@@ -314,6 +314,32 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('cats_tree', 'CatController@cats_tree');
     Route::get('products_enable', 'ProductController@products_enable');
 
+
+
+    Route::resource('subsEmails', 'SubsEmailController');
+    //Route::get('/subsEmails/import', 'CartController@import');
+    Route::post('/subsEmails/import', 'SubsEmailController@import');
+
+    Route::resource('subsGroups', 'SubsGroupController');
+    Route::post('/subsGroups/import', 'SubsGroupController@import');
+
+    Route::resource('makeSubMails', 'MakeSubMailController');
+    Route::get('/makeSubMails/{id}/add_group/{group_id}', 'MakeSubMailController@add_group');
+
+    Route::resource('groupInMails', 'GroupInMailController');
+
+    
+    
+
+    //Route::get('/makeSubMails/{id}/add_group/{group_id}', 'MakeSubMailController@add_group');
+
+
+    Route::get('/run_subs_send', function (Request $request) {
+        Artisan::call('subs:send');
+        return "sent all";
+    });
+
+
 });
 //  !!! END AUTH !!!
 
@@ -565,5 +591,8 @@ Route::get('getlocale', function (Request $request) {
     $locale_get = App::getLocale();
     return $locale_get;
 });
+
+
+
 
 

@@ -47,3 +47,21 @@
     <a href="{!! route('metatexts.index') !!}"><i class="fa fa-edit"></i><span>Мета метки</span></a>
 </li>
 
+
+
+
+<li class="{{ Request::is('makeSubMails*') ? 'active' : '' }}">
+    <a href="{!! route('makeSubMails.index') !!}"><i class="fa fa-envelope"></i><span>Рассылка</span></a>
+</li>
+<li class="{{ Request::is('subsGroups*') ? 'active' : '' }}">
+    <a href="{!! route('subsGroups.index') !!}"><i class="fa fa-envelope"></i><span>Почтовые группы</span></a>
+</li>
+<li class="{{ Request::is('subsEmails*') ? 'active' : '' }}">
+    <a href="{!! route('subsEmails.index') !!}"><i class="fa fa-envelope"></i><span>Ящики/Почта</span></a>
+</li>
+
+
+{{-- <li class="{{ Request::is('groupInMails*') ? 'active' : '' }}">
+    <a href="{!! route('groupInMails.index') !!}"><i class="fa fa-edit"></i><span>Group In Mails</span></a>
+</li> --}}
+

@@ -201,7 +201,7 @@ CSS
                                         <a href="/mcf_cart">
                                             <i class="fa fa-shopping-cart">
                                             </i>
-                                            Корзина <span id="qty_badge" class="badge badge-secondary" style="font-size:10px;" data-cart_id={{ $cart->id }}></span>
+                                            Корзина <span id="qty_badge" class="badge badge-secondary" style="font-size:10px; top: -1px; position: relative;" data-cart_id={{ $cart->id }}></span>
                                         </a>
                                     </li>
                                     <li>

@@ -13,7 +13,9 @@
   background: url(/bg14.jpg);
   background-size: cover;
 }
-
+.single-service {
+    min-height: 19em;
+}
 </style>
 
     <!-- Start page-top-banner section -->
@@ -45,16 +47,16 @@
 
                   <div class="col-lg-4  col-md-6 pb-30">
                       <a href="/mcf_cat/{{ $cat->ident }}">
-                        <div class="single-service text-center">
-                            <div class="text-center">
-                              <img src="{{ $cat->image }}" class="img-responsive responsive-img" style="max-height: 10em; max-width: 10em;">
+                        <div class="single-service text-center" style="display: flex; align-items: center;">
+                            <div class="text-center" style="margin: 0 auto;">
+                                <img src="{{ $cat->image }}" class="img-responsive responsive-img" style="max-height: 10em; max-width: 10em;">
+                                <h4>{{ $cat->name }}</h4>
                             </div>
                             {{-- <i class="ti-user"></i> --}}
 
-                            <h4>{{ $cat->name }}</h4>
-                            <p>
-                                {{ $cat->desc }}
-                            </p>
+                            {{-- <p> --}}
+                                {{-- {{ $cat->desc }} --}}
+                            {{-- </p> --}}
                         </div>
                       </a>
                   </div>

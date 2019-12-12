@@ -43,3 +43,15 @@ Route::resource('products', 'ProductAPIController');
 
 
 Route::resource('metatexts', 'MetatextAPIController');
+
+
+
+
+
+Route::resource('subs_emails', 'SubsEmailAPIController');
+
+Route::resource('subs_groups', 'SubsGroupAPIController');
+
+Route::resource('make_sub_mails', 'MakeSubMailAPIController');
+
+Route::resource('group_in_mails', 'GroupInMailAPIController');
