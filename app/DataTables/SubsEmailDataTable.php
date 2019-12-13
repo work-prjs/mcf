@@ -44,15 +44,19 @@ class SubsEmailDataTable extends DataTable
             ->minifiedAjax()
             ->addAction(['width' => '120px', 'printable' => false])
             ->parameters([
-                'dom'       => 'Bfrtip',
+                // 'dom'       => 'Bfrtip',
+                'dom'       => 'fBrtlip',
                 'stateSave' => true,
                 'order'     => [[0, 'desc']],
                 'buttons'   => [
+                    ['extend' => 'colvis', 'className' => 'btn btn-default btn-sm no-corner',],
+                    ['extend' => 'export', 'className' => 'btn btn-default btn-sm no-corner',]
+                    
                     // ['extend' => 'create', 'className' => 'btn btn-default btn-sm no-corner',],
-                    ['extend' => 'export', 'className' => 'btn btn-default btn-sm no-corner',],
-                    ['extend' => 'print', 'className' => 'btn btn-default btn-sm no-corner',],
-                    ['extend' => 'reset', 'className' => 'btn btn-default btn-sm no-corner',],
-                    ['extend' => 'reload', 'className' => 'btn btn-default btn-sm no-corner',],
+                    // ['extend' => 'export', 'className' => 'btn btn-default btn-sm no-corner',],
+                    // ['extend' => 'print', 'className' => 'btn btn-default btn-sm no-corner',],
+                    // ['extend' => 'reset', 'className' => 'btn btn-default btn-sm no-corner',],
+                    // ['extend' => 'reload', 'className' => 'btn btn-default btn-sm no-corner',],
                 ],
             ]);
     }
@@ -62,14 +66,46 @@ class SubsEmailDataTable extends DataTable
      *
      * @return array
      */
+    // protected function getColumns()
+    // {
+    //     return [
+    //         'group_email_id',
+    //         'email',
+    //         'active',
+    //         'comment',
+    //         'subs'
+    //     ];
+    // }
+
     protected function getColumns()
     {
         return [
-            'group_email_id',
-            'email',
-            'active',
-            'comment',
-            'subs'
+        [
+            'data' => 'group_email_id',
+            'name' => 'group_email_id',
+            'title' => 'Группа'
+        ],
+        [
+            'data' => 'email',
+            'name' => 'email',
+            'title' => 'Email'
+        ],
+        [
+            'data' => 'active',
+            'name' => 'active',
+            'title' => 'Активна'
+        ],
+        [
+            'data' => 'comment',
+            'name' => 'comment',
+            'title' => 'Комментарий'
+        ],
+
+        [
+            'data' => 'subs',
+            'name' => 'subs',
+            'title' => 'Подписан'
+        ]
         ];
     }
 

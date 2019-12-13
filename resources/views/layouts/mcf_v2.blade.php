@@ -18,7 +18,6 @@
     <title>MCF - Бренд завода про производству светового и звукогого оборудования | Sound and light instruments factory.</title>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700" rel="stylesheet">
-
     <!--
 CSS
 ============================================= -->
@@ -38,6 +37,10 @@ CSS
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
     <style type="text/css">
+
+/*#691cff*/
+
+
         .breakpoint-off .dopenav ul li .dropdown {
             width: 17em;
         }
@@ -46,10 +49,6 @@ CSS
             border: 1px solid #f00000;
             padding: 6px;
             background: white;
-        }
-
-        #nav a:hover {
-            color: red !important;
         }
 
         #nav a:hover #qty_badge {
@@ -64,13 +63,33 @@ CSS
             color: white;
         }
         a.a_hover:hover {
-            color: #F00096 !important;
+            color: #691cff !important;
         }
 
         .blog-lists-section .tags-widget ul li a {
             font-size: 14px;
         }
 
+        #nav a:hover {
+            color: red;
+        }
+        #nav .dope-sticky a:hover {
+            color: #691cff !important;
+        }
+
+
+        .dope-nav-container a {
+            color: floralwhite;
+
+        }
+
+        #nav > li.cn-dropdown-item.has-down > ul > li > a {
+            color: black;
+        }
+
+        .dope-sticky a {
+            color: black;
+        }
         
 
     </style>

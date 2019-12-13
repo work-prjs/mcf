@@ -3,7 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-           <b>Показать:</b>  Subs Email
+           <b>Показать:</b> Адреса Email
         </h1>
     </section>
     <div class="content">

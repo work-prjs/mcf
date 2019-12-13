@@ -3,7 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-           <b>Показать:</b>  Subs Group
+           <b>Показать:</b>  Группы рассылки
         </h1>
     </section>
     <div class="content">
@@ -28,9 +28,9 @@
     <table class="table" id="orders-table">
         <thead>
             <tr>
-                <th>email</th>
-                <th>active</th>
-                <th>subs</th>
+                <th>E-mail</th>
+                <th>Активна</th>
+                <th>Подписан</th>
                 <th>Действие</th>
             </tr>
         </thead>

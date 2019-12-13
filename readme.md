@@ -1,3 +1,12 @@
+echo "/usr/local/php/cgi/7.3/bin/php /usr/local/bin/composer install" > composer73.sh
+/usr/local/php/cgi/7.3/bin/php artisan migrate
+/usr/local/php/cgi/7.3/bin/php artisan import:cat
+/usr/local/php/cgi/7.3/bin/php artisan import:product
+/usr/local/php/cgi/7.3/bin/php artisan import:price
+git pull
+/usr/local/php/cgi/7.3/bin/php artisan storage:link
+
+
 
 https://habr.com/ru/post/354036/
 https://magora-systems.ru/how-to-create-a-software-requirement-specification/

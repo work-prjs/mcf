@@ -2,7 +2,7 @@
 
 @section('content')
     <section class="content-header">
-        <h1 class="pull-left"><b>Список:</b> Subs Groups</h1>
+        <h1 class="pull-left"><b>Список:</b> Группы рассылки</h1>
         <h1 class="pull-right">
            <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('subsGroups.create') !!}">Создать</a>
         </h1>

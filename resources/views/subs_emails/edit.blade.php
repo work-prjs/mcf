@@ -3,7 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            <b>Изменить:</b> Subs Email
+            <b>Изменить:</b> Адреса Email
         </h1>
    </section>
    <div class="content">
