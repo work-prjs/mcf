@@ -58,7 +58,8 @@
 <div class="form-group col-sm-6">
     {!! Form::label('cat_id', 'Категория:') !!}
     {{-- {!! Form::text('cat_id', null, ['class' => 'form-control']) !!} --}}
-    {!!  Form::select('cat_id', App\Models\Cat::all()->pluck('name', 'ident'), null, ['class' => 'form-control']) !!}
+    {!!  Form::select('cat_id', App\Models\Cat::all()->pluck('name', 'ident')->prepend('Корневая категория', '0'), null, ['class' => 'form-control']) !!}
+
 </div>
 
 <!-- Price Amount Field -->
