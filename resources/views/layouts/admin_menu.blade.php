@@ -1,8 +1,6 @@
 
         <li class="header">Навигация</li>
-{{-- http://127.0.0.1:8000/manager --}}
         <li class="treeview menu-open active">
-        {{-- <li class="treeview menu-open"> --}}
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Пространства</span>
             <span class="pull-right-container">
@@ -15,8 +13,6 @@
                 <i class="fa fa-circle-o text-success"></i> Менджер
               </a>
             </li>
-            {{-- <li><a href="/administrator"><i class="fa fa-circle-o"></i> Администратор </a></li> --}}
-            {{-- <li><a href="/mind_map"><i class="fa fa-circle-o"></i> Карта </a></li> --}}
           </ul>
         </li>
 
@@ -33,7 +29,7 @@
         </li>
 
 {{-- @if (Auth::user()->role_type==0) --}}
-@if (true)
+@if (false)
 
         <li class="treeview menu-open active">
           <a href="#">
@@ -101,27 +97,10 @@
 
               <ul class="treeview-menu">
                 <li><a href="/generator_builder"><i class="fa fa-circle-o text-orange"></i> Генераторы </a></li>
-
-
-                <li class="treeview menu-open active">
-                  {{-- <a href="#"><i class="fa fa-pie-circle-o"></i> Debug --}}
-                  <a href="#"><i class="fa fa-circle-o  text-red"></i> Отладка
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
-                  <ul class="treeview-menu menu-open active">
-                    <li><a href="/telescope"><i class="fa fa-circle-o"></i> Telescope</a></li>
-                    <li><a href="/prequel"><i class="fa fa-circle-o"></i> Prequel</a></li>
-                    <li><a href="/phpinfo"><i class="fa fa-circle-o"></i>phpinfo()</a></li>
-                  </ul>
-                </li>
-
-
+                <li><a href="/file_manager1"><i class="fa fa-circle-o text-red"></i> Файлы </a></li>
               </ul>
             </li>
 
-            <li><a href="/file_manager1"><i class="fa fa-circle-o text-red"></i> Файлы </a></li>
 
           </ul>
 
@@ -130,8 +109,9 @@
         </li>
 @endif
         <li class="header">ССЫЛКИ</li>
-
         
         {{-- <li><a href="/direct"><i class="fa fa-circle-o text-red"></i> <span>Реклама</span></a></li> --}}
         {{-- <li><a href="/anal"><i class="fa fa-circle-o text-yellow"></i> <span>Аналитика</span></a></li> --}}
+        <li><a href="/generator_builder"><i class="fa fa-circle-o text-orange"></i> Генераторы </a></li>
+        <li><a href="/file_manager1"><i class="fa fa-circle-o text-red"></i> Файлы </a></li>
         <li><a href="/" target="_blank"><i class="fa fa-link text-aqua" aria-hidden="true"></i> <span>Сайт</span></a></li>

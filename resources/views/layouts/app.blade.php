@@ -36,7 +36,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Админка') }}</title>
 
 
     <!-- Fonts -->
@@ -50,10 +50,37 @@
 
     @yield('css')
 
-<style >
+<style>
   .menu_check {
     cursor: pointer;
   }
+  /* TODO по просьбе отключаю границы */
+  label.checkbox-inline {
+    border: none;
+  }
+
+
+            @media (max-width: 1199px) {
+            }
+
+            @media (max-width: 991px) {
+            }
+
+            @media (max-width: 767px) {
+                .one_line_in {
+                    width: 1em !important;
+                    font-size: 1em;
+                    height: 24px !important;
+                }
+            }
+
+            @media (max-width: 479px) {
+                .one_line_in {
+                    width: 1em !important;
+                    font-size: 1em;
+                    height: 24px !important;
+                }
+            }
 </style>
 
 </head>

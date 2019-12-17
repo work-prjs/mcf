@@ -15,6 +15,10 @@ use Illuminate\Http\File;
 use Illuminate\Http\UploadedFile;
 // controller.stub
 
+use Illuminate\Support\Facades\Redirect;
+use Mail;
+use Auth;
+
 use App\Models\Order;
 
 class OrderController extends AppBaseController
@@ -31,7 +35,8 @@ class OrderController extends AppBaseController
         $this->status = ['Новый', 'Подтвержден', 'Готовиться', 'Получен', 'Оплачен'];
         $this->pay_types = ['Оплата на месте', 'Онлайн оплата Картой', 'Выставить счёт'];
         $this->pay_places = ['Доставка курьером', 'Самовывоз', 'Почтой'];
-     }
+
+    }
 
     /**
      * Display a listing of the Order.
@@ -42,7 +47,17 @@ class OrderController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $orders = $this->orderRepository->paginate(10);
+        // $orders = $this->orderRepository->paginate(10);
+
+        if (Auth::check()){
+            // если Крурьер
+            if (Auth::user()->role_type==4) {
+                $orders = \App\Models\Order::where('user_id', Auth::user()->id )->get();
+            } else {
+                $orders = $this->orderRepository->paginate(10);
+            }
+        }
+
         return view('orders.index')
             ->with('orders', $orders)
             ->with('status', $this->status)
@@ -60,6 +75,7 @@ class OrderController extends AppBaseController
     public function create()
     {
         return view('orders.create')
+            ->with('cats', \App\Models\Cat::where('parent_id',0)->get() )
             ->with('status', $this->status)
             ->with('pay_types', $this->pay_types)
             ->with('pay_places', $this->pay_places);
@@ -109,6 +125,7 @@ class OrderController extends AppBaseController
 
         return view('orders.show')
                 ->with('order', $order)
+                ->with('cats', \App\Models\Cat::where('parent_id',0)->get() )
                 ->with('status', $this->status)
                 ->with('pay_types', $this->pay_types)
                 ->with('pay_places', $this->pay_places);
@@ -134,6 +151,7 @@ class OrderController extends AppBaseController
 
         return view('orders.edit')
                 ->with('order', $order)
+                ->with('cats', \App\Models\Cat::where('parent_id',0)->get() )
                 ->with('status', $this->status)
                 ->with('pay_types', $this->pay_types)
                 ->with('pay_places', $this->pay_places);
@@ -159,11 +177,29 @@ class OrderController extends AppBaseController
         }
 
         $input = $request->all();
+
+
+        if (isset($input['send_email']) && $input['send_email']==1) {
+
+            // dd($input['send_email']);
+
+            if (isset($input['user_id']) && $input['user_id']!=0) {
+                $user = \App\Models\User::find($input['user_id']);
+
+                $data2 = array('order' => $order);
+                $contactEmail=$user->email;
+                $contactName=$user->name;
+                Mail::send(['text'=>'order_email'], $data2, function($message) use ($contactEmail, $contactName) {
+                        $message->to($contactEmail, $contactName)->subject('Уведомление');
+                        $message->from(env('MAIL_USERNAME', 'mltefive@gmail.com'),'Уведомление Курьеру');
+                    });
+            }
+
         // if ($request->hasFile('image')) {
         //     $path = $request->file('image')->store('public/orders');
         //     $publicPath = \Storage::url( $path );
         //     $input['image'] = $publicPath;
-        // }
+        }
 
         $order = $this->orderRepository->update($input, $id);
 
@@ -201,7 +237,8 @@ class OrderController extends AppBaseController
 
         Flash::success('Order объект успешно удалён.');
 
-        return redirect(route('orders.index'));
+        // return redirect(route('orders.index'));
+        return Redirect::back();
     }
 
 
@@ -227,7 +264,8 @@ class OrderController extends AppBaseController
     public function remove_items($id)
     {
         $order = Order::find($id);
-        return $order->remove_items();
+        $order->remove_items();
+        return Redirect::back();
     }
 
     public function check($id, Request $request)
@@ -245,12 +283,97 @@ class OrderController extends AppBaseController
 
     }
 
-    // public function status($status='new')
-    // {
-    //     // event( new \App\Events\ServerCreated("Новый заказ!", 1) );
-    //     return view('menu3.thanks')->with('thanks', $thanks_id);
-    // }
+
+    public function client_order_show($client_order_show_id, Request $request)
+    {
+
+        $order = $this->orderRepository->find($client_order_show_id);
+
+        if (empty($order)) {
+            Flash::error('Объект не найден');
+            return abort(404);
+        }
+
+        return view('mcf_v2.client_order_show')
+                ->with('order', $order)
+                ->with('status', $this->status)
+                ->with('pay_types', $this->pay_types)
+                ->with('pay_places', $this->pay_places);
+
+    }
+
+    public function add_product_item($id, $product_id, Request $request)
+    {
+        // $input = $request->all();
+        $order = \App\Models\Order::find( $id );
+        // создаем позиции для Заказа order_id
+        \App\Models\LineItem::create(['order_id'=>$order->id, 'product_id'=>$product_id, 'qty'=>1]);
+        return 'ok';
+    }
+
+    public function generateDocx($id, Request $request)
+    {
+        // $order = \App\Models\Order::find( $id );
+        // // dd($order->comment);
 
 
+        // $phpWord = new \PhpOffice\PhpWord\PhpWord();
+        // $phpWord->setDefaultFontName('Times New Roman');
+        // $phpWord->setDefaultFontSize(14);
+        // $properties = $phpWord->getDocInfo();
+
+        // $properties->setCreator('Name PhpWord');
+        // $properties->setCompany('Company PhpWord');
+        // $properties->setTitle('Title PhpWord');
+        // $properties->setDescription('Description PhpWord');
+        // $properties->setCategory('My category PhpWord');
+        // $properties->setLastModifiedBy('My name PhpWord');
+        // $properties->setCreated(mktime(0, 0, 0, 3, 12, 2015));
+        // $properties->setModified(mktime(0, 0, 0, 3, 14, 2015));
+        // $properties->setSubject('PhpWord subject');
+        // $properties->setKeywords('my, key, word');
+
+        // // $input = $request->all();
+
+        // $section = $phpWord->addSection();
+        // $section->addText('Заказ №'.$order->id);
+
+        // $description = $order->comment;
+
+        // $text = $order->comment;
+        // $textlines = explode("\r\n", $text);
+
+        // $textrun = $section->addTextRun();
+        // $textrun->addText(array_shift($textlines));
+        // // $section->addText($description);
+        // foreach($textlines as $line) {
+        //     $textrun->addTextBreak();
+        //     // maybe twice if you want to seperate the text
+        //     // $textrun->addTextBreak(2);
+        //     $textrun->addText($line);
+        // }
+
+        // $textrun->addTextBreak();
+
+        // $section->addImage("http://itsolutionstuff.com/frontTheme/images/logo.png");
+
+
+
+        // $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
+
+        // try {
+
+        //     $objWriter->save(storage_path('helloWorld1.docx'));
+
+        // } catch (Exception $e) {
+
+        // }
+
+
+        // return response()->download(storage_path('helloWorld1.docx'));
+    }
+
+
+// 
 
 }

@@ -167,13 +167,27 @@
 
                         <div class="row single-widget ">
                               <div class="col-md-7 ">
-                                <img src="{{ $product->image }}" class="" style="max-width: 23em;    height: 100%;    width: 100%;" />
+                                <img src="{{ $product->image }}" class="img-fluid"  />
                               </div>
                               <div class="col-md-5 " >
                                     <div class="row">
                                         <div class="col-md-12">
                                             
-                                            <span class="brown"><b>Галерея:</b></span>
+{{-- <div class="col-lg-4 details-right"> --}}
+                    <ul>
+                        <li><span>Client:</span> Envato</li>
+                        <li><span>Category:</span> Fashion,Design</li>
+                        <li><span>Visit:</span> envato.com</li>
+                        <li><span>Date:</span> 01.09.2018</li>
+                    </ul>
+                    <p>                  
+                        To shewing another demands to. Marianne property cheerful informed at striking at.
+                    </p>
+                    <p>
+                        Received shutters expenses ye he pleasant. Drift as blind above at up. No up simple county stairs do should praise as. Drawings sir gay together landlord had law smallest. Formerly welcomed attended declared met say unlocked. Jennings outlived no dwelling denoting in peculiar.
+                    </p>
+                {{-- </div>                                             --}}
+                                            {{-- <span class="brown"><b>Галерея:</b></span> --}}
 
                                         </div>
                                     </div>

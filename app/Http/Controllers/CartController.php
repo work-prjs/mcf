@@ -30,8 +30,8 @@ class CartController extends AppBaseController
     public function __construct(CartRepository $cartRepo)
     {
         $this->cartRepository = $cartRepo;
-        $this->pay_places = ['Место в заведении','Номер в гостинице', 'На вынос'];
-        $this->pay_types = ['Оплата наличными', 'Оплата картой', 'Онлайн оплата'];
+        $this->pay_types = ['Оплата на месте', 'Онлайн оплата Картой', 'Выставить счёт'];
+        $this->pay_places = ['Доставка курьером', 'Самовывоз', 'Почтой'];
     }
 
     /**
@@ -206,22 +206,20 @@ class CartController extends AppBaseController
 
         $input = $request->all();
         $cart = Cart::find($id);
+        // dd($cart);
         if ($cart == null) {
     		 return abort(404);
         }
     	else
    		{
 
-        	if (isset($input['my_place'])) {
+        	if (isset($input['pay_type'])) {
 
-                if ($input['my_place']==0) {
-                    $pay_adr = "Стол в заведении ".$input['stol_number'];
+                if ($input['pay_place']==0) {
+                    $pay_adr = $input['pay_adr'];
                 }
-                if ($input['my_place']==1) {
-                    $pay_adr = "Номер в отеле ".$input['hotel_number'];
-                }
-                if ($input['my_place']==2) {
-                    $pay_adr = $input['contact_adr'];
+                if ($input['pay_place']==1) {
+                    $pay_adr = "Самовывоз";
                 }
 
                 $contact_number = $input['contact_number'];
@@ -233,21 +231,7 @@ class CartController extends AppBaseController
                     $contact_email = 'нет';
                 }
 
-                // if (isset($input['order_date'])) {
-                if(!empty($input['order_date'])) {
-                    $order_date = $input['order_date'];
-                } else {
-                    $order_date = 'сегодня';
-                }
-
-                // if (isset($input['order_time'])) {
-                if(!empty($input['order_time'])) {
-                    $order_time = $input['order_time'];
-                } else {
-                    $order_time = 'сейчас';
-                }
-
-                $this_pay_place = $this->pay_places[$input["my_place"]];
+                $this_pay_place = $this->pay_places[$input["pay_place"]];
                 $this_pay_type  = $this->pay_types[$input['pay_type']];
 
 $comment = <<<EOT
@@ -255,14 +239,12 @@ $comment = <<<EOT
 Тип оплаты: $this_pay_type
 Телефон: $contact_number
 Email: $contact_email
-Адрес заказа или Номер места/номера: $pay_adr
+Адрес заказа: $pay_adr
 
-На дату: $order_date
-На время: $order_time
 EOT;
 
                 // создаем Заказ
-                $check = \App\Models\Order::create( [ 'pay_place' => $input['my_place'], 'pay_adr' => $pay_adr, 'pay_contact' => $contact_number, 'status' => '0', 'pay_type'=> $input['pay_type'], 'comment' => $comment ]);
+                $check = \App\Models\Order::create( [ 'pay_place' => $input['pay_place'], 'pay_adr' => $pay_adr, 'pay_contact' => $contact_number, 'status' => '0', 'pay_type'=> $input['pay_type'], 'comment' => $comment ]);
 
                 // создаем позиции для Заказа order_id
                 foreach ($cart->line_items as $key => $line) {
@@ -309,7 +291,7 @@ EOT;
                 }
                 
                 $cart->delete();
-            	return view('menu3.thanks')->with('order_id', $check->id);
+            	return view('mcf_v2.thanks')->with('order_id', $check->id);
         	}
             else {
             	return abort(404);

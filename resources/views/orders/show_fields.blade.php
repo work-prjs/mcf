@@ -1,65 +1,79 @@
 <!-- Id Field -->
-{{-- <div class="form-group"> --}}
+{{-- <div class="form-group2"> --}}
     {{-- {!! Form::label('id', __('Id') ) !!}:  --}}
-    {{-- <p>{!! $order->id !!}</p> --}}
+    {{-- {!! $order->id !!} --}}
 {{-- </div> --}}
-
 <!-- Created At Field -->
-<div class="form-group">
+<div class="form-group2">
     {!! Form::label('created_at', __('Created At') ) !!}: 
-    <p>{!! $order->created_at !!}</p>
+    {!! $order->created_at !!}
+
 </div>
 
 <!-- Updated At Field -->
-<div class="form-group">
+<div class="form-group2">
     {!! Form::label('updated_at', __('Updated At') ) !!}: 
-    <p>{!! $order->updated_at !!}</p>
+    {!! $order->updated_at !!}
 </div>
 
-<!-- Pay Type Field -->
-{{-- <div class="form-group"> --}}
-    {{-- {!! Form::label('pay_type', __('Pay Type') ) !!}:  --}}
-    {{-- <p>{!! $order->pay_type !!}</p> --}}
-    {{-- {!! $pay_types[$order->pay_type] ?? 'pay_type' !!} --}}
-{{-- </div> --}}
+@if ($order->kp==1)
+    
+    <div class="form-group2">
+        {!! Form::label('kp', 'Предложение' ) !!}: 
+        {{ $order->kp }}
+    </div>
+@else
 
-<!-- Pay Place Field -->
-<div class="form-group">
-    {!! Form::label('pay_place', __('Pay Place') ) !!}: 
-    {{-- <p>{!! $order->pay_place !!}</p> --}}
-    {!! $pay_places[$order->pay_place] !!}
-</div>
+    <!-- Pay Type Field -->
+    <div class="form-group2">
+        {!! Form::label('pay_type', __('Pay Type') ) !!}: 
+        {{-- {!! $order->pay_type !!} --}}
+        {!! $pay_types[$order->pay_type] ?? 'pay_type' !!}
+    </div>
 
-<!-- Pay Adr Field -->
-<div class="form-group">
-    {!! Form::label('pay_adr', __('Pay Adr') ) !!}: 
-    <p>{!! $order->pay_adr !!}</p>
-</div>
+    <!-- Pay Place Field -->
+    <div class="form-group2">
+        {!! Form::label('pay_place', __('Pay Place') ) !!}: 
+        {{-- {!! $order->pay_place !!} --}}
+        {!! $pay_places[$order->pay_place] !!}
+    </div>
 
-<!-- Pay Contact Field -->
-<div class="form-group">
-    {!! Form::label('pay_contact', __('Pay Contact') ) !!}: 
-    <p>{!! $order->pay_contact !!}</p>
-</div>
+    <!-- Pay Adr Field -->
+    <div class="form-group2">
+        {!! Form::label('pay_adr', __('Pay Adr') ) !!}: 
+        {!! $order->pay_adr !!}
+    </div>
+
+    <!-- Pay Contact Field -->
+    <div class="form-group2">
+        {!! Form::label('pay_contact', __('Pay Contact') ) !!}: 
+        {!! $order->pay_contact !!}
+    </div>
+
+@endif
+
+
 
 <!-- Pay Discount Field -->
-{{-- <div class="form-group"> --}}
+{{-- <div class="form-group2"> --}}
     {{-- {!! Form::label('pay_discount', __('Pay Discount') ) !!}:  --}}
-    {{-- <p>{!! $order->pay_discount !!}</p> --}}
+    {{-- {!! $order->pay_discount !!} --}}
 {{-- </div> --}}
 
 <!-- Status Field -->
-<div class="form-group">
+<div class="form-group2">
     {!! Form::label('status', __('Status') ) !!}: 
-    <p>
-        {{-- {!! $order->status !!} --}}
         {!! $status[$order->status] !!}
-    </p>
+</div>
+
+<div class="form-group2">
+    {!! Form::label('user_id', 'Ответственный' ) !!}: 
+        {!! $order->user_id !!}
 </div>
 
 <!-- Comment Field -->
-{{-- <div class="form-group"> --}}
-    {{-- {!! Form::label('comment', __('Comment') ) !!}:  --}}
-    {{-- <p>{!! $order->comment !!}</p> --}}
-{{-- </div> --}}
+<div class="form-group2">
+    {!! Form::label('comment', __('Comment') ) !!}: 
+    <pre>{!! $order->comment !!}</pre>
+</div>
 

@@ -76,7 +76,7 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('passw
 // Auth::routes();
 
 // Route::get('/home', 'HomeController@index');
-Route::get('/home', 'ManagerController@index');
+// Route::get('/home', 'ManagerController@index');
 // Route::get('/manager', 'ManagerController@index');
 
 
@@ -173,10 +173,20 @@ Route::group(['middleware' => 'auth'], function () {
     });
     // 
 
-    // Route::get('/clear-cache', function() {
-    //     Artisan::call('cache:clear');
-    //     return "Cache is cleared";
-    // });
+    Route::get('/clear-cache', function() {
+        // php artisan route:cache
+        // php artisan cache:clear
+        // php artisan config:cache
+        // php artisan view:clear
+        // Artisan::call('route:cache');
+        // Artisan::call('cache:clear');
+        // Artisan::call('config:cache');
+        // Artisan::call('view:clear');
+        
+        // // php artisan optimize
+
+        return "Cache is cleared";
+    });
 
     Route::get('generator_builder', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@builder')->name('io_generator_builder');
 
@@ -261,6 +271,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 
     Route::resource('orders', 'OrderController');
+Route::get('/client_order_show/{client_order_show_id}', 'OrderController@client_order_show');
 
     Route::get('/route_list', function () {
 
@@ -327,12 +338,11 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 
-Route::resource('carts', 'CartController');
 
 Route::get('/cart', function () {
     // session('cart');
     // return view('menu3.cart');
-    return view('menu3.cart')->with('cart', session('cart'));
+    return view('mcf_v2.cart')->with('cart', session('cart'));
 });
 
 Route::get('/mcf_cart', function () {
@@ -353,6 +363,8 @@ Route::get('/product/{ident}/to_cart/{qty}', 'ProductController@to_cart');
 
 
     Route::get('/cats/{ident}/check_menu', 'CatController@check_menu');
+    Route::get('/cats/{ident}/cats_products', 'CatController@cats_products');
+
     Route::get('/products/{ident}/check_menu', 'ProductController@check_menu');
     Route::get('/products/{ident}/check_menu2', 'ProductController@check_menu2');
 
@@ -361,7 +373,10 @@ Route::get('/product/{ident}/to_cart/{qty}', 'ProductController@to_cart');
     Route::get('/carts/{id}/clear', 'CartController@remove_items');
     Route::get('/carts/{id}/checkout', 'CartController@checkout');
 
+
     Route::get('carts_destroy_all', 'CartController@destroy_all');
+
+    Route::resource('carts', 'CartController');
 
 
     Route::get('/orders/{id}/total', 'OrderController@total');
@@ -370,9 +385,14 @@ Route::get('/product/{ident}/to_cart/{qty}', 'ProductController@to_cart');
     Route::get('/orders/{id}/checkout', 'OrderController@checkout');
     
     Route::get('orders_destroy_all', 'OrderController@destroy_all');
+
+    Route::get('/orders/{id}/add_product_item/{product_id}', 'OrderController@add_product_item');
+
+    Route::get('/orders/{id}/generateDocx', 'OrderController@generateDocx');
     
 
-    Route::resource('lineItems',            'LineItemController');
+    Route::get('/lineItems/{id}/del', 'LineItemController@del');
+
     Route::get('/lineItems_destroy_all',    'LineItemController@destroy_all');
     Route::get('/qty_minus/{id}',           'LineItemController@qty_minus');
     Route::get('/qty_plus/{id}',            'LineItemController@qty_plus');
@@ -507,6 +527,7 @@ Route::get('/mcf_blogs', function () {
 
     // return view('mcf_v2.mcf_blogs');
 });
+    Route::resource('lineItems',            'LineItemController');
 
 
 
@@ -532,9 +553,9 @@ Route::get('/mcf_blogs', function () {
     });
 
 
-Route::get('/contact', function () {
-    return view('menu3.contact1');
-});
+// Route::get('/contact', function () {
+//     return view('mcf_v2.contact1');
+// });
 
 
 

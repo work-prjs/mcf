@@ -130,10 +130,12 @@ CSS
 
         a.h_v:hover h5 {
             color: #691cff;
+            /*opacity: .7;*/
         }
 
         .b_hover:hover {
             color: #691cff !important;
+            opacity: .7;
         }
         .to_cart2 {
             bottom: 1em;

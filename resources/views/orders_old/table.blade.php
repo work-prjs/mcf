@@ -8,16 +8,15 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>{{ __('Pay Type') }}</th>
-                <th>{{ __('Pay Place') }}</th>
-                {{-- <th>{{ __('Pay Adr') }}</th> --}}
-                {{-- <th>{{ __('Pay Contact') }}</th> --}}
-                {{-- <th>{{ __('Pay Discount') }}</th> --}}
-                <th>{{ __('Status') }}</th>
-                {{-- <th>{{ __('Comment') }}</th> --}}
+                {{-- <th>{{ __('Pay Type') }}</th> --}}
+        <th>{{ __('Pay Place') }}</th>
+        {{-- <th>{{ __('Pay Adr') }}</th> --}}
+        {{-- <th>{{ __('Pay Contact') }}</th> --}}
+        {{-- <th>{{ __('Pay Discount') }}</th> --}}
+        <th>{{ __('Status') }}</th>
+        {{-- <th>{{ __('Comment') }}</th> --}}
 
                 <th>Продуктов</th>
-                <th>Ответственный</th>
                 <th>Создано</th>
                 <th>Обновлено</th>
 
@@ -32,10 +31,11 @@
                     {!! $order->id !!}
                 </td>
 
-                <td>
-                    {!! $pay_types[$order->pay_type] !!}
-                </td>
+                {{-- <td> --}}
+                    {{-- {!! $pay_types[$order->pay_type] !!} --}}
+                {{-- </td> --}}
             <td>
+                {{-- {!! $order->pay_place !!} --}}
                 {!! $pay_places[$order->pay_place] !!}
             </td>
             {{-- <td>{!! $order->pay_adr !!}</td> --}}
@@ -60,21 +60,19 @@
                 @if ($order->status==4)
                         <span class="badge label label-success">{!! $status[$order->status] !!}</span>
                 @endif
+{{-- 
+<span class="label label-default">Default Label</span>
+<span class="label label-primary">Primary Label</span>
+<span class="label label-success">Success Label</span>
+<span class="label label-info">Info Label</span>
+<span class="label label-warning">Warning Label</span>
+<span class="label label-danger">Danger Label</span>
+--}}
 
             </td>
             {{-- <td>{!! $order->comment !!}</td> --}}
 
             <td>{!! count($order->line_items) !!}</td>
-            <td>
-                {{-- {{ $order->user_id }} --}}
-                @if (isset($order->user_id))
-                @if ($order->user_id==0)
-                @else
-                    {!! App\Models\User::find($order->user_id)->name !!}
-                @endif
-                @endif
-            
-            </td>
             <td>{!! $order->created_at !!}</td>
             <td>{!! $order->updated_at !!}</td>
 

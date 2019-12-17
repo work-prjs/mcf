@@ -32,7 +32,8 @@ class Order extends Model
         'pay_contact',
         'pay_discount',
         'status',
-        'comment'
+        'comment',
+        'kp'
     ];
 
     /**
@@ -46,7 +47,9 @@ class Order extends Model
         'pay_place' => 'string',
         'pay_contact' => 'string',
         'pay_discount' => 'float',
-        'status' => 'string'
+        'status' => 'string',
+        'kp' => 'boolean'
+
     ];
 
     /**

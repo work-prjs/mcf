@@ -50,7 +50,6 @@
 
   </style>
 
-
 @endsection
 
 @section('content-header')
@@ -151,6 +150,50 @@
 
                           @endforeach
 
+
+
+    <div id="myModal2" class="modal fade ">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Онлайн оплата</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <h3>Модуль онлайн оплаты в тестовом режиме</h3>
+                    <iframe src="https://demo.paykeeper.ru/form/" style="width:100%; height: 600px;"></iframe>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                    {{-- <button type="button" class="btn btn-primary">Сохранить изменения</button> --}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="myModalInvoice" class="modal fade ">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Счет на оплату</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <h3>Счет на оплату в разработке</h3>
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                    {{-- <button type="button" class="btn btn-primary">Сохранить изменения</button> --}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
                           <form id="form_id" action="/carts/{{$cart->id}}/checkout">
                             <div class="row">
 
@@ -158,22 +201,25 @@
 
                                 <b>Метод оплаты</b>
 
+
                                 <div class="radio">
                                   <label>
-                                    <input type="radio" name="pay_type" id="optionsRadios2" value="1" checked>
+                                    <input type="radio" name="pay_type" id="optionsRadios2" value="0" required>
                                     Оплата на месте
                                   </label>
-                                  <a href="/Пункты получения продукта">Пункты получения продукта</a>
+                                  <a href="/mcf_contact" target="_blank">Пункты получения продукта</a>
                                 </div> 
                                 <div class="radio">
                                   <label>
-                                    <input type="radio" name="pay_type" id="optionsRadios3" value="2" checked>
+                                    <input type="radio" name="pay_type" id="optionsRadios3" value="1" class="pay_type_online" required>
                                     Онлайн оплата Картой
                                   </label>
                                 </div>
+
+
                                 <div class="radio">
                                  <label>
-                                    <input type="radio" name="pay_type" id="optionsRadios1" value="3" >
+                                    <input type="radio" name="pay_type" id="optionsRadios1" value="2" class="pay_type_invoice" required>
                                     Выставить счёт
                                   </label>
                                 </div>
@@ -185,27 +231,55 @@
                                 <b>Место получения Продукта</b>
                                 <div class="radio">
                                   <label>
-                                    <input type="radio" name="pay_place" id="optionsRadios4" value="0" >
+                                    <input type="radio" name="pay_place" id="optionsRadios4" value="0" required>
                                     Доставка курьером
                                   </label>
                                 </div>
                                 <div class="radio">
                                   <label>
-                                    <input type="radio" name="pay_place" id="optionsRadios5" value="1" checked>
+                                    <input type="radio" name="pay_place" id="optionsRadios5" value="1" required>
                                     Самовывоз
                                   </label>
                                 </div>
                               </div>
-                              
-                              <div class="col-md-12" style="text-align: left;">
-                                <b>Адрес/Место/Примечание</b>
-                                <textarea name="pay_adr" style="width: 100%;" rows="5" placeholder="Укажите адрес: Населеный пункт, улица, номер дома, офис и примечания"></textarea>
+
+
+                              <div class="col-md-6" style="text-align: left;">
+                                <b>Контактный номер (<span style="color: red;">обязательно*</span>)</b>
+                                <div class="form-group">
+
+                                  <div class="input-group">
+                                    {{-- <span class="input-group-addon">
+                                      <i class="fa fa-phone"></i>            
+                                    </span> --}}
+                                      <input type="text" name="contact_number" id="contact_number" value="" placeholder="11 цифр: +7(999)-888-77-77" class="form-control" required>
+                                  </div>
+                                </div>
                               </div>
 
+                              <div class="col-md-6" style="text-align: left;">
+                                <b>Email (не обязательно)</b>
+                                <div class="form-group">
+
+                                  <div class="input-group">
+                                    {{-- <span class="input-group-addon">
+                                      <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    </span> --}}
+                                      <input type="text" name="contact_email" id="contact_email" value="" placeholder="Ваша электронная почта" class="form-control" >
+                                  </div>
+                                </div>
+                              </div>
+
+                                
                               <div class="col-md-12" style="text-align: left;">
+                                <b>Адрес/Место/Примечание</b>
+                                <textarea name="pay_adr" style="width: 100%;" rows="5" placeholder="Укажите адрес: Населенный пункт, улица, номер дома, офис и примечания"></textarea>
+                              </div>
+
+                              {{-- <div class="col-md-12" style="text-align: left;">
                                 <b>Контакты</b>
                                 <textarea name="contact_number" style="width: 100%;" rows="5" placeholder="Укажите контакты для связи: телефон, смс, почта, WhatsApp"></textarea>
-                              </div>
+                              </div> --}}
 
                             </div>
 
@@ -226,11 +300,11 @@
                                     {{-- <a href="#" class="btn-success btn-block btn-sm" id="checkout_link" data-link="/carts/{{$cart->id}}/checkout">
                                       Оплатить
                                     </a> --}}
-                                    <button type="submit" value="Оплатить" class="btn-success btn-block " id="checkout_link" >
+                                    <button type="submit" value="Оплатить" class="btn btn-success" id="checkout_link" style="background-color: #691cff; border-color: #691cff">
                                     Оплатить
                                   </button>
                                     {{-- <a href="/carts/{{$cart->id}}/clear" class="btn-danger btn-block" data-url="/carts/{{$cart->id}}/clear"> --}}
-                                    <a href="/carts/{{$cart->id}}/clear" class="btn-danger btn-block btn-sm" data-url="/carts/{{$cart->id}}/clear" id="clear_btn">
+                                    <a href="/carts/{{$cart->id}}/clear" class="btn-danger btn" data-url="/carts/{{$cart->id}}/clear" id="clear_btn">
                                       Очистить корзину
                                     </a>
                                   </div>
@@ -264,6 +338,7 @@
 @endsection
 
 @section('script')
+  <script type="text/javascript" src="/js/jquery.inputmask.min.js"></script>
 
   <script type="text/javascript">
 
@@ -274,7 +349,7 @@
         url: $(this).data('url'),
         type: 'GET',
         success: function(result) {
-          window.location='/cart'
+          window.location='/mcf_cart'
         }
     });
   });
@@ -401,7 +476,7 @@
     });
 
   // отменяеть выбор текста мышкой - сделано чтобы не выбирался текст при двойном нажатии
-    jQuery('.cart_id').mousedown(function(e){ e.preventDefault(); });
+    // jQuery('.cart_id').mousedown(function(e){ e.preventDefault(); });
 
   // кнопка оплаты
     // $('#checkout_link').click(function(e) {
@@ -453,6 +528,27 @@
 //     $(this).toggleClass("terms_error", !this.checked);
 // }).change(); // set initial state
 
+
+
+
+
+    $("input.pay_type_online").click(function(e) {
+        $("#myModal2").modal('show')
+        // https://demo.paykeeper.ru/payments/payments
+    }); // 
+
+    $("input.pay_type_invoice").click(function(e) {
+        $("#myModalInvoice").modal('show')
+        // https://demo.paykeeper.ru/payments/payments
+    }); // 
+
+
+
+    $(document).ready(function(){
+      // $(selector).inputmask("99-9999999");  //static mask
+      $('#contact_number').inputmask({"mask": "+9(999) 999-99-99"}); //specifying options
+      // $(selector).inputmask("9-a{1,3}9{1,3}"); //mask with dynamic syntax
+    });
 
   </script>
 
