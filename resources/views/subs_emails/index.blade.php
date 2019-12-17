@@ -5,13 +5,17 @@
         <h1 class="pull-left"><b>Список:</b> Адреса Email</h1>
         <h1 class="pull-right">
             
+            <a class="btn btn-danger pull-right" style="margin-top: -10px;margin-bottom: 5px" href="/subsEmails_destroy_all">Очистить</a>
+            
            <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" data-toggle="modal" data-target="#myModal_import">Импорт</a>
-           <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('subsEmails.create') !!}">Создать</a>
+           <a class="btn btn-info pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('subsEmails.create') !!}">Создать</a>
         </h1>
     </section>
     <div class="content">
         <div class="clearfix"></div>
+  
 
+          <!-- /.box -->
         @include('flash::message')
 
         <div class="clearfix"></div>
@@ -36,7 +40,7 @@
           <h4 class="modal-title">Импорт</h4>
         </div>
         <div class="modal-body">
-          {{-- <p>Some text in the modal.</p> --}}
+
           <form action="/subsEmails/import" method="POST" >
               @csrf
               <div class="form-group col-sm-12">
@@ -61,16 +65,9 @@
               <div class="form-group col-sm-6">
 
               {!! Form::label('group_email_id', 'Группа:') !!}
-              {{-- {!! Form::select('group_email_id', ['' => 'GroupEmail'], null, ['class' => 'form-control']) !!} --}}
               {!!  Form::select('group_email_id', App\Models\SubsGroup::all()->pluck('name', 'id')->prepend('Корневая категория', '0'), null, ['class' => 'form-control']) !!}
               </div>
 
-
-{{-- group_email_id --}}
-
-                {{-- <label>
-                  <input type="checkbox" name="active"> Активны
-                </label>                 --}}
                 <hr>
                 <button class="btn">Выполнить</button>
           </form>
@@ -83,6 +80,15 @@
     </div>
   </div>
 
-
 @endsection
 
+@section('script')
+
+<script type="text/javascript">
+    $(document).ready(function (){
+
+    });
+
+</script>
+
+@endsection

@@ -51,7 +51,8 @@ class ImportProduct extends Command {
                                         foreach ($i2["Группы"] as $i3) {
                                             // $gr = $i3["Ид"];
                                             var_dump($i3);
-                                            Product::create( array('name' => $i2['Наименование'], 'ident' => $i2['Ид'], 'xml_name' => $i2["Артикул"], "cat_id" => $i3, 'image'=> $arrX[$randIndex[0]] ) );
+                                            // Product::create( array('name' => $i2['Наименование'], 'ident' => $i2['Ид'], 'xml_name' => $i2["Артикул"], "cat_id" => $i3, 'image'=> $arrX[$randIndex[0]] ) );
+                                            Product::create( array('name' => $i2['Наименование'], 'ident' => $i2['Ид'], 'xml_name' => $i2["Артикул"], "cat_id" => $i3 ) );
                                         }
 
 

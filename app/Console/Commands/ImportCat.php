@@ -74,7 +74,9 @@ foreach ($i3 as $i4) {
                                                     var_dump($i4['Наименование']);
                                                     // isset($i3)
                                                     
-                                                    Cat::create(array ( 'id' => $i4['Ид'], 'name' => $i4['Наименование'], 'ident' => $i4['Ид'], 'image'=> '/'.$arrXX[$randIndex2[0]], 'xml_name' => $i4['Наименование'], 'parent_id' => 0 ));
+                                                    Cat::create(array ( 'id' => $i4['Ид'], 'name' => $i4['Наименование'], 'ident' => $i4['Ид'], 'xml_name' => $i4['Наименование'], 'parent_id' => 0 ));
+
+                                                    // Cat::create(array ( 'id' => $i4['Ид'], 'name' => $i4['Наименование'], 'ident' => $i4['Ид'], 'image'=> '/'.$arrXX[$randIndex2[0]], 'xml_name' => $i4['Наименование'], 'parent_id' => 0 ));
                                                     
                                                     echo "+";                                                
 

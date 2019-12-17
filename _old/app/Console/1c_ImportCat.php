@@ -17,10 +17,10 @@ function xml2array ( $xmlObject, $out = array () )
     return $out;
 }
 
-class ImportCat extends Command {
+class Impor1CCat extends Command {
 
     // php artisan import:cat
-    protected $signature = 'import:cat';
+    protected $signature = '1c_import:cat';
     protected $description = 'Categories import';
     public function __construct()    {        parent::__construct();    }
     public function handle(){

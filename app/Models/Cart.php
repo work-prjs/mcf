@@ -53,7 +53,7 @@ class Cart extends Model
         foreach ($this->line_items as $key => $value) {
             $value->delete();
         }
-        return true;
+        return 'ok';
     }
 
 

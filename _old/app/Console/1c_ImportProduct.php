@@ -8,9 +8,9 @@ use Illuminate\Console\Command;
 use App\Models\Product;
 use App\Models\Cat;
 
-class ImportProduct extends Command {
+class Impor1CtProduct extends Command {
 
-    protected $signature = 'import:product';
+    protected $signature = '1c_import:product';
     protected $description = 'Product import';
     public function __construct()    {        parent::__construct();    }
     public function handle(){

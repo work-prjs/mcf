@@ -19,6 +19,7 @@
       $('.scroll-top').fadeOut(600);
     }
   });
+
   $('.scroll-top').on("click", function () {
     $("html,body").animate({
       scrollTop: 0
@@ -34,7 +35,7 @@
   $(document).ready(function () {
     setTimeout(function () {
       $('body').addClass('loaded');
-    }, 1000);
+    }, 500);
 
   });
 
@@ -49,12 +50,12 @@
   });
 
   //Smooth Scrolling Using Navigation Menu
-  $('a[href*="#"]').on('click', function (e) {
-    $('html,body').animate({
-      scrollTop: $($(this).attr('href')).offset().top - 70
-    }, 500);
-    e.preventDefault();
-  });
+  // $('a[href*="#"]').on('click', function (e) {
+  //   $('html,body').animate({
+  //     scrollTop: $($(this).attr('href')).offset().top - 70
+  //   }, 500);
+  //   e.preventDefault();
+  // });
 
 
 

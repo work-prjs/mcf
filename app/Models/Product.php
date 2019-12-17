@@ -94,7 +94,10 @@ class Product extends Model
         'cat_id',
         'price_amount',
         'menu',
-        'position'
+        'position',
+        'attrs',
+        'docs',
+        'new'
     ];
 
     /**
@@ -111,7 +114,11 @@ class Product extends Model
         'xml_cat' => 'string',
         'cat_id' => 'string',
         'price_amount' => 'float',
-        'menu' => 'boolean'
+        'menu' => 'boolean',
+        'attrs' => 'string',
+        'docs' => 'string',
+        'new' => 'boolean'
+
     ];
 
     /**

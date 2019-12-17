@@ -103,7 +103,7 @@
                             <div class="row">
 
                               <div class="col-xs-2 col-lg-2">
-                                <img class="img-responsive" src="{{ $line->product->cat->image ?? "http://placehold.it/100x70" }}" style="    max-width: 9em;">
+                                <img class="img-fluid" src="{{ $line->product->cat->image ?? "http://placehold.it/100x70" }}" style="">
                               </div>
 
                               <div class="col-xs-3 col-md-6 col-lg-6">

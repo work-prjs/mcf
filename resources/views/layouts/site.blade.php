@@ -2,11 +2,10 @@
 <html lang="ru" class="no-js">
 
 <head>
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon-->
-    {{-- <link rel="shortcut icon" href="img/fav.png"> --}}
+    <link rel="shortcut icon" href="img/fav.png">
     <!-- Author Meta -->
     <meta name="author" content="MCF Michael">
     <!-- Meta Description -->
@@ -23,20 +22,19 @@
 CSS
 ============================================= -->
 
+    <link rel="stylesheet" type="text/css" href="/fontawesome-free-5.11.2-web/css/all.min.css">
     {{-- <script type="text/javascript" src="/fontawesome-free-5.11.2-web/js/all.min.js"></script> --}}
     {{-- <link rel="stylesheet" href="/mcf/css/font-awesome.min.css"> --}}
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     {{-- <link rel="stylesheet" href="/mcf/css/bootstrap.min.css"> --}}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="/fontawesome-free-5.11.2-web/css/all.min.css">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="/mcf/css/themify-icons.css">
     <link rel="stylesheet" href="/mcf/css/owl.carousel.min.css">
     <link rel="stylesheet" href="/mcf/css/style.css">
     <link rel="stylesheet" href="/mcf/css/responsive.css">
 
     <link rel="stylesheet" href="/mcf/css/animate.min.css">
-
     {{-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> --}}
   
 
@@ -67,7 +65,7 @@ CSS
             color: white;
         }
         a.a_hover:hover {
-            /*color: #691cff !important;*/
+            color: #691cff !important;
         }
 
         .blog-lists-section .tags-widget ul li a {
@@ -81,91 +79,23 @@ CSS
             color: #691cff !important;
         }
 
-        .dope-sticky a:hover {
-            /*color: black !important;*/
-        }
 
         .dope-nav-container a {
-            /*color: floralwhite;*/
+            color: floralwhite;
+
         }
 
         #nav > li.cn-dropdown-item.has-down > ul > li > a {
-            /*color: black;*/
+            color: black;
         }
 
         .dope-sticky a {
             color: black;
         }
-        /*breakpoint-off*/
-        /*breakpoint-on*/
+        
 
-        .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-            color: #fff;
-            background-color: #691cff;
-        }        
-
-        .nav-pills .nav-link {
-            color: brown;
-        }
-
-        .nav-pills a.nav-link:hover  {
-            color: white;
-            background-color: #691cff;
-            opacity: 0.7;
-        }
-
-        .nav-pills a.nav-link:active, a.nav-link.active:hover  {
-            color: white;
-            background-color: #691cff;
-            opacity: 1;
-        }
-
-        .brown {
-            color: brown;
-        }
-
-        .vi {
-            color: #691cff;
-        }
-
-        a.h_v:hover h5 {
-            color: #691cff;
-        }
-
-        .b_hover:hover {
-            color: #691cff !important;
-        }
-        .to_cart2 {
-            bottom: 1em;
-            position: absolute;
-            right: 1em;
-            background-color: grey;
-            border-color: grey;
-            /*background-color: #691cff;*/
-            /*border-color: #691cff*/
-        }
-
-        .to_cart3 {
-            background-color: grey;
-            border-color: grey;
-            /*background-color: #691cff;*/
-            /*border-color: #691cff*/
-        }
-        .card_s:hover {
-            box-shadow: 0 0 40px grey;
-        }
-        .bold1 {
-            font-weight: 800;
-        }
-
-        .service-section .single-service {
-            min-height: 37em;
-        }
     </style>
-
     @yield('css')
-
-
 </head>
 
 <body>
@@ -439,7 +369,7 @@ JS
 ============================================= -->
     {{-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> --}}
     <script src="/mcf/js/vendor/jquery-2.2.4.min.js"></script>
-    {{-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> --}}
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   
     {{-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> --}}
     {{-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script> --}}
@@ -449,14 +379,12 @@ JS
     {{-- <script src="/mcf/js/vendor/popper.min.js"></script> --}}
     <script src="/mcf/js/jquery.easing.1.3.js"></script>
     {{-- <script src="/mcf/js/vendor/bootstrap.min.js"></script> --}}
-
     <script src="/mcf/js/jquery.parallax-scroll.js"></script>
     <script src="/mcf/js/dopeNav.js"></script>
     <script src="/mcf/js/owl.carousel.min.js"></script>
     <script src="/mcf/js/waypoints.min.js"></script>
     <script src="/mcf/js/jquery.stellar.min.js"></script>
     <script src="/mcf/js/jquery.counterup.min.js"></script>
-
     <script src="/mcf/js/main.js"></script>
 
 

@@ -8,12 +8,12 @@ use Illuminate\Console\Command;
 use App\Models\Product;
 use App\Models\Cat;
 
-class ImportPrice extends Command {
+class Impor1CPrice extends Command {
 
 
 
     // php artisan import:import:price
-    protected $signature = 'import:price';
+    protected $signature = '1c_import:price';
     protected $description = 'Price import';
     public function __construct()    {        parent::__construct();    }
     public function handle(){

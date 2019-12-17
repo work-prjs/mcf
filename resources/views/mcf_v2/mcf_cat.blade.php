@@ -157,8 +157,27 @@
                 <!-- Start service section -->
                 <section class="service-section section-gap-full" style="padding-top: 0em;">
                     <div class="container">
-                        <div class="row">
 
+                        <div class="row single-widget ">
+                                <div class="col-md-12 ">
+                                    <span class="brown">Категория:</span>
+                                    <span><h2>{{ $cat2->name }}</h2></span>
+                                </div>
+                        </div>
+
+                        <div class="row ">
+                                <div class="col-md-12 pb-3">
+                                    <div class="pull-right">
+                                        {{-- <span class="">Список</span> --}}
+                                        <a href="#" id="card_list"><i class="fa fa-2x fa-th-list b_hover" aria-hidden="true" style="color: grey;"></i></a>
+                                        <a href="#" id="card_card"><i class="fa fa-2x fa-th-large b_hover " aria-hidden="true" style="color: #691cff;"></i></a>
+
+                                        {{-- <span>Блоки</span> --}}
+                                    </div>
+                                </div>
+                        </div>
+
+                            <div class="row">
                             {{-- @foreach($cats as $cat) --}}
                             @php
                                 $idx=0;
@@ -171,37 +190,46 @@
                                         @endphp
 
                                         @if ($idx<16)
-                                          <div class="col-lg-4  col-md-6 pb-30">
-                                              {{-- <a href="/mcf_product/{{ $product->ident }}"> --}}
-                                                <div class="single-service text-center" style="background-color: white;">
-                                                    <div class="text-center">
-                                                      <img src="{{ $cat2->image }}" class="img-responsive responsive-img" style="max-height: 10em; max-width: 10em;">
+                                          {{-- <div class="bg-white rounded shadow mb-5 col-lg-3  col-md-4"> --}}
+                                            <div class="col-lg-4 col-md-4 col-sm-6 col-12 pb-3"> 
+                                            {{-- <div class="col-12 pb-3">  --}}
+                                                
+                                            <div class="card card_s" style=" min-height: 17em;">
+                                              <div class="card-body">
+                                              
+                                                {{-- <div class=" text-center" style="background-color: white;"> --}}
+                                                    <div class="text-center " style="    padding-bottom: 1em;">
+                                                      {{-- <img src="{{ $cat2->image }}" class="img-fluid" style="max-height: 10em; max-width: 8em;"> --}}
+                                                      <img src="{{ $cat2->image }}" class="img-fluid" style="">
                                                     </div>
                                                     {{-- <i class="ti-user"></i> --}}
 
-                                                    <h4>{{ $product->name ?? '??' }}</h4>
-                                                    <h4>
+                                                    <a href="/mcf_products/{{ $product->ident }}" class="h_v">
+                                                        <h5>{{ $product->name ?? '??' }}</h5>
+                                                    </a>
+                                                    <hr>
+                                                    <a href="" data-ident="{{ $product->ident }}" class="btn to_cart3 btn-success to_cart pull-right" >
+                                                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
                                                         {{ $product->price_amount ?? '??' }} руб.
-                                                    </h4>
-
-                                                    <button class="card-link text-red to_cart btn-sm btn" data-ident="{{ $product->ident }}" >
-                                                        В корзину
-                                                    </button>
+                                                    </a>
+                                                    {{-- <button class="card-link text-red to_cart btn-sm btn" data-ident="{{ $product->ident }}" >В корзину</button> --}}
+                                                </div>
+                                              </div>
+                                              </div>
                                                     
 
-                                                </div>
+                                                {{-- </div> --}}
                                               {{-- </a> --}}
-                                          </div>
+                                          {{-- </div> --}}
 
                                         @else 
-
+{{-- 
                                           <div class="col-lg-4  col-md-6 pb-30" style="display: none;">
-                                              {{-- <a href="/mcf_product/{{ $product->ident }}"> --}}
-                                                <div class="single-service text-center" style="background-color: white;">
+                                                <div class=" text-center" style="background-color: white;">
                                                     <div class="text-center">
                                                       <img src="{{ $cat2->image }}" class="img-responsive responsive-img" style="max-height: 10em; max-width: 10em;">
                                                     </div>
-                                                    {{-- <i class="ti-user"></i> --}}
+                                                    
 
                                                     <h4>{{ $product->name ?? '??' }}</h4>
                                                     <p>
@@ -214,8 +242,7 @@
                                                     
 
                                                 </div>
-                                              {{-- </a> --}}
-                                          </div>
+                                          </div> --}}
 
                                         @endif
                                     @endif
@@ -223,7 +250,7 @@
                             @endforeach
 
                                 <div class="col-lg-12  col-md-12 center text-center">
-                                    <button class="btn " style="    background: #691cff; color: white;">ЕЩЁ...</button>
+                                    <button class="btn " style="    background: #691cff; opacity: .4; color: white;">ЕЩЁ...</button>
                                 </div>    
                         </div>
                     </div>

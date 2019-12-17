@@ -6,7 +6,7 @@
 
 <!-- Ident Field -->
 <div class="form-group col-sm-2">
-    {!! Form::label('ident', 'Ident:') !!}
+    {!! Form::label('ident', 'ID:') !!}
     {!! Form::text('ident', null, ['class' => 'form-control']) !!}
 </div>
 
@@ -43,10 +43,10 @@
 {{-- <div class="clearfix"></div> --}}
 
 <!-- Xml Name Field -->
-<div class="form-group col-sm-6">
+{{-- <div class="form-group col-sm-6">
     {!! Form::label('xml_name', 'Xml Имя:') !!}
     {!! Form::text('xml_name', null, ['class' => 'form-control']) !!}
-</div>
+</div> --}}
 
 <!-- Xml Cat Field -->
 {{-- <div class="form-group col-sm-6">
@@ -68,10 +68,23 @@
     {!! Form::text('price_amount', null, ['class' => 'form-control']) !!}
 </div>
 
+<div class="form-group col-sm-6">
+    {!! Form::label('new', 'Новинка:') !!}
+    <label class="checkbox-inline form-control" style="    text-align: center;">
+        {!! Form::hidden('new', 0) !!}
+        {!! Form::checkbox('new', '1', null) !!}
+    </label>
+</div>
+
 <!-- Desc Field -->
 <div class="form-group col-sm-12 col-lg-12">
     {!! Form::label('desc', 'Описание:') !!}
     {!! Form::textarea('desc', null, ['class' => 'form-control']) !!}
+</div>
+
+<div class="form-group col-sm-12 col-lg-12">
+    {!! Form::label('attrs', 'Характеристики:') !!}
+    {!! Form::textarea('attrs', null, ['class' => 'form-control']) !!}
 </div>
 
 

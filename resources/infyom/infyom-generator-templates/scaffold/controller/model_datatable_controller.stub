@@ -159,7 +159,8 @@ class $MODEL_NAME$Controller extends AppBaseController
             return redirect(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
         }
         // TODO Удаляем файл
-        unlink( getcwd().$$MODEL_NAME_CAMEL$['image'] );
+        
+        // unlink( getcwd().$$MODEL_NAME_CAMEL$['image'] );
 
         $$MODEL_NAME_CAMEL$->delete();
 

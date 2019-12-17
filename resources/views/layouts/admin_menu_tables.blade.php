@@ -65,3 +65,33 @@
     <a href="{!! route('groupInMails.index') !!}"><i class="fa fa-edit"></i><span>Group In Mails</span></a>
 </li> --}}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="{{ Request::is('productComments*') ? 'active' : '' }}">
+    <a href="{!! route('productComments.index') !!}"><i class="fa fa-edit"></i><span>Комментарии Продуктов</span></a>
+</li>
+

@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 
 use App\Models\Cat;
+use App\Models\Product;
 
 // Route::get($uri, $callback);
 // Route::post($uri, $callback);
@@ -10,9 +11,6 @@ use App\Models\Cat;
 // Route::patch($uri, $callback);
 // Route::delete($uri, $callback);
 // Route::options($uri, $callback);
-
-
-
 
 // Route::get('user/{name}', function ($name) {
 //     //
@@ -38,14 +36,6 @@ use App\Models\Cat;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-Route::get('hello', function () {
-    return response('Hello World', 200)
-                  ->header('Content-Type', 'text/plain');
-});
-
 
 /**
  * Роуты аутентификации...
@@ -58,11 +48,9 @@ Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 //POST запрос на выход из системы (логаут)
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
- 
 /**
  * Маршруты регистрации...
  */
- 
 //страница с формой Laravel регистрации пользователей
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 //POST запрос регистрации на сайте
@@ -92,9 +80,9 @@ Route::get('/home', 'ManagerController@index');
 // Route::get('/manager', 'ManagerController@index');
 
 
-Route::get('/session', function (Request $request) {
-    return $request->session()->getId();
-});
+// Route::get('/session', function (Request $request) {
+//     return $request->session()->getId();
+// });
 
 
 
@@ -148,28 +136,33 @@ Route::post('/api/v1/{model}/{id}', function ($model, $id) {
 
 
 
-Route::get('/show_session', 'AppBaseController@show_session');
 // Route::get('/line_item_remove/{id}', 'LineItemController@remove');
 // Route::get('/total_cart/{id}', 'CartController@total_cart');
 // 
 Route::group(['middleware' => 'auth'], function () {
+
     Route::get('/laravel-filemanager', '\UniSharp\LaravelFilemanager\Controllers\LfmController@show');
     Route::post('/laravel-filemanager/upload', '\UniSharp\LaravelFilemanager\Controllers\UploadController@upload');
     // list all lfm routes here...
-
-    Route::resource('metatexts', 'MetatextController');    
-
-
-
     // 
     Route::get('/manager', 'ManagerController@index');
     // Route::get('/manager', function () {
         // return view('manager');
     // });
 
-    Route::get('/administrator', function () {
-        return view('administrator');
-    });
+    // Route::get('/administrator', function () {
+    //     return view('administrator');
+    // });
+
+
+
+
+    Route::resource('metatexts', 'MetatextController');    
+    Route::resource('users', 'UserController');
+    Route::resource('roles', 'RoleController');
+    Route::resource('permissions', 'PermissionController');
+    Route::resource('menus', 'MenuController');
+
 
 
     Route::get('/generator', function () {
@@ -180,15 +173,10 @@ Route::group(['middleware' => 'auth'], function () {
     });
     // 
 
-    Route::resource('users', 'UserController');
-    Route::resource('roles', 'RoleController');
-    Route::resource('permissions', 'PermissionController');
-    Route::resource('menus', 'MenuController');
-
-    Route::get('/clear-cache', function() {
-        Artisan::call('cache:clear');
-        return "Cache is cleared";
-    });
+    // Route::get('/clear-cache', function() {
+    //     Artisan::call('cache:clear');
+    //     return "Cache is cleared";
+    // });
 
     Route::get('generator_builder', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@builder')->name('io_generator_builder');
 
@@ -255,16 +243,7 @@ Route::group(['middleware' => 'auth'], function () {
         // return redirect('/manager');
         // return view('sync');
     });
-    Route::get('/import_run', function (Request $request) {
-        return Artisan::call('import:cat');
-        // php artisan make:command ImportCat --command=import:cat
-        // php artisan make:command ImportProduct --command=import:product
-        // php artisan make:command ImportPrice --command=import:price
 
-        // return view('import');
-        // Artisan::call('make:view '.$request->all()['viewName'].' --extends='.$request->all()['layoutName'].' --section=content');
-        // return redirect('/manager');
-    });
     Route::get('/schemaView', function (Request $request) {
         Artisan::call('make:view '.$request->all()['viewName'].' --extends=layouts.'.pathinfo($request->all()['viewName'])['filename'].' --section=content');
         return redirect('/generator_builder');
@@ -319,6 +298,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('subsEmails', 'SubsEmailController');
     //Route::get('/subsEmails/import', 'CartController@import');
     Route::post('/subsEmails/import', 'SubsEmailController@import');
+    Route::get('/subsEmails_destroy_all', 'SubsEmailController@destroy_all');
+
+
 
     Route::resource('subsGroups', 'SubsGroupController');
     Route::post('/subsGroups/import', 'SubsGroupController@import');
@@ -465,11 +447,26 @@ Route::get('/admin2_mindmap', function () {
 
 
 
-Route::get('/mcf_products', function () {
-        $categories = Cat::all();
-        return view('mcf_v2.mcf_products')->with('categories', $categories);
+Route::get('/mcf_products/{ident}', function ($ident) {
+        $product = Product::find($ident);
+        $comments=\App\Models\ProductComment::where(['product_id'=>$product->ident, 'allowed'=>true])->get();
+        // dd($comments);
+        return view('mcf_v2.mcf_products')
+            ->with('comments', $comments)
+            ->with('product', $product);
     // return view('mcf_v2.mcf_product');
 });
+
+// Route::get('/mcf_cat/{ident}', function ($ident, Request $request) {
+
+//     $language = $request->selected_language ?? 'ru';
+//     session(['selected_language' =>$language]);
+//     App::setLocale($language);
+
+//         $cat2 = Cat::find($ident);
+//         return view('mcf_v2.mcf_cat')->with('cat2', $cat2);
+// });
+
 
 
 Route::resource('mcf_cats', 'CatController');
@@ -595,4 +592,22 @@ Route::get('getlocale', function (Request $request) {
 
 
 
+
+
+// Route::resource('images', 'ImageController');
+// Route::get('/blocks_destroy_all', 'BlockController@destroy_all');
+// Route::get('/blocks/import', 'BlockController@import');
+
+
+
+
+
+
+Route::get('/post_comment', 'ProductCommentController@post_comment');
+// Route::post('/post_comment', 'ProductCommentController@post_comment');
+
+Route::post('/productComments/import', 'ProductCommentController@import');
+Route::get('/productComments/destroy_all', 'ProductCommentController@destroy_all');
+Route::get('/productComments_destroy_all', 'ProductCommentController@destroy_all');
+Route::resource('productComments', 'ProductCommentController');
 

@@ -32,7 +32,7 @@ Route::resource('cats', 'CatAPIController');
 
 
 
-Route::resource('carts', 'CartAPIController');
+
 
 Route::resource('line_items', 'LineItemAPIController');
 
@@ -55,3 +55,6 @@ Route::resource('subs_groups', 'SubsGroupAPIController');
 Route::resource('make_sub_mails', 'MakeSubMailAPIController');
 
 Route::resource('group_in_mails', 'GroupInMailAPIController');
+
+
+

@@ -105,7 +105,7 @@ class $MODEL_NAME$Controller extends AppBaseController
         $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repository->find($id);
 
         if (empty($$MODEL_NAME_CAMEL$)) {
-            Flash::error('$MODEL_NAME_HUMAN$ not found');
+            Flash::error('$MODEL_NAME_HUMAN$ не найдено');
 
             return redirect(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
         }
@@ -126,7 +126,7 @@ class $MODEL_NAME$Controller extends AppBaseController
         $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repository->find($id);
 
         if (empty($$MODEL_NAME_CAMEL$)) {
-            Flash::error('$MODEL_NAME_HUMAN$ not found');
+            Flash::error('$MODEL_NAME_HUMAN$ не найдено');
 
             return redirect(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
         }
@@ -140,7 +140,7 @@ class $MODEL_NAME$Controller extends AppBaseController
 
         $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repository->update($input, $id);
 
-        Flash::success('$MODEL_NAME_HUMAN$ updated successfully.');
+        Flash::success('$MODEL_NAME_HUMAN$ обновили.');
 
         return redirect(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
     }
@@ -159,18 +159,64 @@ class $MODEL_NAME$Controller extends AppBaseController
         $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repository->find($id);
 
         if (empty($$MODEL_NAME_CAMEL$)) {
-            Flash::error('$MODEL_NAME_HUMAN$ not found');
+            Flash::error('$MODEL_NAME_HUMAN$ не найден');
 
             return redirect(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
         }
 
         // TODO Удаляем файл
-        unlink( getcwd().$$MODEL_NAME_CAMEL$['image'] );
+        if (isset($$MODEL_NAME_CAMEL$['image'])) {
+            // $input['image']=0;
+            unlink( getcwd().$$MODEL_NAME_CAMEL$['image'] );
+        }
 
         $this->$MODEL_NAME_CAMEL$Repository->delete($id);
 
-        Flash::success('$MODEL_NAME_HUMAN$ deleted successfully.');
+        Flash::success('$MODEL_NAME_HUMAN$ удалено.');
 
         return redirect(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
     }
+
+    public function destroy_all()
+    {
+        \App\Models\$MODEL_NAME$::truncate();
+        Flash::success('Всё удалено!');
+        return redirect(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
+    // destroy_all
+
+    }
+
+    /**
+     * Remove the specified SubsEmail from storage.
+     *
+     * @param  int $id
+     *
+     * @return Response
+     */
+    public function import(Create$MODEL_NAME$Request $request)
+    {
+
+        $input = $request->all();
+        $arr1 = preg_split('/\s+/', $input['elist']);
+        if (!isset($input['active'])) {
+            $input['active']=0;
+        }
+        if (!isset($input['subs'])) {
+            $input['subs']=0;
+        }
+        // 
+        foreach ($arr1 as $email ) {
+            // $NewsubsEmail = $this->$MODEL_NAME_CAMEL$Repository->create(['email'=> $email, 'active'=> $input['active'], 'subs'=>$input['subs'], 'group_email_id'=> $input['group_email_id'] ]);
+            $this->$MODEL_NAME_CAMEL$Repository->create(['name'=> $email ]);
+        }
+        // return var_dump($arr1);
+        return redirect(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
+    }
+
+
+    public function export(Request $request)
+    {
+
+    }
+
 }

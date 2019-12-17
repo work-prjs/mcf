@@ -1,3 +1,13 @@
+MODEL_NAME$ NameWhatsApp
+MODEL_NAME_SNAKE$ name_whats_app
+MODEL_NAME_CAMEL$ nameWhatsApp
+MODEL_NAME_HUMAN$ Name Whats App
+MODEL_NAME_PLURAL_CAMEL$ nameWhatsApps
+MODEL_NAME_PLURAL_SNAKE$ name_whats_apps
+
+
+
+
 echo "/usr/local/php/cgi/7.3/bin/php /usr/local/bin/composer install" > composer73.sh
 /usr/local/php/cgi/7.3/bin/php artisan migrate
 /usr/local/php/cgi/7.3/bin/php artisan import:cat

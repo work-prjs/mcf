@@ -73,13 +73,14 @@
   "Pay Contact": "Контакт",
   "Pay Discount": "Скидка",
   "Status": "Статус",
-  "Comment": "Кооментарий",
+  "Comment": "Комментарий",
   "Orders": "Заказы",
   "Order": "Заказ",
   "Role": "Роль",
   "Action": "действия",
   "Price Amount": "Цена",
   "Product": "Продукт",
+  "Product Id": "Продукт",
   "Search": "Поиск",
   "Search here": "Поисковой запрос",
   "Tags": "Хеш теги",
@@ -93,5 +94,13 @@
   "Done": "Сделано",
   "Subject": "Тема",
   "Text": "Текст",
-  "Mail Files": "Вложения"
+  "Mail Files": "Вложения",
+  "Allowed": "Разрешён",
+  "Session": "Сессия",
+  "User": "Пользователь",
+  "User Id": "ID Пользователя",
+  "Product Comments": "Комментарии Продуктов",
+  "Product Comment": "Комментарии Продуктов"
+
+
 }

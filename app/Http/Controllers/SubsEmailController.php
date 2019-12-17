@@ -172,6 +172,14 @@ class SubsEmailController extends AppBaseController
     }
 
 
+
+        public function destroy_all()
+        {
+            \App\Models\SubsEmail::truncate();
+            Flash::success('Всё удалено!');
+            return redirect(route('subsEmails.index'));
+        }
+
     /**
      * Remove the specified SubsEmail from storage.
      *
@@ -183,7 +191,11 @@ class SubsEmailController extends AppBaseController
     {
 
         $input = $request->all();
-        $arr1 = explode(" ", $input['elist']);
+
+
+        // $arr1 = explode("/(.*\n?)/g", $input['elist']);
+        $arr1 = preg_split('/\s+/', $input['elist']);
+        // $arr1 = explode(" ", $input['elist']);
         if (!isset($input['active'])) {
             $input['active']=0;
         }

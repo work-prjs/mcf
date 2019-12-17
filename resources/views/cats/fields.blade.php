@@ -29,8 +29,10 @@
 <!-- Image Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('image', 'Фото:') !!}
+    @if (isset($cat->image))
     <p><img class="img-responsive" style="max-width:400px;" src="{!! $cat->image !!}"></p>
     {!! $cat->image !!}
+    @endif
     {!! Form::file('image') !!}
 </div>
 {{-- <div class="clearfix"></div> --}}
