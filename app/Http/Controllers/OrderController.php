@@ -313,7 +313,7 @@ class OrderController extends AppBaseController
 
     public function generateDocx($id, Request $request)
     {
-        // $order = \App\Models\Order::find( $id );
+        $order = \App\Models\Order::find( $id );
         // // dd($order->comment);
 
 
@@ -370,7 +370,7 @@ class OrderController extends AppBaseController
         // }
 
 
-        // return response()->download(storage_path('helloWorld1.docx'));
+        // return response()->download(storage_path('present.docx'));
     }
 
 
