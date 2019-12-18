@@ -30,20 +30,22 @@
 </div>
 <div class="clearfix"></div>
 
-<!-- Done Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('done', __('Done') ) !!}
-    <label class="checkbox-inline">
-        {!! Form::hidden('done', 0) !!}
-        {!! Form::checkbox('done', '1', null) !!}
-    </label>
-</div>
 
 <!-- Comment Field -->
 <div class="form-group col-sm-12 col-lg-12">
     {!! Form::label('comment', __('Comment') ) !!}
     {!! Form::textarea('comment', null, ['class' => 'form-control']) !!}
 </div>
+
+<!-- Done Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('done', 'Рассылка выполнена' ) !!}
+    <label class="checkbox-inline">
+        {!! Form::hidden('done', 0) !!}
+        {!! Form::checkbox('done', '1', null) !!}
+    </label>
+</div>
+
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">

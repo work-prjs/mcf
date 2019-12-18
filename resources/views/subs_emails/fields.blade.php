@@ -6,7 +6,7 @@
 
 <!-- Group Email Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('group_email_id', 'Group Email Id:') !!}
+    {!! Form::label('group_email_id', 'Группа ящиков:') !!}
     {{-- {!! Form::select('group_email_id', ['' => 'GroupEmail'], null, ['class' => 'form-control']) !!} --}}
     {!!  Form::select('group_email_id', App\Models\SubsGroup::all()->pluck('name', 'id')->prepend('Корневая категория', '0'), null, ['class' => 'form-control']) !!}
 
@@ -18,25 +18,26 @@
     {!! Form::text('email', null, ['class' => 'form-control']) !!}
 </div>
 
+
+
+<!-- Comment Field -->
+<div class="form-group col-sm-12 col-lg-12">
+    {!! Form::label('comment', 'Комментарий:') !!}
+    {!! Form::textarea('comment', null, ['class' => 'form-control']) !!}
+</div>
+
 <!-- Active Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('active', 'Active:') !!}
+    {!! Form::label('active', 'Активен:') !!}
     <label class="checkbox-inline">
         {!! Form::hidden('active', 0) !!}
         {!! Form::checkbox('active', '1', null) !!}
     </label>
 </div>
 
-
-<!-- Comment Field -->
-<div class="form-group col-sm-12 col-lg-12">
-    {!! Form::label('comment', 'Comment:') !!}
-    {!! Form::textarea('comment', null, ['class' => 'form-control']) !!}
-</div>
-
 <!-- Subs Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('subs', 'Subs:') !!}
+    {!! Form::label('subs', 'Подписан:') !!}
     <label class="checkbox-inline">
         {!! Form::hidden('subs', 0) !!}
         {!! Form::checkbox('subs', '1', null) !!}

@@ -16,21 +16,21 @@
     <p>{!! $subsGroup->updated_at !!}</p>
 </div>
 
-<!-- Active Field -->
-<div class="form-group">
-    {!! Form::label('active', __('Active') ) !!}
-    <p>{!! $subsGroup->active !!}</p>
-</div>
 
 <!-- Name Field -->
 <div class="form-group">
-    {!! Form::label('name', __('Name') ) !!}
+    {!! Form::label('name', 'Навзание' ) !!}
     <p>{!! $subsGroup->name !!}</p>
+</div>
+<!-- Active Field -->
+<div class="form-group">
+    {!! Form::label('active', 'Активен' ) !!}
+    <p>{!! $subsGroup->active !!}</p>
 </div>
 
 <!-- Comment Field -->
 <div class="form-group">
-    {!! Form::label('comment', __('Comment') ) !!}
+    {!! Form::label('comment', 'Комментарий' ) !!}
     <p>{!! $subsGroup->comment !!}</p>
 </div>
 

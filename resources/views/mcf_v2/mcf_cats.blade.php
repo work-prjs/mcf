@@ -47,7 +47,7 @@
 
                   <div class="col-lg-4  col-md-6 pb-30">
                       <a href="/mcf_cat/{{ $cat->ident }}">
-                        <div class="single-service text-center" style="display: flex; align-items: center;">
+                        <div class="single-service text-center ccats" style="display: flex; align-items: center;">
                             <div class="text-center" style="margin: 0 auto; ">
                                 <img src="{{ $cat->image }}" class="img-responsive responsive-img" style="max-width: 23em;    height: 100%;    width: 100%;">
                                 <h4>{{ $cat->name }}</h4>

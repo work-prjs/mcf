@@ -6,7 +6,7 @@
 
 <!-- Active Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('active', 'Active:') !!}
+    {!! Form::label('active', 'Активна:') !!}
     <label class="checkbox-inline">
         {!! Form::hidden('active', 0) !!}
         {!! Form::checkbox('active', '1', null) !!}
@@ -16,13 +16,13 @@
 
 <!-- Name Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('name', 'Name:') !!}
+    {!! Form::label('name', 'Навзание:') !!}
     {!! Form::text('name', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Comment Field -->
 <div class="form-group col-sm-12 col-lg-12">
-    {!! Form::label('comment', 'Comment:') !!}
+    {!! Form::label('comment', 'Комментарий:') !!}
     {!! Form::textarea('comment', null, ['class' => 'form-control']) !!}
 </div>
 

@@ -167,7 +167,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 skill-right">
-                    <img class="img-fluid" src="img/banner2.jpg" alt="">
+                    <img class="img-fluid" src="/mcf/img/banner2.jpg" alt="">
                 </div>
             </div>
         </div>

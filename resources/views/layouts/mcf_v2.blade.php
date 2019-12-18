@@ -162,8 +162,8 @@ CSS
             font-weight: 800;
         }
 
-        .service-section .single-service {
-            min-height: 37em;
+        .ccats {
+            min-height: 37em !important;
         }
 
 
@@ -369,9 +369,9 @@ CSS
                                     <li>
                                         <a href="/mcf_about_us">О нас</a>
                                     </li>
-                                    <li>
-                                        <a href="/mcf_service">Сервис</a>
-                                    </li>
+                                    {{-- <li> --}}
+                                        {{-- <a href="/mcf_service">Сервис</a> --}}
+                                    {{-- </li> --}}
                                     <li>
                                         <a href="/mcf_contact">Контакты</a>
                                     </li>

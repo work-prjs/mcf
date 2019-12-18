@@ -18,31 +18,31 @@
 
 <!-- Group Email Id Field -->
 <div class="form-group">
-    {!! Form::label('group_email_id', __('Group Email Id') ) !!}
+    {!! Form::label('group_email_id', 'Группа ящиков' ) !!}
     <p>{!! $subsEmail->group_email_id !!}</p>
 </div>
 
 <!-- Email Field -->
 <div class="form-group">
-    {!! Form::label('email', __('Email') ) !!}
+    {!! Form::label('email', 'Email' ) !!}
     <p>{!! $subsEmail->email !!}</p>
 </div>
 
 <!-- Active Field -->
 <div class="form-group">
-    {!! Form::label('active', __('Active') ) !!}
+    {!! Form::label('active', 'Активен' ) !!}
     <p>{!! $subsEmail->active !!}</p>
+</div>
+
+
+<!-- Subs Field -->
+<div class="form-group">
+    {!! Form::label('subs', 'Подписан:' ) !!}
+    <p>{!! $subsEmail->subs !!}</p>
 </div>
 
 <!-- Comment Field -->
 <div class="form-group">
-    {!! Form::label('comment', __('Comment') ) !!}
+    {!! Form::label('comment', 'Комментарий' ) !!}
     <p>{!! $subsEmail->comment !!}</p>
 </div>
-
-<!-- Subs Field -->
-<div class="form-group">
-    {!! Form::label('subs', __('Subs') ) !!}
-    <p>{!! $subsEmail->subs !!}</p>
-</div>
-

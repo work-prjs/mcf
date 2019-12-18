@@ -403,7 +403,24 @@
         } );
 
 
+
+        // переименовываем Action кнопку colvis в Действия при нажатии
+
     })(jQuery, jQuery.fn.dataTable);
+
+
+// TODO Action в Действия
+$(document).ready(function (){
+// $(window).load(function (){
+        // переименовываем колонку Action в Действия
+        $('thead > tr > th').last().html('Действия')
+        $('.buttons-colvis').on({
+          click: function(event){
+            $('.dt-button-collection > div > button').last().find('span').html('Действия')
+          }
+        })
+
+});
       
 </script>
 
