@@ -202,62 +202,109 @@
                     <div class="single-team item">
                         <img class="img-fluid" src="/8_cr.jpg" alt="">
                         <div class="team-content">
-                            <h4>Елена</h4>
-{{--                             <ul>
+                            <h4>Елена (Бухгалтер)</h4>
+                            <ul>
                                 <li>
-                                    <a href="#">
-                                        <i class="fa fa-facebook"></i>
+                                    <a href="tel:+79145763770" class="hover_red">
+                                        <i class="fa fa-phone" aria-hidden="true"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
-                                        <i class="fa fa-twitter"></i>
+                                    <a href="mailto:mc-fank@mail.ru" class="hover_red">
+                                        <i class="fa fa-envelope" aria-hidden="true"></i>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-linkedin"></i>
-                                    </a>
-                                </li>
-                            </ul> --}}
+                            </ul>
                         </div>
                     </div>
                     <div class="single-team item">
                         <img class="img-fluid" src="/7_cr.jpg" alt="">
                         <div class="team-content">
-                            <h4>Павел</h4>
+                            <h4>Павел (Директор)</h4>
+                            <ul>
+                                <li>
+                                    <a href="tel:+79098134343" class="hover_red">
+                                        <i class="fa fa-phone" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="mailto:mcfzavod@gmail.com" class="hover_red">
+                                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            </ul>
+
                         </div>
                     </div>
                     <div class="single-team item">
                         <img class="img-fluid" src="/9_cr.jpg" alt="">
                         <div class="team-content">
-                            <h4>Матвей</h4>
+                            <h4>Матвей (Техн.Специалист)</h4>
+                            <ul>
+                                <li>
+                                    <a href="tel:+79248415521" class="hover_red">
+                                        <i class="fa fa-phone" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="mailto:mcfzavod@gmail.com" class="hover_red">
+                                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            </ul>
+
                         </div>
                     </div>
-                    <div class="single-team item">
+{{--                     <div class="single-team item">
                         <img class="img-fluid" src="/10_cr.jpg" alt="">
                         <div class="team-content">
                             <h4>Анастасия</h4>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="single-team item">
                         <img class="img-fluid" src="/11_cr.jpg" alt="">
                         <div class="team-content">
-                            <h4>Михаил</h4>
+                            <h4>Михаил (Программист)</h4>
+                            <ul>
+                                <li>
+                                    <a href="tel:+79622841331" class="hover_red">
+                                        <i class="fa fa-phone" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="mailto:mltefive@gmail.com" class="hover_red">
+                                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            </ul>
+
                         </div>
                     </div>
                     <div class="single-team item">
                         <img class="img-fluid" src="/12_cr.jpg" alt="">
                         <div class="team-content">
-                            <h4>Галина</h4>
+                            <h4>Галина (Менеджер)</h4>
+                            <ul>
+                                <li>
+                                    <a href="tel:+79244427027" class="hover_red">
+                                        <i class="fa fa-phone" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="mailto:mc.fank@mail.ru" class="hover_red">
+                                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            </ul>
+
                         </div>
                     </div>
-                    <div class="single-team item">
+{{--                     <div class="single-team item">
                         <img class="img-fluid" src="/13_cr.jpg" alt="">
                         <div class="team-content">
                             <h4>Владимир</h4>
                         </div>
-                    </div>
+                    </div> --}}
                     
                 </div>
             </div>

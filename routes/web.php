@@ -271,7 +271,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 
     Route::resource('orders', 'OrderController');
-Route::get('/client_order_show/{client_order_show_id}', 'OrderController@client_order_show');
+    Route::get('/client_order_show/{client_order_show_id}', 'OrderController@client_order_show');
 
     Route::get('/route_list', function () {
 

@@ -139,6 +139,11 @@ CSS
             color: #691cff !important;
             opacity: .7;
         }
+
+        .hover_red:hover i {
+            color: red !important;
+        }
+
         .to_cart2 {
             bottom: 1em;
             position: absolute;

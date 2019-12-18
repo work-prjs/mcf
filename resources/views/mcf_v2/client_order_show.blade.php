@@ -40,9 +40,9 @@
     <!-- Start contact section -->
     <section class="contact-section contact-page-section padding-top-120" id="contact-section">
         <div class="container">
-            <div class="row address-wrap justify-content-center">
 
-
+            <div class="row justify-content-center form-row">
+                <div class="col-lg-9">
 
                         @if (count($order->line_items) > 0)
 
@@ -51,7 +51,7 @@
                             <div class="row">
 
                               <div class="col-xs-2 col-lg-2">
-                                <img class="img-responsive" src="{{ $line->product->image ?? "http://placehold.it/100x70" }}">
+                                <img class="img-fluid" src="{{ $line->product->cat->image ?? "http://placehold.it/100x70" }}" style="">
                               </div>
 
                               <div class="col-xs-3 col-md-6 col-lg-6">
@@ -60,17 +60,18 @@
                                 {{-- </h4> --}}
                                     {{-- {{ $line->product->desc ?? "" }} --}}
 
-                                  @if (mb_strlen($line->product->desc)>140)
-                                    {{ mb_substr($line->product->desc, 0, 140,'UTF-8') }}...
-                                  @else
-                                    {{ $line->product->desc }}
-                                  @endif
+                                @if (mb_strlen($line->product->desc)>140)
+                                  {{ mb_substr($line->product->desc, 0, 140,'UTF-8') }}...
+                                @else
+                                  {{ $line->product->desc }}
+                                @endif
                               </div>
 
                               <div class="col-xs-7 col-md-4 col-lg-4" style="text-align: left;">
                                 <div class="col-xs-12 cart_id" >
 
-                                    {{ $line->product->price_amount ?? "" }} X {{ $line->qty ?? "" }} = {{ $line->qty*$line->product->price_amount }} руб.
+                                  {{-- <h7> --}}
+                                    {{ $line->product->price_amount ?? "" }} x {{ $line->qty ?? "" }} = {{ $line->qty*$line->product->price_amount }}
 
                                   {{-- cart_id --}}
                                 </div>
@@ -85,36 +86,40 @@
 
                           @endforeach
 
+
+                            {{-- <hr> --}}
+
                             <div class="panel-footer">
                               <div class="row text-center">
-                                <div class="col-xs-9">
-                                  <h4 class="text-right">Итого: <strong id="cart_total">{{ $order->total() }}</strong> руб.</h4>
-                                </div>
-                                <div class="col-xs-3">
-
+                                <div class="col-xs-12">
+                                  <h4 class="text-right">Итого <strong id="cart_total">{{ $order->total() }}</strong></h4>
                                 </div>
                               </div>
-                            </div>
+                              
+                              <div class="row text-center">
+                                  <div class="col-xs-12">
+                                    {{-- <a href="/carts/{{$cart->id}}/clear" class="btn-danger btn-block" data-url="/carts/{{$cart->id}}/clear"> --}}
+                                  </div>
+                              </div>
+
+                              </div>
+                              
+                            {{-- checkout_link --}}
 
 
                         @else
-                          <div class="row">
+
+                          <div class="row" style="display: grid;">
                             <div class="col-xs-12 text-center">
                               Заказ пуст
+                              <br>
+                              <a href="/">На главную</a>
                             </div>
                           </div>
                           <hr>
                         @endif
-              {{-- 
-                <div class="col-lg-3 col-md-4 col-sm-12 single-address-col">
-                    <div class="div">
-                        <i class="ti ti-email"></i>
-                        <p>
-                            СООБЩЕНИЕ ОТПРАВЛЕНО
-                        </p>
-                        <a href="/">На главную</a>
-                    </div>
-                </div> --}}
+
+                </div>
             </div>
         </div>
     </section>
