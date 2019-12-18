@@ -37,6 +37,9 @@ CSS
 
     <link rel="stylesheet" href="/mcf/css/animate.min.css">
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     {{-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> --}}
   
 
@@ -361,7 +364,7 @@ CSS
     @yield('content')
 
     <!-- Start footer section -->
-    <footer class="footer-section section-gap-half">
+    <footer class="footer-section section-gap-half" >
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-sm-6 footer-cols">
@@ -516,6 +519,10 @@ JS
 
     $(document).ready(function (){
         setInterval(qty_badge, 2000);
+
+
+          AOS.init();
+
     });
 
     </script>

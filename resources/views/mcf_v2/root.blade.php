@@ -41,7 +41,7 @@
 
     <!-- Start about section -->
     <section class="about-section section-gap-full relative" id="about-section">
-        <div class="container">
+        <div class="container" data-aos="fade-up-right">
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-6 col-md-6 about-left">
                     <img class="img-fluid" src="/led.png" alt="">
@@ -92,7 +92,8 @@
     <section class="feature-section section-gap-full" id="feature-section">
         <div class="container">
             <div class="row align-items-center feature-wrap">
-                <div class="col-lg-4 header-left">
+                <div class="col-lg-4 header-left " data-aos="fade-right" data-aos-anchor-placement="bottom-bottom">
+
                     <h1 style="font-size: 3em;">
                         Уникальное предложение для каждого проекта.
                     </h1>
@@ -100,7 +101,7 @@
                         <span class="ti-arrow-right"></span>
                     </a>
                 </div>
-                <div class="col-lg-8">
+                <div class="col-lg-8" data-aos="fade-left" data-aos-anchor-placement="bottom-bottom">
                     <div class="row features-wrap">
                         <div class="col-md-6">
                             <div class="single-feature relative">
@@ -150,7 +151,7 @@
     <!-- End feature section -->
 
     <!-- Start stat section -->
-    <section class="stat-section section-gap-half">
+    <section class="stat-section section-gap-half" data-aos="flip-down" data-aos-anchor-placement="bottom-bottom" >
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
@@ -191,13 +192,13 @@
     <!-- End stat section -->
 
 
-<section class="portfolio-section section-gap-full">
+    <section class="portfolio-section section-gap-full">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title" data-aos="zoom-in-down" data-aos-anchor-placement="bottom-bottom">
                 <h2 class="text-center">Наши последние работы</h2>
                 <p class="text-center">Поставка и монтаж установка оборудования</p>
             </div>
-            <div class="row justify-content-center">
+            <div class="row justify-content-center" data-aos="zoom-in-up" data-aos-anchor-placement="bottom-bottom">
                 <div class="col-lg-6">
                     <div class="row">
                         <div class="col-lg-6 cl">
@@ -267,11 +268,11 @@
     <!-- Start team section -->
     <section class="team-section section-gap-full">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title" data-aos="zoom-in-down" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1500">
                 <h2 class="text-center">Наша команда</h2>
                 <p class="text-center">А вот и Мы! Знакомьтесь.</p>
             </div>
-            <div class="row">
+            <div class="row" data-aos="zoom-in-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1500">
                 <div class="team-carusel  owl-carousel" id="team-carusel">
                     <div class="single-team item">
                         <img class="img-fluid" src="/8_cr.jpg" alt="">
@@ -390,7 +391,7 @@
     <section class="testimonial-section section-gap-full" id="testimonial-section">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-4 testimonial-left">
+                <div class="col-lg-4 testimonial-left" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1500" data-aos="fade-right">
                     <h2>Что о нас говорят</h2>
                     <p>
                         Если Вы уже являетесь нашим клиентом, то оставьте пожалуйста отзыв. Мы будем Вам благодарны за обратную связь.
@@ -399,7 +400,7 @@
                         <span class="ti-arrow-right"></span>
                     </a>
                 </div>
-                <div class="col-lg-8 testimonial-right">
+                <div class="col-lg-8 testimonial-right" data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1500">
                     <div class="testimonial-carusel  owl-carousel" id="testimonial-carusel">
 
                         @foreach($chits as $chit)
@@ -433,14 +434,14 @@
 
 
     <!-- Start contact section -->
-    <section class="contact-section contact-page-section padding-top-120" id="contact-section">
+    <section class="contact-section contact-page-section " id="contact-section">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title" data-aos="zoom-in-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1500">
                 <h2 class="text-center">Контакты</h2>
                 <p class="text-center">Позвоните нам или оставьте заявку тут</p>
             </div>
 
-            <div class="row address-wrap justify-content-center">
+            <div class="row address-wrap justify-content-center" data-aos="zoom-in-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1500">
                 <div class="col-lg-3 col-md-4 col-sm-6 single-address-col">
                     <div class="div">
                         <i class="ti ti-mobile"></i>
@@ -471,7 +472,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center form-row">
+            <div class="row justify-content-center form-row" data-aos="zoom-in-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1500">
                 <div class="col-lg-9">
 
                     <form id="contact-form2" action="/contact_us" method="get" >

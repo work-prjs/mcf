@@ -106,10 +106,10 @@ $( document ).ready(function() {
               @include('layouts.admin_menu_tables')
             </ul>
           </li>
-        @endif
+        {{-- @endif --}}
 
 {{-- @if (Auth::user()->role_type==0) --}}
-@if (false)
+{{-- @if (false) --}}
 
         <li class="treeview menu-open2 active2">
           <a href="#">
@@ -122,7 +122,7 @@ $( document ).ready(function() {
 
           <ul class="treeview-menu">
             <li><a href="/api/docs"  target="_blank"><i class="fa fa-book"></i> <span>Документация</span></a></li>
-            <li class="treeview" style="display: none;">
+            <li class="treeview" style="">
               <a href="#"><i class="fa fa-circle-o text-blue"></i> Visual
                 <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
@@ -150,10 +150,8 @@ $( document ).ready(function() {
                     </span>
                   </a>
                   <ul class="treeview-menu menu-open2">
-                    <li><a href="http://www.crusader12.com/Yoshi/"><i class="fa fa-circle-o"></i> Demo1</a></li>
-                    <li><a href="http://activiotic.com/products/fluid/"><i class="fa fa-circle-o"></i> Demo fluid</a></li>
-                    <li><a href="http://activiotic.com/products/blob/"><i class="fa fa-circle-o"></i> Demo blob</a></li>
-                    <li><a href="http://activiotic.com/products/pave/"><i class="fa fa-circle-o"></i> Demo pave</a></li>
+                    <li><a href="http://www.crusader12.com/Yoshi/"><i class="fa fa-circle-o"></i> Yoshi - Particle Effects System</a></li>
+                    <li><a href="http://activiotic.com/products/background-bundle/"><i class="fa fa-circle-o"></i> interactive animated backgrounds</a></li>
                     
                     {{-- http://www.crusader12.com/Yoshi/ --}}
                     {{-- https://previews.customer.envatousercontent.com/files/16687559/index.html --}}
@@ -167,19 +165,6 @@ $( document ).ready(function() {
             </li>
 
                 
-            <li class="treeview menu-open2 active2">
-              <a href="#"><i class="fa fa-circle-o  text-green"></i> Разработка
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-              </a>
-                        {{-- <li class="active treeview menu-open2"> --}}
-
-              <ul class="treeview-menu">
-                <li><a href="/generator_builder"><i class="fa fa-circle-o text-orange"></i> Генераторы </a></li>
-                <li><a href="/file_manager1"><i class="fa fa-circle-o text-red"></i> Файлы </a></li>
-              </ul>
-            </li>
 
 
           </ul>
@@ -195,3 +180,6 @@ $( document ).ready(function() {
         <li><a href="/generator_builder"><i class="fa fa-circle-o text-orange"></i> Генераторы </a></li>
         <li><a href="/file_manager1"><i class="fa fa-circle-o text-red"></i> Файлы </a></li>
         <li><a href="/" target="_blank"><i class="fa fa-link text-aqua" aria-hidden="true"></i> <span>Сайт</span></a></li>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+JS
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
