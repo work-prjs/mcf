@@ -414,16 +414,18 @@ Route::get('/product/{ident}/to_cart/{qty}', 'ProductController@to_cart');
 // });
 
 Route::get('/', function () {
-    return view('mcf_v2.root');
+    $chits = \App\Models\Chit::where('active','=',1)->get();
+    return view('mcf_v2.root')
+        ->with('chits', $chits);
 });
 
 
-
-
-
-
-
-
+Route::get('/show_chits', function () {
+    $chits = \App\Models\Chit::where('active','=',1)->get();
+    return view('mcf_v2.show_chits')
+        ->with('chits', $chits);
+});
+//Route::get('/',     'LineItemController@total');
 
 
 // Route::get('/reservation', function () {
@@ -632,3 +634,8 @@ Route::get('/productComments/destroy_all', 'ProductCommentController@destroy_all
 Route::get('/productComments_destroy_all', 'ProductCommentController@destroy_all');
 Route::resource('productComments', 'ProductCommentController');
 
+
+
+Route::resource('chits', 'ChitController');
+Route::get('/chits_destroy_all', 'ChitController@destroy_all');
+Route::post('/chits/import', 'ChitController@import');

@@ -109,7 +109,6 @@
                             <ul>
                                 <li>
                                     <a target="_blank" href="#">
-                                        {{-- <i class="fa fa-facebook"></i> --}}
                                         <i class="fab fa-facebook"></i>
                                     </a>
                                 </li>
@@ -128,11 +127,6 @@
                                         <i class="fab fa-instagram" aria-hidden="true"></i>
                                     </a>
                                 </li>
-{{--                                 <li>
-                                    <a target="_blank" href="#">
-                                        <i class="fa fa-linkedin" aria-hidden="true"></i>
-                                    </a>
-                                </li> --}}
                             </ul>
                         </div>
                         <div class="single-widget banner-widget">
@@ -222,23 +216,23 @@
 
 
 
-    <!-- Rounded tabs -->
-    <ul id="myTab" role="tablist" class="nav nav-tabs nav-pills flex-column flex-sm-row text-center bg-light border-0 rounded-nav">
-      <li class="nav-item flex-sm-fill">
-        <a id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" class="nav-link border-0 text-uppercase font-weight-bold active">Описание</a>
-      </li>
-      <li class="nav-item flex-sm-fill">
-        <a id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" class="nav-link border-0 text-uppercase font-weight-bold">Характеристики</a>
-      </li>
-      <li class="nav-item flex-sm-fill">
-        <a id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false" class="nav-link border-0 text-uppercase font-weight-bold">Документы</a>
-      </li>
-    </ul>
+                                    <!-- Rounded tabs -->
+                                    <ul id="myTab" role="tablist" class="nav nav-tabs nav-pills flex-column flex-sm-row text-center bg-light border-0 rounded-nav">
+                                      <li class="nav-item flex-sm-fill">
+                                        <a id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" class="nav-link border-0 text-uppercase font-weight-bold active">Описание</a>
+                                      </li>
+                                      <li class="nav-item flex-sm-fill">
+                                        <a id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" class="nav-link border-0 text-uppercase font-weight-bold">Характеристики</a>
+                                      </li>
+                                      <li class="nav-item flex-sm-fill">
+                                        <a id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false" class="nav-link border-0 text-uppercase font-weight-bold">Документы</a>
+                                      </li>
+                                    </ul>
 
-    <div id="myTabContent" class="tab-content">
-      <div id="home" role="tabpanel" aria-labelledby="home-tab" class="tab-pane fade px-4 py-5 show active">
-        {{ $product->desc }}
-      </div>
+                        <div id="myTabContent" class="tab-content">
+                          <div id="home" role="tabpanel" aria-labelledby="home-tab" class="tab-pane fade px-4 py-5 show active">
+                            {{ $product->desc }}
+                          </div>
                           <div id="profile" role="tabpanel" aria-labelledby="profile-tab" class="tab-pane fade px-4 py-5">
                                                     @php
                                                         if (isset($product->attrs)) {

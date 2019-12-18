@@ -69,3 +69,7 @@
     <a href="{!! route('productComments.index') !!}"><i class="fa fa-edit"></i><span>Комментарии Продуктов</span></a>
 </li>
 
+<li class="{{ Request::is('chits*') ? 'active' : '' }}">
+    <a href="{!! route('chits.index') !!}"><i class="fa fa-edit"></i><span>Комментарии на Главной</span></a>
+</li>
+
