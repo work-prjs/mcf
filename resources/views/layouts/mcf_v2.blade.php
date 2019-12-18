@@ -77,7 +77,12 @@ CSS
         #nav a:hover {
             color: red;
         }
-        #nav .dope-sticky a:hover {
+
+        .dope-sticky #nav a {
+            color: black;
+        }
+
+        .dope-sticky #nav a:hover {
             color: #691cff !important;
         }
 
@@ -93,9 +98,6 @@ CSS
             /*color: black;*/
         }
 
-        .dope-sticky a {
-            color: black;
-        }
         /*breakpoint-off*/
         /*breakpoint-on*/
 
