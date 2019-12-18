@@ -165,6 +165,12 @@ CSS
         .service-section .single-service {
             min-height: 37em;
         }
+
+
+        .bold-black {
+            color: black;
+            font-weight: 600;
+        }
     </style>
 
     @yield('css')

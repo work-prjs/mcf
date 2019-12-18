@@ -199,7 +199,7 @@
 
                               <div class="col-md-6" style="text-align: left;">
 
-                                <b>Метод оплаты</b>
+                                <b class="bold-black">Метод оплаты</b>
 
 
                                 <div class="radio">
@@ -228,7 +228,7 @@
                               </div>
 
                               <div class="col-md-6" style="text-align: left;">
-                                <b>Место получения Продукта</b>
+                                <b class="bold-black">Место получения Продукта</b>
                                 <div class="radio">
                                   <label>
                                     <input type="radio" name="pay_place" id="optionsRadios4" value="0" required>
@@ -245,7 +245,7 @@
 
 
                               <div class="col-md-6" style="text-align: left;">
-                                <b>Контактный номер (<span style="color: red;">обязательно*</span>)</b>
+                                <b class="bold-black">Контактный номер (<span style="color: red;">обязательно*</span>)</b>
                                 <div class="form-group">
 
                                   <div class="input-group">
@@ -258,7 +258,7 @@
                               </div>
 
                               <div class="col-md-6" style="text-align: left;">
-                                <b>Email (не обязательно)</b>
+                                <b class="bold-black">Email (не обязательно)</b>
                                 <div class="form-group">
 
                                   <div class="input-group">
@@ -272,7 +272,7 @@
 
                                 
                               <div class="col-md-12" style="text-align: left;">
-                                <b>Адрес/Место/Примечание</b>
+                                <b class="bold-black">Адрес/Место/Примечание</b>
                                 <textarea name="pay_adr" style="width: 100%;" rows="5" placeholder="Укажите адрес: Населенный пункт, улица, номер дома, офис и примечания"></textarea>
                               </div>
 

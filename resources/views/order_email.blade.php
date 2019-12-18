@@ -6,12 +6,11 @@
   Наименование: {!! $line->product->name !!}
   Всего: {{ $line->product->price_amount }} X {{ $line->qty }} = {{ $line->qty*$line->product->price_amount }} руб. 
 @endforeach
-
 @php
 $itog = 0;
 $status = ['Новый', 'Подтвержден', 'Готовиться', 'Получен', 'Оплачен'];
-$pay_places = ['Место в заведении','Номер в гостинице', 'На вынос'];
-$pay_types = ['Оплата наличными', 'Оплата картой', 'Онлайн оплата'];
+$pay_places = ['Доставка курьером', 'Самовывоз', 'Почтой'];
+$pay_types = ['Оплата на месте', 'Онлайн оплата Картой', 'Выставить счёт'];
 @endphp
 @foreach($order->line_items as $line)
 @php
