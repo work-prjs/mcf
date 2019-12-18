@@ -1,17 +1,4 @@
 
-<li class="{{ Request::is('cats*') ? 'active' : '' }}">
-    <a href="{!! route('cats.index') !!}"><i class="fa fa-book"></i><span>Категории</span></a>
-</li>
-
-
-<li class="{{ Request::is('products*') ? 'active' : '' }}">
-    <a href="{!! route('products.index') !!}"><i class="fa fa-credit-card" aria-hidden="true"></i></i><span>Продукты</span></a>
-</li>
-
-<li class="{{ Request::is('orders*') ? 'active' : '' }}">
-    <a href="{!! route('orders.index') !!}"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-<span>Заказы</span></a>
-</li>
 
 @if (Auth::user()->role_type==0)
 
@@ -24,9 +11,6 @@
     </li>
 
 
-    <li class="{{ Request::is('users*') ? 'active' : '' }}">
-        <a href="{!! route('users.index') !!}"><i class="fa fa-user-secret" aria-hidden="true"></i><span>Пользователи</span></a>
-    </li>
 
     {{-- <li class="{{ Request::is('roles*') ? 'active' : '' }}">
         <a href="{!! route('roles.index') !!}"><i class="fa fa-circle-o  text-white"></i><span>Роли</span></a>
@@ -49,27 +33,8 @@
 
 
 
-
-<li class="{{ Request::is('makeSubMails*') ? 'active' : '' }}">
-    <a href="{!! route('makeSubMails.index') !!}"><i class="fa fa-envelope"></i><span>Рассылка</span></a>
-</li>
-<li class="{{ Request::is('subsGroups*') ? 'active' : '' }}">
-    <a href="{!! route('subsGroups.index') !!}"><i class="fa fa-envelope"></i><span>Почтовые группы</span></a>
-</li>
-<li class="{{ Request::is('subsEmails*') ? 'active' : '' }}">
-    <a href="{!! route('subsEmails.index') !!}"><i class="fa fa-envelope"></i><span>Ящики/Почта</span></a>
-</li>
-
-
 {{-- <li class="{{ Request::is('groupInMails*') ? 'active' : '' }}">
     <a href="{!! route('groupInMails.index') !!}"><i class="fa fa-edit"></i><span>Group In Mails</span></a>
 </li> --}}
 
-<li class="{{ Request::is('productComments*') ? 'active' : '' }}">
-    <a href="{!! route('productComments.index') !!}"><i class="fa fa-edit"></i><span>Комментарии Продуктов</span></a>
-</li>
-
-<li class="{{ Request::is('chits*') ? 'active' : '' }}">
-    <a href="{!! route('chits.index') !!}"><i class="fa fa-edit"></i><span>Комментарии на Главной</span></a>
-</li>
 

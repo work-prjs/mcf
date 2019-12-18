@@ -21,7 +21,7 @@
         </div>
 
         <!-- search form (Optional) -->
-{{--         <form action="#" method="get" class="sidebar-form">
+        <form action="#" method="get" class="sidebar-form">
             <div class="input-group">
                 <input type="text" name="q" class="form-control" placeholder="Поиск..."/>
                 <span class="input-group-btn">
@@ -30,10 +30,10 @@
                     </button>
                 </span>
             </div>
-        </form> --}}
+        </form>
         <!-- Sidebar Menu -->
 
-        <ul class="sidebar-menu" data-widget="tree">
+        <ul class="sidebar-menu" id="sidebar-menu" data-widget="tree">
             @include('layouts.admin_menu')
         </ul>
         <!-- /.sidebar-menu -->

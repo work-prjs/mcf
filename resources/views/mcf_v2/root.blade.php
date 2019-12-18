@@ -190,6 +190,80 @@
     </section>
     <!-- End stat section -->
 
+
+<section class="portfolio-section section-gap-full">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="text-center">Наши последние работы</h2>
+                <p class="text-center">Поставка и монтаж установка оборудования</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-6 cl">
+                            <div class="single-portfolio">
+                                <img class="img-fluid" src="/mcf/img/portfolio1.jpg" alt="">
+                                <div class="box-content">
+                                    <a href="single-portfolio.html">
+                                        <h5 class="title">Project Title</h5>
+                                    </a>
+                                    <span class="post">Product</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 cl">
+                            <div class="single-portfolio">
+                                <img class="img-fluid" src="/mcf/img/portfolio2.jpg" alt="">
+                                <div class="box-content">
+                                    <a href="single-portfolio.html">
+                                        <h5 class="title">Project Title</h5>
+                                    </a>
+                                    <span class="post">Product</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="single-portfolio">
+                                <img class="img-fluid" src="/mcf/img/portfolio3.jpg" alt="">
+                                <div class="box-content">
+                                    <a href="single-portfolio.html">
+                                        <h5 class="title">Project Title</h5>
+                                    </a>
+                                    <span class="post">Product</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="single-portfolio">
+                                <img class="img-fluid" src="/mcf/img/portfolio4.jpg" alt="">
+                                <div class="box-content">
+                                    <a href="single-portfolio.html">
+                                        <h5 class="title">Project Title</h5>
+                                    </a>
+                                    <span class="post">Product</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="single-portfolio">
+                                <img class="img-fluid" src="/mcf/img/portfolio5.jpg" alt="">
+                                <div class="box-content">
+                                    <a href="single-portfolio.html">
+                                        <h5 class="title">Project Title</h5>
+                                    </a>
+                                    <span class="post">Product</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Start team section -->
     <section class="team-section section-gap-full">
         <div class="container">
@@ -317,7 +391,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-4 testimonial-left">
-                    <h2>Что о нас гворят</h2>
+                    <h2>Что о нас говорят</h2>
                     <p>
                         Если Вы уже являетесь нашим клиентом, то оставьте пожалуйста отзыв. Мы будем Вам благодарны за обратную связь.
                     </p>
@@ -356,4 +430,80 @@
         </div>
     </section>
     <!-- End testimonial section -->
+
+
+    <!-- Start contact section -->
+    <section class="contact-section contact-page-section padding-top-120" id="contact-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="text-center">Контакты</h2>
+                <p class="text-center">Позвоните нам или оставьте заявку тут</p>
+            </div>
+
+            <div class="row address-wrap justify-content-center">
+                <div class="col-lg-3 col-md-4 col-sm-6 single-address-col">
+                    <div class="div">
+                        <i class="ti ti-mobile"></i>
+                        <p>
+                            <a href="tel:+8‒800‒200‒00‒23">+8‒800‒200‒00‒23</a>
+                            <br>
+                            <a href="tel:+7–914–553–48–18">+7–914–553–48–18</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 single-address-col">
+                    <div class="div">
+                        <i class="ti ti-map-alt"></i>
+                        <p>
+                            Россия Амурская область
+                            <br> г.Благовещенск,<br> Пионерская 31
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-12 single-address-col">
+                    <div class="div">
+                        <i class="ti ti-email"></i>
+                        <p>
+                            <a href="mailto:mc.fank@mail.ru">mc.fank@mail.ru</a>
+                            <br> 
+                            <a href="mailto:mcfzavod@gmail.com">mcfzavod@gmail.com</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center form-row">
+                <div class="col-lg-9">
+
+                    <form id="contact-form2" action="/contact_us" method="get" >
+                        <div class="row contact-form-wrap justify-content-center">
+{{--                             <div class="col-md-6 contact-name form-col">
+                                <input name="name" id="name" class="form-control" type="text" placeholder="Name*"
+                                    onfocus="this.placeholder=''" onblur="this.placeholder='Name*'">
+                            </div> --}}
+                            <div class="col-md-6 contact-email form-col">
+
+                                {{-- <label> Email или Телефон </label> --}}
+                                                           
+                                <input type="text" name="your-contact" value="" size="40" class="form-control"  placeholder="E-mail или Телефон*"
+                                    onfocus="this.placeholder=''" onblur="this.placeholder='Контакт*'">
+
+                                {{-- <input name="mail" id="mail" class="form-control" type="text" placeholder="E-mail или Телефон*" --}}
+                                    {{-- onfocus="this.placeholder=''" onblur="this.placeholder='Контакт*'"> --}}
+                            </div>
+                            <div class="col-lg-12">
+                                <textarea name="your-message" id="comment" class="form-control" rows="8" placeholder="Сообщение"
+                                    onfocus="this.placeholder=''" onblur="this.placeholder='Сообщение*'"></textarea>
+                            </div>
+                            <input type="submit" class="primary-btn btn" value="Отправить" id="submit-message" >
+                            <div id="msg" class="message"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End contact section -->
+
+
+
 @endsection

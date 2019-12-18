@@ -75,8 +75,30 @@ CSS
         }
 
         #nav a:hover {
-            color: red;
+            /*color: red;*/
+            /*#nav > li:nth-child(7) > a*/
         }
+
+        #nav a {
+            color: white;
+            /*#nav > li:nth-child(7) > a*/
+        }
+        #nav a:hover {
+            color: black;
+            /*#nav > li:nth-child(7) > a*/
+        }
+
+        #nav .dropdown a {
+            color: black;
+            /*#nav > li:nth-child(7) > a*/
+        }
+
+        #nav .dropdown a:hover {
+            color: #691cff !important;
+            /*#nav > li:nth-child(7) > a*/
+        }
+
+
 
         .dope-sticky #nav a {
             color: black;
@@ -297,9 +319,9 @@ CSS
                                     <li>
                                         <a href="/mcf_about_us">О нас</a>
                                     </li>
-                                    {{-- <li> --}}
-                                        {{-- <a href="/mcf_service">Сервис</a> --}}
-                                    {{-- </li> --}}
+                                    <li>
+                                        <a href="/mcf_media">Медиа</a>
+                                    </li>
                                     <li>
                                         <a href="/mcf_contact">Контакты</a>
                                     </li>

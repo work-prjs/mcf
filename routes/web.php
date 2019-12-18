@@ -553,6 +553,15 @@ Route::get('/mcf_blogs', function () {
 
         return view('mcf_v2.contact');
     });
+    Route::get('/mcf_media', function (Request $request) {
+
+        // $language = $request->selected_language ?? 'ru';
+        // session(['selected_language' =>$language]);
+        // App::setLocale($language);
+
+        return view('mcf_v2.mcf_media');
+    });
+
 
 
 // Route::get('/contact', function () {
