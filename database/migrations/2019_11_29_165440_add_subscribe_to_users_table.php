@@ -15,7 +15,7 @@ class AddSubscribeToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->boolean('subscribe')->nullable()->default(false);
+            // $table->boolean('subscribe')->nullable()->default(false);
         });
     }
 
