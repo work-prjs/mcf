@@ -648,3 +648,22 @@ Route::resource('productComments', 'ProductCommentController');
 Route::resource('chits', 'ChitController');
 Route::get('/chits_destroy_all', 'ChitController@destroy_all');
 Route::post('/chits/import', 'ChitController@import');
+
+
+Route::resource('mediaFiles', 'MediaFileController');
+Route::get('/mediaFiles_destroy_all', 'MediaFileController@destroy_all');
+Route::post('/mediaFiles/import', 'MediaFileController@import');
+
+
+
+
+Route::get('/articles_destroy_all', 'ArticleController@destroy_all');
+Route::post('/articles/import', 'ArticleController@import');
+Route::get('/articles/export', 'ArticleController@export');
+Route::resource('articles', 'ArticleController');
+
+
+
+Route::resource('docFiles', 'DocFileController');
+Route::get('/docFiles_destroy_all', 'DocFileController@destroy_all');
+Route::post('/docFiles/import', 'DocFileController@import');

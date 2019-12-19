@@ -208,7 +208,7 @@ CSS
 
 </head>
 
-<body>
+<body style="    overflow-x: hidden;">
 
 
 <!-- Modal -->
@@ -378,7 +378,14 @@ CSS
                         {{-- <i class="fa fa-heart" aria-hidden="true"></i> от <br> --}}
                         {{-- <a href="mailto:mltefive@gmail.com" target="_blank">mltefive@gmail.com</a> --}}
                     </p>
+                    <ul >
+                        <li>
+                            <img src="/logo3h.png" class="img-responsive img-fluid" style="max-width: 18em">
+                        </li>
+                    </ul>
+                    
                 </div>
+
                 <div class="col-lg-3 col-sm-6 footer-cols">
                     <h4>Ссылки</h4>
                     <ul>

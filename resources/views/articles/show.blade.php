@@ -157,14 +157,14 @@
                         <div class="row single-widget ">
                                 <div class="col-md-12 pb-30  ">
                                     <span class="brown">Название:</span>
-                                    <span><h2>{{ $$MODEL_NAME_CAMEL$->name }}</h2></span>
+                                    <span><h2>{{ $article->name }}</h2></span>
                                             
                                 </div>
                         </div>
 
                         <div class="row single-widget ">
                               <div class="col-md-7 pb-30  ">
-                                <img src="{{ $$MODEL_NAME_CAMEL$->image }}" class="" style="max-width: 23em;    height: 100%;    width: 100%;" />
+                                <img src="{{ $article->image }}" class="" style="max-width: 23em;    height: 100%;    width: 100%;" />
                               </div>
                               <div class="col-md-5 " >
                                     <div class="row">
@@ -189,7 +189,7 @@
                                         </div>
                                         <div class="col-md-12 col-xs-12">
 
-                                            <h3><strong><b>{{ $$MODEL_NAME_CAMEL$->price }}</b></strong> руб. <span class="pull-right"><a href="" class="btn to_cart btn-success" style="background-color: #691cff; border-color: #691cff"> <i class="fa fa-cart-plus" aria-hidden="true"></i> В корзину</a></span> </h3>
+                                            <h3><strong><b>{{ $article->price }}</b></strong> руб. <span class="pull-right"><a href="" class="btn to_cart btn-success" style="background-color: #691cff; border-color: #691cff"> <i class="fa fa-cart-plus" aria-hidden="true"></i> В корзину</a></span> </h3>
 
                                             <span >
                                             </span>
@@ -225,11 +225,11 @@
 
     <div id="myTabContent" class="tab-content">
       <div id="home" role="tabpanel" aria-labelledby="home-tab" class="tab-pane fade px-4 py-5 show active">
-        {{ $$MODEL_NAME_CAMEL$->desc }}
+        {{ $article->desc }}
       </div>
       <div id="profile" role="tabpanel" aria-labelledby="profile-tab" class="tab-pane fade px-4 py-5">
                                 @php
-                                    $a1 = explode("\n", $$MODEL_NAME_CAMEL$->attrs);
+                                    $a1 = explode("\n", $article->attrs);
                                 @endphp
 
                                 <table class="table table-hover">

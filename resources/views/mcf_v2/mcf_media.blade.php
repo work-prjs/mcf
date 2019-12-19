@@ -42,67 +42,25 @@
         <div class="container">
             <div class="row justify-content-center">
 
-                <div class="col-lg-6">
+                <div class="col-lg-12">
                     <div class="row">
+
+        
+                      @foreach (\App\Models\MediaFile::all() as $line )
                         <div class="col-lg-6 cl">
                             <div class="single-portfolio">
-                                <img class="img-fluid" src="/mcf/img/portfolio1.jpg" alt="">
+                                <img class="img-fluid" src="{{ $line->image ?? '/mcf/img/portfolio1.jpg' }}" alt="">
                                 <div class="box-content">
                                     <a href="single-portfolio.html">
-                                        <h5 class="title">Project Title</h5>
+                                        <h5 class="title">{{ $line->name }}</h5>
                                     </a>
-                                    <span class="post">Product</span>
+                                    <span class="post">{{ $line->desc ?? '' }}</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 cl">
-                            <div class="single-portfolio">
-                                <img class="img-fluid" src="/mcf/img/portfolio2.jpg" alt="">
-                                <div class="box-content">
-                                    <a href="single-portfolio.html">
-                                        <h5 class="title">Project Title</h5>
-                                    </a>
-                                    <span class="post">Product</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="single-portfolio">
-                                <img class="img-fluid" src="/mcf/img/portfolio3.jpg" alt="">
-                                <div class="box-content">
-                                    <a href="single-portfolio.html">
-                                        <h5 class="title">Project Title</h5>
-                                    </a>
-                                    <span class="post">Product</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="single-portfolio">
-                                <img class="img-fluid" src="/mcf/img/portfolio4.jpg" alt="">
-                                <div class="box-content">
-                                    <a href="single-portfolio.html">
-                                        <h5 class="title">Project Title</h5>
-                                    </a>
-                                    <span class="post">Product</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="single-portfolio">
-                                <img class="img-fluid" src="/mcf/img/portfolio5.jpg" alt="">
-                                <div class="box-content">
-                                    <a href="single-portfolio.html">
-                                        <h5 class="title">Project Title</h5>
-                                    </a>
-                                    <span class="post">Product</span>
-                                </div>
-                            </div>
-                        </div>
+
+                      @endforeach
+
                     </div>
                 </div>
 

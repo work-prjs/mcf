@@ -58,13 +58,30 @@ $( document ).ready(function() {
             </span>
           </a>
           <ul class="treeview-menu tt">
+            <li class="{{ Request::is('mediaFiles*') ? 'active' : '' }}">
+                <a href="{!! route('mediaFiles.index') !!}"><i class="fa fa-edit"></i><span>Медиа Файлы</span></a>
+            </li>
+
+            <li class="{{ Request::is('docFiles*') ? 'active' : '' }}">
+                <a href="{!! route('docFiles.index') !!}"><i class="fa fa-edit"></i><span>Документы</span></a>
+            </li>
+
+            <li class="{{ Request::is('articles*') ? 'active' : '' }}">
+                <a href="{!! route('articles.index') !!}"><i class="fa fa-edit"></i><span>Статьи</span></a>
+            </li>
+
             <li class="{{ Request::is('chits*') ? 'active' : '' }}">
-                <a href="{!! route('chits.index') !!}"><i class="fa fa-edit"></i><span>Комментарии на Главной</span></a>
+                <a href="{!! route('chits.index') !!}"><i class="fa fa-edit"></i><span>Отзывы</span></a>
             </li>
 
             <li class="{{ Request::is('productComments*') ? 'active' : '' }}">
-                <a href="{!! route('productComments.index') !!}"><i class="fa fa-edit"></i><span>Комментарии Продуктов</span></a>
+                <a href="{!! route('productComments.index') !!}"><i class="fa fa-edit"></i><span>Комментарии</span></a>
             </li>
+
+            <li class="{{ Request::is('metatexts*') ? 'active' : '' }}">
+                <a href="{!! route('metatexts.index') !!}"><i class="fa fa-edit"></i><span>Мета метки</span></a>
+            </li>
+
             
           </ul>
         </li>

@@ -198,70 +198,21 @@
                 <h2 class="text-center">Наши последние работы</h2>
                 <p class="text-center">Поставка и монтаж установка оборудования</p>
             </div>
-            <div class="row justify-content-center" data-aos="zoom-in-up" data-aos-anchor-placement="bottom-bottom">
-                <div class="col-lg-6">
-                    <div class="row">
+            <div class="row justify-content-center" data-aos="zoom-in-up" >
+                      @foreach (\App\Models\MediaFile::take(4)->get() as $line )
                         <div class="col-lg-6 cl">
                             <div class="single-portfolio">
-                                <img class="img-fluid" src="/mcf/img/portfolio1.jpg" alt="">
+                                <img class="img-fluid" src="{{ $line->image ?? '/mcf/img/portfolio1.jpg' }}" alt="">
                                 <div class="box-content">
                                     <a href="single-portfolio.html">
-                                        <h5 class="title">Project Title</h5>
+                                        <h5 class="title">{{ $line->name }}</h5>
                                     </a>
-                                    <span class="post">Product</span>
+                                    <span class="post">{{ $line->desc ?? '' }}</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 cl">
-                            <div class="single-portfolio">
-                                <img class="img-fluid" src="/mcf/img/portfolio2.jpg" alt="">
-                                <div class="box-content">
-                                    <a href="single-portfolio.html">
-                                        <h5 class="title">Project Title</h5>
-                                    </a>
-                                    <span class="post">Product</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="single-portfolio">
-                                <img class="img-fluid" src="/mcf/img/portfolio3.jpg" alt="">
-                                <div class="box-content">
-                                    <a href="single-portfolio.html">
-                                        <h5 class="title">Project Title</h5>
-                                    </a>
-                                    <span class="post">Product</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="single-portfolio">
-                                <img class="img-fluid" src="/mcf/img/portfolio4.jpg" alt="">
-                                <div class="box-content">
-                                    <a href="single-portfolio.html">
-                                        <h5 class="title">Project Title</h5>
-                                    </a>
-                                    <span class="post">Product</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="single-portfolio">
-                                <img class="img-fluid" src="/mcf/img/portfolio5.jpg" alt="">
-                                <div class="box-content">
-                                    <a href="single-portfolio.html">
-                                        <h5 class="title">Project Title</h5>
-                                    </a>
-                                    <span class="post">Product</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                      @endforeach
+
             </div>
         </div>
     </section>
@@ -434,7 +385,7 @@
 
 
     <!-- Start contact section -->
-    <section class="contact-section contact-page-section " id="contact-section">
+    <section class="contact-section " id="contact-section" style="padding-top: 6em;">
         <div class="container">
             <div class="section-title" data-aos="zoom-in-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1500">
                 <h2 class="text-center">Контакты</h2>
@@ -472,7 +423,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center form-row" data-aos="zoom-in-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1500">
+            <div class="row justify-content-center form-row" data-aos="zoom-in-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1500" >
                 <div class="col-lg-9">
 
                     <form id="contact-form2" action="/contact_us" method="get" >

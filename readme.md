@@ -1,3 +1,5 @@
+https://github.com/spatie/db-dumper
+
 MODEL_NAME$ NameWhatsApp
 MODEL_NAME_SNAKE$ name_whats_app
 MODEL_NAME_CAMEL$ nameWhatsApp

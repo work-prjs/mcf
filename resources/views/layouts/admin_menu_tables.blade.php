@@ -25,9 +25,6 @@
         <a href="{!! route('menus.index') !!}"><i class="fa fa-bars" aria-hidden="true"></i><span>Меню</span></a>
     </li>
 
-    <li class="{{ Request::is('metatexts*') ? 'active' : '' }}">
-        <a href="{!! route('metatexts.index') !!}"><i class="fa fa-edit"></i><span>Мета метки</span></a>
-    </li>
 @endif
 
 
@@ -36,5 +33,6 @@
 {{-- <li class="{{ Request::is('groupInMails*') ? 'active' : '' }}">
     <a href="{!! route('groupInMails.index') !!}"><i class="fa fa-edit"></i><span>Group In Mails</span></a>
 </li> --}}
+
 
 
