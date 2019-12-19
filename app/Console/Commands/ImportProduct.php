@@ -43,16 +43,31 @@ class ImportProduct extends Command {
                                         var_dump($i2['Наименование']);
                                         
                                         var_dump($i2["Категория"]);
+                                        var_dump($i2['Описание']);
+
                                         // var_dump($i2["Группы"]);
 
                                         $arrX = array("/uploads/product-chicken-wings.jpg", "/uploads/product-burger.jpg", "/uploads/product-chicken-burger.jpg", "/uploads/product-sushi.jpg", "/uploads/product-pizza.jpg" );
+
                                         $randIndex = array_rand($arrX, 2);
 
                                         foreach ($i2["Группы"] as $i3) {
                                             // $gr = $i3["Ид"];
-                                            var_dump($i3);
+
+                                            // var_dump($i3);
+
                                             // Product::create( array('name' => $i2['Наименование'], 'ident' => $i2['Ид'], 'xml_name' => $i2["Артикул"], "cat_id" => $i3, 'image'=> $arrX[$randIndex[0]] ) );
-                                            Product::create( array('name' => $i2['Наименование'], 'ident' => $i2['Ид'], 'xml_name' => $i2["Артикул"], "cat_id" => $i3 ) );
+                                            // Product::create( array('name' => $i2['Наименование'], 'ident' => $i2['Ид'], 'xml_name' => $i2["Артикул"], "cat_id" => $i3 ) );
+
+                                            if (!empty($i2['Описание'])) {
+                                                $attrs = $i2['Описание'];
+                                            } else  {
+                                                $attrs = '';
+                                            }
+
+
+                                                Product::create( array('name' => $i2['Наименование'], 'ident' => $i2['Ид'], 'xml_name' => $i2["Артикул"], "cat_id" => $i3, 'image'=> '/mcf/img/portfolio1.jpg', 'attrs'=>$attrs ) );
+
                                         }
 
 

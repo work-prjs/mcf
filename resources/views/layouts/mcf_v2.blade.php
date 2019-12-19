@@ -201,6 +201,14 @@ CSS
             color: black;
             font-weight: 600;
         }
+
+
+        .div {
+            padding: 30px 0px;
+            border-radius: 5px;
+            background: #fff;
+            margin-bottom: 40px;
+        }
     </style>
 
     @yield('css')
@@ -323,9 +331,6 @@ CSS
                                         <a href="/mcf_about_us">О нас</a>
                                     </li>
                                     <li>
-                                        <a href="/mcf_media">Медиа</a>
-                                    </li>
-                                    <li>
                                         <a href="/mcf_contact">Контакты</a>
                                     </li>
                                     <li>
@@ -380,7 +385,7 @@ CSS
                     </p>
                     <ul >
                         <li>
-                            <img src="/logo3h.png" class="img-responsive img-fluid" style="max-width: 18em">
+                            <img src="/logo3h.png" class="img-responsive img-fluid" style="max-width: 15em">
                         </li>
                     </ul>
                     
@@ -396,22 +401,29 @@ CSS
                         <li><a href="/mcf_contact">Контакты</a></li> --}}
 
 
-
                                     <li>
+                                        <a href="/mcf_media">Статьи</a>
+                                    </li>
+                                    <li>
+                                        <a href="/mcf_media">Медиа</a>
+                                    </li>
+                                    <li>
+                                        <a href="/mcf_media">Документы</a>
+                                    </li>
+
+
+{{--                                     <li>
                                         <a href="/">Главная</a>
                                     </li>
                                     <li>
                                         <a href="/mcf_products">Продукция</a>
-                                    </li>
-                                    <li>
+                                    </li> --}}
+{{--                                     <li>
                                         <a href="/mcf_about_us">О нас</a>
                                     </li>
-                                    {{-- <li> --}}
+ --}}                                    {{-- <li> --}}
                                         {{-- <a href="/mcf_service">Сервис</a> --}}
                                     {{-- </li> --}}
-                                    <li>
-                                        <a href="/mcf_contact">Контакты</a>
-                                    </li>
 
 
 

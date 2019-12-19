@@ -58,12 +58,12 @@
                             <h4 class="widget-title">Категории</h4>
                             <ul>
 
-                            @foreach(\App\Models\Cat::all() as $cat)
+                            @foreach($cats as $cat1)
                                 <li class="d-flex justify-content-between">
-                                    <a href="#">{{ $cat->name }}</a>
+                                    <a href="/mcf_cat/{{ $cat1->ident }}">{{ $cat1->name }}</a>
                                     <span>
                                         (
-                                            {{ count($cat->products) }}
+                                            {{ count($cat1->products) }}
                                         )
                                     </span>
                                 </li>
@@ -165,25 +165,9 @@
                               </div>
                               <div class="col-md-5 " >
                                     <div class="row">
-                                        <div class="col-md-12">
-                                            
-{{-- <div class="col-lg-4 details-right"> --}}
-                    <ul>
-                        <li><span>Client:</span> Envato</li>
-                        <li><span>Category:</span> Fashion,Design</li>
-                        <li><span>Visit:</span> envato.com</li>
-                        <li><span>Date:</span> 01.09.2018</li>
-                    </ul>
-                    <p>                  
-                        To shewing another demands to. Marianne property cheerful informed at striking at.
-                    </p>
-                    <p>
-                        Received shutters expenses ye he pleasant. Drift as blind above at up. No up simple county stairs do should praise as. Drawings sir gay together landlord had law smallest. Formerly welcomed attended declared met say unlocked. Jennings outlived no dwelling denoting in peculiar.
-                    </p>
-                {{-- </div>                                             --}}
-                                            {{-- <span class="brown"><b>Галерея:</b></span> --}}
-
-                                        </div>
+                                                @foreach ( [0,1,2,3,4,5] as $line)
+                                                        <img src="{{ $product->image }}" class="img-fluid"  style="    width: 100%; height: 100%; max-width: 5em;"/>
+                                                @endforeach
                                     </div>
                               </div>
 
@@ -235,14 +219,15 @@
                           </div>
                           <div id="profile" role="tabpanel" aria-labelledby="profile-tab" class="tab-pane fade px-4 py-5">
                                                     @php
-                                                        if (isset($product->attrs)) {
+                                                        // if (!empty($product->attrs)) {
                                                             # code...
                                                             $a1 = explode("\n", $product->attrs);
-                                                        } else {
-                                                            $a1 = ['значение Характеристики:Отсутствует'];
-                                                        }
+                                                        // } else {
+                                                        //     $a1 = [0];
+                                                        // }
                                                     @endphp
 
+                                                    @if (!empty($product->attrs))
                                                     <table class="table table-hover">
                                                         <thead class="thead-light">
                                                             <th>Название</th>
@@ -254,13 +239,16 @@
                                                                     $a2 = explode(":", $line);
                                                                 @endphp
                                                                 <tr>
-                                                                    <td><strong>{{ $a2[0] }}:</strong></td>
-                                                                    <td>{{ $a2[1] }}</td>
+                                                                    <td><strong>{{ $a2[0] ?? '' }}:</strong></td>
+                                                                    <td>{{ $a2[1] ?? ''}}</td>
                                                                 </tr>
                                                             @endforeach
                                                             
                                                         </tbody>
                                                     </table>
+
+                                                    @endif                                                 
+
                           </div>
                                       <div id="contact" role="tabpanel" aria-labelledby="contact-tab" class="tab-pane fade px-4 py-5">
                                         <table class="table table-hover">

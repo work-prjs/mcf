@@ -53,7 +53,7 @@
                         Работаем с 2002 года. Сообдственное производство звукового и светового оборудования.
                         Работая с нами Вы работает без посредников.
                     </p>
-                    <a class="primary-btn" href="#">Контакты</a>
+                    <a class="primary-btn" href="#contact-section">Контакты</a>
                 </div>
             </div>
         </div>
@@ -97,7 +97,7 @@
                     <h1 style="font-size: 3em;">
                         Уникальное предложение для каждого проекта.
                     </h1>
-                    <a class="primary-btn" href="#">Заказать расчёт
+                    <a class="primary-btn" href="#contact-section">Заказать расчёт
                         <span class="ti-arrow-right"></span>
                     </a>
                 </div>
