@@ -26,6 +26,10 @@ class CreateProductsTable extends Migration
             $table->decimal('price_amount')->nullable();
             $table->boolean('menu')->nullable()->default(false);
             $table->bigInteger('position')->nullable();
+            $table->longText('attrs')->nullable();
+            $table->longText('docs')->nullable();
+            $table->boolean('new')->default(false);
+            
             $table->timestamps();
         });
     }

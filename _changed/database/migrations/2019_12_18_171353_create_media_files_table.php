@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateCatsTable extends Migration
+class CreateMediaFilesTable extends Migration
 {
 
     /**
@@ -13,17 +13,11 @@ class CreateCatsTable extends Migration
      */
     public function up()
     {
-        // Schema::drop('cats');
-        Schema::create('cats', function (Blueprint $table) {
+        Schema::create('media_files', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ident')->nullable();
             $table->string('name')->nullable();
             $table->longText('desc')->nullable();
             $table->string('image')->nullable();
-            $table->string('xml_name')->nullable();
-            $table->string('parent_id')->nullable();
-            $table->boolean('menu')->nullable()->default(false);
-            $table->bigInteger('position')->nullable();
             $table->timestamps();
         });
     }
@@ -35,6 +29,6 @@ class CreateCatsTable extends Migration
      */
     public function down()
     {
-        // Schema::drop('cats');
+        Schema::drop('media_files');
     }
 }

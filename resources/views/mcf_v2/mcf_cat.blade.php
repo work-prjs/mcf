@@ -182,7 +182,9 @@
                             @php
                                 $idx=0;
                             @endphp
-                            @foreach($cat2->products as $product)
+                            {{-- @foreach($cat2->products as $product) --}}
+                            @foreach($prds as $product)
+                            
                                     @if (isset($product))
 
                                         @php

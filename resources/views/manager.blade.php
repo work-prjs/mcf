@@ -36,7 +36,7 @@
             <div class="info-box-content">
               <span class="info-box-text">Категорий</span>
               <span class="info-box-number">
-                {{ $cats }}
+                {{ \App\Models\Cat::all()->count() }}
             </div>
             </a>
             <!-- /.info-box-content -->

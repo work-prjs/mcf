@@ -54,12 +54,16 @@ class AppServiceProvider extends ServiceProvider
         // dd($dbs);
         view()->share('dbs', $dbs);
 
-        $cats = Cat::all()->sortBy('name');
-        view()->share('cats', $cats);
+        // TODO don`t use Models here
 
         // TODO Fuck_UP SHARE SESSION_ID
         view()->composer('*', function ($view) 
         {
+
+            $cats = Cat::all()->sortBy('name');
+            // $cats=1;
+            // view()->share('cats', $cats);
+            $view->with('cats', $cats );
 
             if (Auth::check()) {
                 # code..
@@ -67,7 +71,9 @@ class AppServiceProvider extends ServiceProvider
                 $view->with('user_id', Auth::user()->id );
     
                 $session_id = \Session::getId();
+                // TODO check enable after migrate
                 $cart = Cart::firstOrCreate(['session_id' => $session_id]);
+                // $cart=1;
                 session('cart', $cart);
                 session('session_id', $session_id);
                 // $view->with('cats', $cats );
@@ -78,7 +84,9 @@ class AppServiceProvider extends ServiceProvider
             else {
     
                 $session_id = \Session::getId();
+                // TODO check enable after migrate
                 $cart = Cart::firstOrCreate(['session_id' => $session_id]);
+                // $cart=1;
                 session('cart', $cart);
                 session('session_id', $session_id);
                 $view->with('cart', $cart );

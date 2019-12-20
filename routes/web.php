@@ -506,7 +506,9 @@ Route::get('/mcf_cat/{ident}', function ($ident, Request $request) {
     App::setLocale($language);
 
         $cat2 = Cat::find($ident);
-        return view('mcf_v2.mcf_cat')->with('cat2', $cat2);
+        $prds = \App\Models\Product::where(['cat_id'=>$ident, 'menu'=>true])->get();
+        // return view('mcf_v2.mcf_cat')->with('cat2', $cat2);
+        return view('mcf_v2.mcf_cat')->with('prds', $prds)->with('cat2', $cat2);
 });
 
 Route::get('/mcf_v2', function () {

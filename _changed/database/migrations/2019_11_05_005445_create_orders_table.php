@@ -23,9 +23,6 @@ class CreateOrdersTable extends Migration
             $table->decimal('pay_discount')->nullable();
             $table->string('status')->nullable();
             $table->longText('comment')->nullable();
-            $table->bigInteger('user_id')->nullable();
-            $table->boolean('kp')->default(false);
-            
             $table->timestamps();
         });
     }
@@ -37,6 +34,6 @@ class CreateOrdersTable extends Migration
      */
     public function down()
     {
-        // Schema::drop('orders');
+        Schema::drop('orders');
     }
 }
