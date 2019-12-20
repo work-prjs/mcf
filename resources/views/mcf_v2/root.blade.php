@@ -191,7 +191,7 @@
     </section>
     <!-- End stat section -->
 
-
+    @if (\App\Models\MediaFile::take(4)->get()->count()>0)
     <section class="portfolio-section section-gap-full">
         <div class="container">
             <div class="section-title" data-aos="zoom-in-down" >
@@ -204,7 +204,7 @@
                             <div class="single-portfolio">
                                 <img class="img-fluid" src="{{ $line->image ?? '/mcf/img/portfolio1.jpg' }}" alt="">
                                 <div class="box-content">
-                                    <a href="single-portfolio.html">
+                                    <a href="{{ $line->image ?? '/mcf/img/portfolio1.jpg' }}">
                                         <h5 class="title">{{ $line->name }}</h5>
                                     </a>
                                     <span class="post">{{ $line->desc ?? '' }}</span>
@@ -216,8 +216,10 @@
             </div>
         </div>
     </section>
+    @endif
+
     <!-- Start team section -->
-    <section class="team-section section-gap-full">
+    <section class="team-section section-gap-full" style="    padding-top: 4em !important;">
         <div class="container">
             <div class="section-title" data-aos="zoom-in-down"  data-aos-duration="1500">
                 <h2 class="text-center">Наша команда</h2>
@@ -228,7 +230,7 @@
                     <div class="single-team item">
                         <img class="img-fluid" src="/8_cr.jpg" alt="">
                         <div class="team-content">
-                            <h4>Елена (Бухгалтер)</h4>
+                            <h4>Елена (Контрактный управляющий)</h4>
                             <ul>
                                 <li>
                                     <a href="tel:+79145763770" class="hover_red">
@@ -246,7 +248,7 @@
                     <div class="single-team item">
                         <img class="img-fluid" src="/7_cr.jpg" alt="">
                         <div class="team-content">
-                            <h4>Павел (Директор)</h4>
+                            <h4>Павел (Руководитель завода)</h4>
                             <ul>
                                 <li>
                                     <a href="tel:+79098134343" class="hover_red">
@@ -265,7 +267,26 @@
                     <div class="single-team item">
                         <img class="img-fluid" src="/9_cr.jpg" alt="">
                         <div class="team-content">
-                            <h4>Матвей (Техн.Специалист)</h4>
+                            <h4>Матвей (IT Специалист)</h4>
+                            <ul>
+                                <li>
+                                    <a href="tel:+79248415521" class="hover_red">
+                                        <i class="fa fa-phone" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="mailto:mcfzavod@gmail.com" class="hover_red">
+                                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="single-team item">
+                        <img class="img-fluid" src="/9_cr.jpg" alt="">
+                        <div class="team-content">
+                            <h4>Владимир (Юридический отдел)</h4>
                             <ul>
                                 <li>
                                     <a href="tel:+79248415521" class="hover_red">
@@ -309,7 +330,7 @@
                     <div class="single-team item">
                         <img class="img-fluid" src="/12_cr.jpg" alt="">
                         <div class="team-content">
-                            <h4>Галина (Менеджер)</h4>
+                            <h4>Галина (Старший менеджер по работе с клиентами)</h4>
                             <ul>
                                 <li>
                                     <a href="tel:+79244427027" class="hover_red">

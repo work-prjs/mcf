@@ -262,7 +262,6 @@ EOT;
                     if ($key2['subscribe']==1) {
                     // if (false) {
 
-                        // $from = env('MAIL_USERNAME', 'mltefive@gmail.com');
                         $to = $key2['email'];
                         $contactName = $key2['name'];
                         $contactEmail = $key2['email'];
@@ -283,7 +282,7 @@ EOT;
 
                             Mail::send(['text'=>'order_email'], $data2, function($message) use ($contactEmail, $contactName) {
                                     $message->to($contactEmail, 'Гость')->subject('Заказ');
-                                    $message->from(env('MAIL_USERNAME', 'zakaz@restoran-nadezhda.com'),'Сайт');
+                                    $message->from(env('MAIL_USERNAME', 'mcfzavod@gmail.com'),'Сайт');
                                 });
                         } // if (isset($input['contact_email'])) {
 

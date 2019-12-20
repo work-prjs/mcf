@@ -85,7 +85,7 @@ class SubsSend extends Command
                                 
                                 // $contactEmail = $value3->email;
 
-                                Mail::to('mltefive@gmail.com')->send(new SubsSent('$text'));
+                                Mail::to(env('MAIL_USERNAME', 'mcfzavod@gmail.com'))->send(new SubsSent('$text'));
 
                                 // Mail::raw('Текст письма', function ($message) {
                                 //     $message->to('mltefive@gmail.com');

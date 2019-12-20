@@ -593,8 +593,8 @@ if (isset($request->all()['your-contact'])) {
            'mes' => $mes
        ), function($sendm)
    {
-       $sendm->from('mltefive@gmail.com');
-       $sendm->to('mltefive@gmail.com', 'Admin')->subject('Запрос');
+       $sendm->from(env('MAIL_USERNAME', 'mcfzavod@gmail.com'));
+       $sendm->to(env('MAIL_USERNAME', 'mcfzavod@gmail.com'), 'Запрос с сайта')->subject('Запрос с сайта mcfzavod.com');
    });
 
     return view('mcf_v2.contact_us')->with('contact', $contact)->with('mes', $mes);

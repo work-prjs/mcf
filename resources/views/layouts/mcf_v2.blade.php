@@ -335,6 +335,9 @@ CSS
                                         <a href="/mcf_about_us">О нас</a>
                                     </li>
                                     <li>
+                                        <a href="/mcf_about_us">Представители</a>
+                                    </li>
+                                    <li>
                                         <a href="/mcf_contact">Контакты</a>
                                     </li>
                                     <li>
