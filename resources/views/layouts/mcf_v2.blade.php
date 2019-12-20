@@ -209,6 +209,10 @@ CSS
             background: #fff;
             margin-bottom: 40px;
         }
+
+        .section-gap-full {
+            padding: 1em 0 !important;
+        }        
     </style>
 
     @yield('css')

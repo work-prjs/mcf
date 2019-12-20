@@ -51,7 +51,7 @@
                             <div class="single-portfolio">
                                 <img class="img-fluid" src="{{ $line->image ?? '/mcf/img/portfolio1.jpg' }}" alt="">
                                 <div class="box-content">
-                                    <a href="single-portfolio.html">
+                                    <a href="{{ $line->image ?? '/mcf/img/portfolio1.jpg' }}">
                                         <h5 class="title">{{ $line->name }}</h5>
                                     </a>
                                     <span class="post">{{ $line->desc ?? '' }}</span>
