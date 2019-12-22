@@ -118,6 +118,10 @@
   "Languages":"Языки",
   "Products":"Продукция",
   "Home":"Главная",
-  "Dillers":"Дилеры"
+  "Сontractors":"Поставщики",
+  "Сontractor":"Поставщик",
+  "Сontractors contact information":"Контакты наших представителей",
+  "Address": "Адрес",
+  "Locality":"Населенный пункт"
 
 }

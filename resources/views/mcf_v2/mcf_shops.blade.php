@@ -24,8 +24,8 @@
         <div class="container">
             <div class="row section-gap-half">
                 <div class="col-lg-12 text-center">
-                    <h1>Представители</h1>
-                    <h4>Наши представители</h4>
+                    <h1>{!! __('Сontractors') !!}</h1>
+                    <h4>{!! __('Сontractors contact information') !!}</h4>
                 </div>
             </div>
         </div>
@@ -45,10 +45,10 @@
 
                     <table class="table table-hover">
                         <thead>
-                            <th>Город</th>
-                            <th>Название</th>
-                            <th>Адрес</th>
-                            <th>Контакты</th>
+                            <th>{!! __('Locality') !!}</th>
+                            <th>{!! __('Сontractor') !!}</th>
+                            <th>{!! __('Address') !!}</th>
+                            <th>{!! __('Contacts') !!}</th>
                         </thead>
                         <tbody>
                             <tr>

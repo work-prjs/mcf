@@ -338,7 +338,7 @@ CSS
                                         <a href="/mcf_about_us">{!! __('About us') !!}</a>
                                     </li>
                                     <li>
-                                        <a href="/mcf_shops"> {!! __('Dillers') !!}</a>
+                                        <a href="/mcf_shops"> {!! __('Сontractors') !!}</a>
                                     </li>
                                     <li>
                                         <a href="/mcf_contact">{!! __('Contacts') !!}</a>
