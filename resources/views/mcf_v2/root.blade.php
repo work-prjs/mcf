@@ -448,6 +448,7 @@
                 <div class="col-lg-9">
 
                     <form id="contact-form2" action="/contact_us" method="get" >
+                        @csrf
                         <div class="row contact-form-wrap justify-content-center">
 {{--                             <div class="col-md-6 contact-name form-col">
                                 <input name="name" id="name" class="form-control" type="text" placeholder="Name*"
@@ -467,6 +468,11 @@
                                 <textarea name="your-message" id="comment" class="form-control" rows="8" placeholder="Сообщение"
                                     onfocus="this.placeholder=''" onblur="this.placeholder='Сообщение*'"></textarea>
                             </div>
+                            {{-- <div class="col-lg-12"> --}}
+                                {{-- {!! Captcha::create() !!} --}}
+                                {{-- <img src="{!! Captcha::src('default') !!}"> --}}
+                            {{-- </div> --}}
+
                             <input type="submit" class="primary-btn btn" value="Отправить" id="submit-message" >
                             <div id="msg" class="message"></div>
                         </div>

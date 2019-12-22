@@ -54,11 +54,34 @@ class AppServiceProvider extends ServiceProvider
         // dd($dbs);
         view()->share('dbs', $dbs);
 
+
         // TODO don`t use Models here
+
+        // config('app.locale');
+        // \Carbon\Carbon::setLocale($lang);
+        // dd(\Carbon\Carbon::getLocale());
+
+
+        // setLocale for php. Enables ->formatLocalized() with localized values for dates
+        // setlocale(LC_TIME, config('app.locale_php'));
+        // setLocale to use Carbon source locales. Enables diffForHumans() localized
+        // Carbon::setLocale($lang);
+
+        // view()->share('lang', $lang);
+        // session('lang', $lang);
+        // Session::put('locale', $lang);
+
 
         // TODO Fuck_UP SHARE SESSION_ID
         view()->composer('*', function ($view) 
         {
+
+
+            // App::setLocale($locale);
+            // $lang=App::getLocale();
+
+            // $view->with('lang', $lang );
+            // session('lang', $lang);
 
             $cats = Cat::all()->sortBy('name');
             // $cats=1;

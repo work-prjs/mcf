@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="ru" class="no-js">
+<html lang="{{ session('locale') }}" class="no-js">
 
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Mobile Specific Meta -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+    {{-- <meta name="viewport" content="width=device-width, user-scalable=no" /> --}}
+
     <!-- Favicon-->
     {{-- <link rel="shortcut icon" href="img/fav.png"> --}}
     <!-- Author Meta -->
@@ -16,7 +18,8 @@
     <!-- meta character set -->
     <meta charset="UTF-8">
     <!-- Site Title -->
-    <title>MCF - Бренд завода про производству светового и звукогого оборудования | Sound and light instruments factory.</title>
+    <title> {{ __('mcf title')  }}
+    </title>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700" rel="stylesheet">
     <!--
@@ -240,13 +243,13 @@ CSS
 
                 <ul class="list-group">
                     <li class="list-group-item list-group-item-action">
-                        <a href="/ru">
+                        <a href="?_lang=ru">
                             <img src="/22px-Flag_of_Russia.svg.png">
                             Русский
                         </a>
                     </li>
                     <li class="list-group-item list-group-item-action">
-                        <a href="/en">
+                        <a href="?_lang=en">
                             <img src="/22px-Flag_of_the_United_States.svg.png">
                             English
                         </a>
@@ -335,7 +338,7 @@ CSS
                                         <a href="/mcf_about_us">О нас</a>
                                     </li>
                                     <li>
-                                        <a href="/mcf_about_us">Представители</a>
+                                        <a href="/mcf_shops">Представители</a>
                                     </li>
                                     <li>
                                         <a href="/mcf_contact">Контакты</a>
@@ -344,7 +347,7 @@ CSS
                                         <a href="/mcf_cart">
                                             <i class="fa fa-shopping-cart">
                                             </i>
-                                            Корзина <span id="qty_badge" class="badge badge-secondary" style="font-size:10px; top: -1px; position: relative;" data-cart_id={{ $cart->id }}></span>
+                                            {{ __('Cart') }} <span id="qty_badge" class="badge badge-secondary" style="font-size:10px; top: -1px; position: relative;" data-cart_id={{ $cart->id }}></span>
                                         </a>
                                     </li>
                                     <li>

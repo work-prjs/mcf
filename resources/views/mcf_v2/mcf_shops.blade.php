@@ -11,7 +11,7 @@
 }
 
 .page-top-banner {
-  background: url(/bg14.jpg);
+  background: url(/about_us1.jpg);
   background-size: cover;
 }
 
@@ -24,8 +24,8 @@
         <div class="container">
             <div class="row section-gap-half">
                 <div class="col-lg-12 text-center">
-                    <h1>{{ __('Chits') }}</h1>
-                    <h4>что о нас говорят</h4>
+                    <h1>Представители</h1>
+                    <h4>Наши представители</h4>
                 </div>
             </div>
         </div>
@@ -38,24 +38,30 @@
 @section('content')
 
     <!-- Start contact section -->
-    <section class="contact-section contact-page-section padding-top-120" >
+    <section class="contact-section contact-page-section padding-top-120" id="contact-section">
         <div class="container">
+            <div class="row justify-content-center form-row">
+                <div class="col-lg-9">
 
-            @foreach($chits as $chit)
-                <div class="row justify-content-center card" style="    margin-bottom: 2em;">
+                    <table class="table table-hover">
+                        <thead>
+                            <th>Город</th>
+                            <th>Название</th>
+                            <th>Адрес</th>
+                            <th>Контакты</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                    <div class="col-lg-12 card-body">
-
-                            <div class="col-lg-12">
-                                {{ $chit->text }}
-                            </div>
-                            <div class="col-md-12" style="    text-align: right;">
-                                {!! $chit->by_line !!}
-                            </div>
-
-                    </div>
                 </div>
-            @endforeach
+            </div>
         </div>
     </section>
     <!-- End contact section -->

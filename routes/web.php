@@ -413,18 +413,50 @@ Route::get('/product/{ident}/to_cart/{qty}', 'ProductController@to_cart');
 //     return view('menu3.index_site');
 // });
 
-Route::get('/', function () {
-    $chits = \App\Models\Chit::where('active','=',1)->get();
-    return view('mcf_v2.root')
-        ->with('chits', $chits);
+Route::group(['middleware'=>'language'],function ()
+{
+
+// 'locale' => 'en',  // config/app.php
+//  Session::put('locale',Config::get('app.locale')); // in middleware code we use Config method to get app configuration locale
+// App::setLocale(session('locale')); // finally set this to app locale
+
+    //your translation routes
+    Route::get('/', function () {
+        $chits = \App\Models\Chit::where('active','=',1)->get();
+        return view('mcf_v2.root')
+            ->with('chits', $chits);
+    });
+
+    Route::get('setlocale/{locale}',function($lang){
+           \Session::put('locale',$lang);
+           return redirect()->back();
+    });
+
+    // отзызвы
+    Route::get('/show_chits', function () {
+        $chits = \App\Models\Chit::where('active','=',1)->get();
+        return view('mcf_v2.show_chits')
+            ->with('chits', $chits);
+    });
+
+
+    // О нас
+    Route::get('/mcf_about_us', function () {
+        return view('mcf_v2.about_us');
+    });
+
+    // 
+    Route::get('/mcf_service', function () {
+        return view('mcf_v2.service');
+    });
+
+    Route::get('/mcf_shops', function () {
+        return view('mcf_v2.mcf_shops');
+    });
+
 });
 
 
-Route::get('/show_chits', function () {
-    $chits = \App\Models\Chit::where('active','=',1)->get();
-    return view('mcf_v2.show_chits')
-        ->with('chits', $chits);
-});
 //Route::get('/',     'LineItemController@total');
 
 
@@ -441,19 +473,6 @@ Route::get('/show_chits', function () {
 
 
 
-
-Route::get('/mcf_about_us', function () {
-    return view('mcf_v2.about_us');
-});
-
-
-Route::get('/mcf_menu', function () {
-    return view('mcf_v2.menu');
-});
-
-Route::get('/mcf_service', function () {
-    return view('mcf_v2.service');
-});
 
 
 // rs-fullwidth-wrap
@@ -511,9 +530,9 @@ Route::get('/mcf_cat/{ident}', function ($ident, Request $request) {
         return view('mcf_v2.mcf_cat')->with('prds', $prds)->with('cat2', $cat2);
 });
 
-Route::get('/mcf_v2', function () {
-    return view('layouts.mcf_v2');
-});
+// Route::get('/mcf_v2', function () {
+//     return view('layouts.mcf_v2');
+// });
 
 
 Route::get('/mcf_blog/{id}', function ($id) {
@@ -546,6 +565,53 @@ Route::get('/mcf_blogs', function () {
 
 
 // });
+
+
+
+    Route::get('/HTTP_ACCEPT_LANGUAGE', function (Request $request) {
+        // $a = explode(',', $request->server('HTTP_ACCEPT_LANGUAGE'));
+        // if (explode('-',$a[0])[0]=='ru') {
+        //     $lang='ru';
+        // } else {
+        //     $lang='en';
+        // }
+        // echo trans("Login");
+
+        if (Session::has('locale')) {
+            $locale = Session::get('locale', Config::get('app.locale'));
+        } else {
+            $locale = substr($request->server('HTTP_ACCEPT_LANGUAGE'), 0, 2);
+            
+
+            if ($locale != 'ru') {
+                $locale = 'en';
+            }
+        }
+        // App::setLocale($locale);
+
+        if (!empty($request->all()['_lang'])) {
+
+            if ($request->all()['_lang'] != 'ru') {
+                $locale = 'en';
+            } else {
+                $locale = 'ru';
+            }
+            // dd($locale);
+        }
+
+        Session::put('locale', $locale);
+        App::setLocale($locale);
+        // $lang=App::getLocale();
+
+        return trans("mcf title");
+        // return trans("Login");
+        // return $lang;
+        // return dd($request);
+
+        // return trans("Login");
+
+    });
+
 
     Route::get('/mcf_contact', function (Request $request) {
 
@@ -581,7 +647,7 @@ Route::get('/contact_us', function (Request $request) {
         // return view('menu3.menu3')->with('cats', $cats);
     // });
     // dd($request->all()['your-contact']);
-if (isset($request->all()['your-contact'])) {
+if (isset($request->all()['your-contact']) && isset($request->all()['_token'])) {
     # code...
 
     $contact = $request->all()['your-contact'];
@@ -669,3 +735,24 @@ Route::resource('articles', 'ArticleController');
 Route::resource('docFiles', 'DocFileController');
 Route::get('/docFiles_destroy_all', 'DocFileController@destroy_all');
 Route::post('/docFiles/import', 'DocFileController@import');
+
+    // [your site path]/Http/routes.php
+    // Route::any('captcha-test', function() {
+    //     if (request()->getMethod() == 'POST') {
+    //         $rules = ['captcha' => 'required|captcha'];
+    //         $validator = validator()->make(request()->all(), $rules);
+    //         if ($validator->fails()) {
+    //             echo '<p style="color: #ff0000;">Incorrect!</p>';
+    //         } else {
+    //             echo '<p style="color: #00ff30;">Matched :)</p>';
+    //         }
+    //     }
+    
+    //     $form = '<form method="post" action="captcha-test">';
+    //     $form .= '<input type="hidden" name="_token" value="' . csrf_token() . '">';
+    //     $form .= '<p>' . captcha_img() . '</p>';
+    //     $form .= '<p><input type="text" name="captcha"></p>';
+    //     $form .= '<p><button type="submit" name="check">Check</button></p>';
+    //     $form .= '</form>';
+    //     return $form;
+    // });

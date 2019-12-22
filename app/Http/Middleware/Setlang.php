@@ -16,7 +16,7 @@ class Setlang
      */
     public function handle($request, Closure $next)
     {
-        App::setLocale(session()->get('selected_language') ?? 'ru');
+     //   App::setLocale(session()->get('selected_language') ?? 'ru');
         // App::setLocale(App::getLocale());
         return $next($request);
     }
