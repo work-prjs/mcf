@@ -5,6 +5,32 @@ use Illuminate\Http\Request;
 use App\Models\Cat;
 use App\Models\Product;
 
+    Route::get('/generator', function () {
+        return view('generator');
+    });
+
+    Route::get('generator_builder', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@builder')->name('io_generator_builder');
+
+    Route::get('field_template', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@fieldTemplate')->name('io_field_template');
+
+    Route::get('relation_field_template', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@relationFieldTemplate')->name('io_relation_field_template');
+
+    Route::post('generator_builder/generate', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@generate')->name('io_generator_builder_generate');
+
+    Route::post('generator_builder/rollback', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@rollback')->name('io_generator_builder_rollback');
+
+    Route::post(
+        'generator_builder/generate-from-file',
+        '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@generateFromFile'
+    )->name('io_generator_builder_generate_from_file');
+
+
+    // https://harish81.github.io/infyom-schema-generator/
+
+    Route::get('/schema_builder', function () {
+        return view('schema_builder');
+    });
+
 // Route::get($uri, $callback);
 // Route::post($uri, $callback);
 // Route::put($uri, $callback);
@@ -137,9 +163,9 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 
-    Route::get('/generator', function () {
-        return view('generator');
-    });
+    // Route::get('/generator', function () {
+    //     return view('generator');
+    // });
     Route::get('/file_manager1', function () {
         return view('file_manager1');
     });
@@ -160,27 +186,6 @@ Route::group(['middleware' => 'auth'], function () {
         return "Cache is cleared";
     });
 
-    Route::get('generator_builder', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@builder')->name('io_generator_builder');
-
-    Route::get('field_template', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@fieldTemplate')->name('io_field_template');
-
-    Route::get('relation_field_template', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@relationFieldTemplate')->name('io_relation_field_template');
-
-    Route::post('generator_builder/generate', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@generate')->name('io_generator_builder_generate');
-
-    Route::post('generator_builder/rollback', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@rollback')->name('io_generator_builder_rollback');
-
-    Route::post(
-        'generator_builder/generate-from-file',
-        '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@generateFromFile'
-    )->name('io_generator_builder_generate_from_file');
-
-
-    // https://harish81.github.io/infyom-schema-generator/
-
-    Route::get('/schema_builder', function () {
-        return view('schema_builder');
-    });
 
     // Route::get('/schema_builder', function () {
         // return view('schema_builder');
@@ -753,3 +758,14 @@ Route::post('/docFiles/import', 'DocFileController@import');
     //     $form .= '</form>';
     //     return $form;
     // });
+
+
+
+
+
+
+Route::get('/contrs_destroy_all', 'ContrController@destroy_all');
+Route::post('/contrs/import', 'ContrController@import');
+
+
+Route::resource('contactContractors', 'ContactContractorController');
