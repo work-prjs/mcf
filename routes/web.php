@@ -42,34 +42,6 @@ use App\Models\Product;
  */
 // https://laravel.com/docs/6.x/authentication
  
-//отображение формы аутентификации
-Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-//POST запрос аутентификации на сайте
-Route::post('login', 'Auth\LoginController@login');
-//POST запрос на выход из системы (логаут)
-Route::post('logout', 'Auth\LoginController@logout')->name('logout');
-/**
- * Маршруты регистрации...
- */
-//страница с формой Laravel регистрации пользователей
-Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-//POST запрос регистрации на сайте
-Route::post('register', 'Auth\RegisterController@register');
- 
-/**
- * URL для сброса пароля...
- */
- 
-//POST запрос для отправки email письма пользователю для сброса пароля
-Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-//ссылка для сброса пароля (можно размещать в письме)
-Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-//страница с формой для сброса пароля
-Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-//POST запрос для сброса старого и установки нового пароля
-Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
-
-
 
 // password.update
 
@@ -413,48 +385,167 @@ Route::get('/product/{ident}/to_cart/{qty}', 'ProductController@to_cart');
 //     return view('menu3.index_site');
 // });
 
-Route::group(['middleware'=>'language'],function ()
-{
+    Route::group(['middleware'=>'language'],function ()
+    {
+        //отображение формы аутентификации
+        Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+        //POST запрос аутентификации на сайте
+        Route::post('login', 'Auth\LoginController@login');
+        //POST запрос на выход из системы (логаут)
+        Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+        /**
+         * Маршруты регистрации...
+         */
+        //страница с формой Laravel регистрации пользователей
+        Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+        //POST запрос регистрации на сайте
+        Route::post('register', 'Auth\RegisterController@register');
+         
+        /**
+         * URL для сброса пароля...
+         */
+         
+        //POST запрос для отправки email письма пользователю для сброса пароля
+        Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+        //ссылка для сброса пароля (можно размещать в письме)
+        Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+        //страница с формой для сброса пароля
+        Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+        //POST запрос для сброса старого и установки нового пароля
+        Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
 
-// 'locale' => 'en',  // config/app.php
-//  Session::put('locale',Config::get('app.locale')); // in middleware code we use Config method to get app configuration locale
-// App::setLocale(session('locale')); // finally set this to app locale
 
-    //your translation routes
-    Route::get('/', function () {
-        $chits = \App\Models\Chit::where('active','=',1)->get();
-        return view('mcf_v2.root')
-            ->with('chits', $chits);
+
+
+        Route::get('/mcf_products/{ident}', function ($ident) {
+            $product = Product::find($ident);
+            $comments=\App\Models\ProductComment::where(['product_id'=>$product->ident, 'allowed'=>true])->get();
+            // dd($comments);
+            return view('mcf_v2.mcf_products')
+                ->with('comments', $comments)
+                ->with('product', $product);
+        // return view('mcf_v2.mcf_product');
+        });
+        Route::resource('mcf_cats', 'CatController');
+
+        Route::get('/mcf_cats', function () {
+            $cats = Cat::all();
+            return view('mcf_v2.mcf_cats')->with('cats', $cats);
+        // return view('mcf_v2.mcf_product');
+        });
+
+        Route::get('/mcf_cat/{ident}', function ($ident, Request $request) {
+
+        $language = $request->selected_language ?? 'ru';
+        session(['selected_language' =>$language]);
+        App::setLocale($language);
+
+            $cat2 = Cat::find($ident);
+            $prds = \App\Models\Product::where(['cat_id'=>$ident, 'menu'=>true])->get();
+            // return view('mcf_v2.mcf_cat')->with('cat2', $cat2);
+            return view('mcf_v2.mcf_cat')->with('prds', $prds)->with('cat2', $cat2);
+        });
+
+
+        Route::get('/mcf_contact', function (Request $request) {
+
+            // $language = $request->selected_language ?? 'ru';
+            // session(['selected_language' =>$language]);
+            // App::setLocale($language);
+
+            return view('mcf_v2.contact');
+        });
+        Route::get('/mcf_media', function (Request $request) {
+
+            // $language = $request->selected_language ?? 'ru';
+            // session(['selected_language' =>$language]);
+            // App::setLocale($language);
+
+            return view('mcf_v2.mcf_media');
+        });
+        Route::resource('chits', 'ChitController');
+        Route::resource('mediaFiles', 'MediaFileController');
+        Route::resource('docFiles', 'DocFileController');
+
+
+
+        // Route::get('/contact', function () {
+        //     return view('mcf_v2.contact1');
+        // });
+
+
+
+        Route::get('/contact_us', function (Request $request) {
+        // contact_us
+        // message
+        // Route::get('/menu', function () {
+            // $cats = Cat::all();
+            // $cart
+            // return view('menu3.menu3')->with('cats', $cats);
+        // });
+        // dd($request->all()['your-contact']);
+        if (isset($request->all()['your-contact']) && isset($request->all()['_token'])) {
+        # code...
+
+        $contact = $request->all()['your-contact'];
+        $mes = $request->all()['your-message'];
+
+        Mail::send('email',
+           array(
+               'contact' => $contact,
+               'mes' => $mes
+           ), function($sendm)
+        {
+           $sendm->from(env('MAIL_USERNAME', 'mcfzavod@gmail.com'));
+           $sendm->to(env('MAIL_USERNAME', 'mcfzavod@gmail.com'), 'Запрос с сайта')->subject('Запрос с сайта mcfzavod.com');
+        });
+
+        return view('mcf_v2.contact_us')->with('contact', $contact)->with('mes', $mes);
+        } else {
+        # code...
+        return view('mcf_v2.contact_us')->with('contact', '$contact')->with('mes', '$mes');
+        }
+        })->name('contact_us');
+
+    // 'locale' => 'en',  // config/app.php
+    //  Session::put('locale',Config::get('app.locale')); // in middleware code we use Config method to get app configuration locale
+    // App::setLocale(session('locale')); // finally set this to app locale
+
+        //your translation routes
+        Route::get('/', function () {
+            $chits = \App\Models\Chit::where('active','=',1)->get();
+            return view('mcf_v2.root')
+                ->with('chits', $chits);
+        });
+
+        Route::get('setlocale/{locale}',function($lang){
+               \Session::put('locale',$lang);
+               return redirect()->back();
+        });
+
+        // отзызвы
+        Route::get('/show_chits', function () {
+            $chits = \App\Models\Chit::where('active','=',1)->get();
+            return view('mcf_v2.show_chits')
+                ->with('chits', $chits);
+        });
+
+
+        // О нас
+        Route::get('/mcf_about_us', function () {
+            return view('mcf_v2.about_us');
+        });
+
+        // 
+        Route::get('/mcf_service', function () {
+            return view('mcf_v2.service');
+        });
+
+        Route::get('/mcf_shops', function () {
+            return view('mcf_v2.mcf_shops');
+        });
+
     });
-
-    Route::get('setlocale/{locale}',function($lang){
-           \Session::put('locale',$lang);
-           return redirect()->back();
-    });
-
-    // отзызвы
-    Route::get('/show_chits', function () {
-        $chits = \App\Models\Chit::where('active','=',1)->get();
-        return view('mcf_v2.show_chits')
-            ->with('chits', $chits);
-    });
-
-
-    // О нас
-    Route::get('/mcf_about_us', function () {
-        return view('mcf_v2.about_us');
-    });
-
-    // 
-    Route::get('/mcf_service', function () {
-        return view('mcf_v2.service');
-    });
-
-    Route::get('/mcf_shops', function () {
-        return view('mcf_v2.mcf_shops');
-    });
-
-});
 
 
 //Route::get('/',     'LineItemController@total');
@@ -487,17 +578,6 @@ Route::get('/admin2_mindmap', function () {
 });
 
 
-
-Route::get('/mcf_products/{ident}', function ($ident) {
-        $product = Product::find($ident);
-        $comments=\App\Models\ProductComment::where(['product_id'=>$product->ident, 'allowed'=>true])->get();
-        // dd($comments);
-        return view('mcf_v2.mcf_products')
-            ->with('comments', $comments)
-            ->with('product', $product);
-    // return view('mcf_v2.mcf_product');
-});
-
 // Route::get('/mcf_cat/{ident}', function ($ident, Request $request) {
 
 //     $language = $request->selected_language ?? 'ru';
@@ -510,25 +590,6 @@ Route::get('/mcf_products/{ident}', function ($ident) {
 
 
 
-Route::resource('mcf_cats', 'CatController');
-    
-Route::get('/mcf_cats', function () {
-        $cats = Cat::all();
-        return view('mcf_v2.mcf_cats')->with('cats', $cats);
-    // return view('mcf_v2.mcf_product');
-});
-
-Route::get('/mcf_cat/{ident}', function ($ident, Request $request) {
-
-    $language = $request->selected_language ?? 'ru';
-    session(['selected_language' =>$language]);
-    App::setLocale($language);
-
-        $cat2 = Cat::find($ident);
-        $prds = \App\Models\Product::where(['cat_id'=>$ident, 'menu'=>true])->get();
-        // return view('mcf_v2.mcf_cat')->with('cat2', $cat2);
-        return view('mcf_v2.mcf_cat')->with('prds', $prds)->with('cat2', $cat2);
-});
 
 // Route::get('/mcf_v2', function () {
 //     return view('layouts.mcf_v2');
@@ -613,81 +674,23 @@ Route::get('/mcf_blogs', function () {
     });
 
 
-    Route::get('/mcf_contact', function (Request $request) {
+// Route::get('setlocale/{locale}', function (Request $request, $locale) {
 
-        // $language = $request->selected_language ?? 'ru';
-        // session(['selected_language' =>$language]);
-        // App::setLocale($language);
+//     $language = $request->language ?? 'ru';
+//     session(['selected_language' =>$language]);
+//     // App::setLocale(session('selected_language'));
+//     App::setLocale($locale);
 
-        return view('mcf_v2.contact');
-    });
-    Route::get('/mcf_media', function (Request $request) {
-
-        // $language = $request->selected_language ?? 'ru';
-        // session(['selected_language' =>$language]);
-        // App::setLocale($language);
-
-        return view('mcf_v2.mcf_media');
-    });
-
-
-
-// Route::get('/contact', function () {
-//     return view('mcf_v2.contact1');
+//     $locale_get = App::getLocale();
+//     return $locale_get;
+//     //
 // });
 
 
-
-Route::get('/contact_us', function (Request $request) {
-    // contact_us
-    // message
-    // Route::get('/menu', function () {
-        // $cats = Cat::all();
-        // $cart
-        // return view('menu3.menu3')->with('cats', $cats);
-    // });
-    // dd($request->all()['your-contact']);
-if (isset($request->all()['your-contact']) && isset($request->all()['_token'])) {
-    # code...
-
-    $contact = $request->all()['your-contact'];
-    $mes = $request->all()['your-message'];
-
-    Mail::send('email',
-       array(
-           'contact' => $contact,
-           'mes' => $mes
-       ), function($sendm)
-   {
-       $sendm->from(env('MAIL_USERNAME', 'mcfzavod@gmail.com'));
-       $sendm->to(env('MAIL_USERNAME', 'mcfzavod@gmail.com'), 'Запрос с сайта')->subject('Запрос с сайта mcfzavod.com');
-   });
-
-    return view('mcf_v2.contact_us')->with('contact', $contact)->with('mes', $mes);
-} else {
-    # code...
-    return view('mcf_v2.contact_us')->with('contact', '$contact')->with('mes', '$mes');
-}
-})->name('contact_us');
-
-
-Route::get('setlocale/{locale}', function (Request $request, $locale) {
-
-    $language = $request->language ?? 'ru';
-    session(['selected_language' =>$language]);
-    // App::setLocale(session('selected_language'));
-    App::setLocale($locale);
-
-    $locale_get = App::getLocale();
-    return $locale_get;
-    //
-});
-
-
-Route::get('getlocale', function (Request $request) {
-    $locale_get = App::getLocale();
-    return $locale_get;
-});
+// Route::get('getlocale', function (Request $request) {
+//     $locale_get = App::getLocale();
+//     return $locale_get;
+// });
 
 
 
@@ -713,16 +716,12 @@ Route::resource('productComments', 'ProductCommentController');
 
 
 
-Route::resource('chits', 'ChitController');
 Route::get('/chits_destroy_all', 'ChitController@destroy_all');
 Route::post('/chits/import', 'ChitController@import');
 
 
-Route::resource('mediaFiles', 'MediaFileController');
 Route::get('/mediaFiles_destroy_all', 'MediaFileController@destroy_all');
 Route::post('/mediaFiles/import', 'MediaFileController@import');
-
-
 
 
 Route::get('/articles_destroy_all', 'ArticleController@destroy_all');
@@ -731,8 +730,6 @@ Route::get('/articles/export', 'ArticleController@export');
 Route::resource('articles', 'ArticleController');
 
 
-
-Route::resource('docFiles', 'DocFileController');
 Route::get('/docFiles_destroy_all', 'DocFileController@destroy_all');
 Route::post('/docFiles/import', 'DocFileController@import');
 

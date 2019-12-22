@@ -25,7 +25,7 @@
             <div class="row section-gap-half">
                 <div class="col-lg-12 text-center">
                     <h1>{{ __('Contacts') }} </h1>
-                    <h4>Наши реквизиты и партнеры</h4>
+                    <h4>{{__('Our details and contacts')}}</h4>
                 </div>
             </div>
         </div>
@@ -54,8 +54,8 @@
                     <div class="div">
                         <i class="ti ti-map-alt"></i>
                         <p>
-                            Россия Амурская область
-                            <br> г.Благовещенск, <br>Пионерская 31
+                            {!! __('Contact adress') !!}
+                            
                         </p>
                     </div>
                 </div>
@@ -82,17 +82,17 @@
 
                                 {{-- <label> Email или Телефон </label> --}}
                                                            
-                                <input type="text" name="your-contact" value="" size="40" class="form-control"  placeholder="E-mail или Телефон*"
-                                    onfocus="this.placeholder=''" onblur="this.placeholder='Контакт*'">
+                                <input type="text" name="your-contact" value="" size="40" class="form-control"  placeholder="{!! __('E-mail or Phone') !!}*"
+                                    onfocus="this.placeholder=''" onblur="this.placeholder='{!! __('Contact') !!}*'">
 
                                 {{-- <input name="mail" id="mail" class="form-control" type="text" placeholder="E-mail или Телефон*" --}}
                                     {{-- onfocus="this.placeholder=''" onblur="this.placeholder='Контакт*'"> --}}
                             </div>
                             <div class="col-lg-12">
-                                <textarea name="your-message" id="comment" class="form-control" rows="8" placeholder="Сообщение"
-                                    onfocus="this.placeholder=''" onblur="this.placeholder='Сообщение*'"></textarea>
+                                <textarea name="your-message" id="comment" class="form-control" rows="8" placeholder="{!! __('Message') !!}"
+                                    onfocus="this.placeholder=''" onblur="this.placeholder='{!! __('Message') !!}*'"></textarea>
                             </div>
-                            <input type="submit" class="primary-btn btn" value="Отправить" id="submit-message" >
+                            <input type="submit" class="primary-btn btn" value="{!! __('Submit') !!}" id="submit-message" >
                             <div id="msg" class="message"></div>
                         </div>
                     </form>

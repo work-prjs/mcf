@@ -231,7 +231,7 @@ CSS
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Выбор языка</h5>
+        <h5 class="modal-title" id="exampleModalLabel">{{__('Set languages')}}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -245,13 +245,13 @@ CSS
                     <li class="list-group-item list-group-item-action">
                         <a href="?_lang=ru">
                             <img src="/22px-Flag_of_Russia.svg.png">
-                            Русский
+                            {{__('Russian')}}
                         </a>
                     </li>
                     <li class="list-group-item list-group-item-action">
                         <a href="?_lang=en">
                             <img src="/22px-Flag_of_the_United_States.svg.png">
-                            English
+                            {{__('English')}}
                         </a>
                     </li>
                 </ul>
@@ -260,8 +260,8 @@ CSS
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-        <button type="button" class="btn btn-primary">Сохранить</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">{!! __('Close') !!}</button>
+        <button type="button" class="btn btn-primary">{!! __('Save') !!}</button>
       </div>
     </div>
   </div>
@@ -322,10 +322,10 @@ CSS
                             <div class="dopenav">
                                 <ul id="nav">
                                     <li>
-                                        <a href="/">Главная</a>
+                                        <a href="/">{!! __('Home') !!}</a>
                                     </li>
                                     <li>
-                                        <a href="/mcf_cats">Продукция</a>
+                                        <a href="/mcf_cats">{!! __('Products') !!}</a>
                                         <ul class="dropdown">
                                         @foreach($cats as $cat)
                                             <li >
@@ -335,13 +335,13 @@ CSS
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="/mcf_about_us">О нас</a>
+                                        <a href="/mcf_about_us">{!! __('About us') !!}</a>
                                     </li>
                                     <li>
-                                        <a href="/mcf_shops">Представители</a>
+                                        <a href="/mcf_shops"> {!! __('Dillers') !!}</a>
                                     </li>
                                     <li>
-                                        <a href="/mcf_contact">Контакты</a>
+                                        <a href="/mcf_contact">{!! __('Contacts') !!}</a>
                                     </li>
                                     <li>
                                         <a href="/mcf_cart">
@@ -353,7 +353,7 @@ CSS
                                     <li>
                                         <a href="#" data-toggle="modal" data-target="#exampleModal">
                                             <i class="fa fa-flag"></i>
-                                            Язык
+                                            {!! __('Languages') !!}
                                         </a>
                                     </li>
 {{--                                     <li>

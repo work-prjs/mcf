@@ -90,6 +90,7 @@
   "Email": "Email",
   "Recent Comments": "Последние комментарии",
   "Contacts": "Контакты",
+  "Contact": "Контакт",
   "Subscribe": "Рассылка",
   "Done": "Сделано",
   "Subject": "Тема",
@@ -103,6 +104,20 @@
   "Product Comment": "Комментарии Продуктов",
   "mcf title": "MCF - Завод про производству светового и звукогого оборудования ",
   "Cart": "Корзина",
-  "Chits": "Отзывы"
+  "Chits": "Отзывы",
+  "Set languages":"Выбор языка",
+  "Russian":"Русский",
+  "English":"Английский",
+  "Our details and contacts":"Наши реквизиты и контакты",
+  "Contact adress":"Россия Амурская область<br> г.Благовещенск, <br>Пионерская 31",
+  "E-mail or Phone":"E-mail или Телефон",
+  "Close":"Закрыть",
+  "Save":"Сохранить",
+  "Message":"Сообщение",
+  "About us":"О нас",
+  "Languages":"Языки",
+  "Products":"Продукция",
+  "Home":"Главная",
+  "Dillers":"Дилеры"
 
 }
