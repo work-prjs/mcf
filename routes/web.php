@@ -229,7 +229,10 @@ Route::post('/api/v1/{model}/{id}', function ($model, $id) {
         });
 
         Route::get('/contact_us', function (Request $request) {
-            if (isset($request->all()['your-contact']) && isset($request->all()['_token'])) {
+
+
+
+            if (isset($request->all()['your-contact']) && isset($request->all()['_token']) && $request->all()['spam_check']==1 ) {
                 $contact = $request->all()['your-contact'];
                 $mes = $request->all()['your-message'];
 

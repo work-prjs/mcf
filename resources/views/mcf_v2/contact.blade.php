@@ -74,24 +74,16 @@
                 <div class="col-lg-9">
 
                     <form id="contact-form2" action="/contact_us" method="get" >
+                        @csrf
                         <div class="row contact-form-wrap justify-content-center">
-{{--                             <div class="col-md-6 contact-name form-col">
-                                <input name="name" id="name" class="form-control" type="text" placeholder="Name*"
-                                    onfocus="this.placeholder=''" onblur="this.placeholder='Name*'">
-                            </div> --}}
                             <div class="col-md-6 contact-email form-col">
-
-                                {{-- <label> Email или Телефон </label> --}}
-                                                           
+                                <input type="hidden" name="spam_check" value="0" id="spam_check">
                                 <input type="text" name="your-contact" value="" size="40" class="form-control"  placeholder="{!! __('E-mail or Phone') !!}*"
-                                    onfocus="this.placeholder=''" onblur="this.placeholder='{!! __('Contact') !!}*'">
-
-                                {{-- <input name="mail" id="mail" class="form-control" type="text" placeholder="E-mail или Телефон*" --}}
-                                    {{-- onfocus="this.placeholder=''" onblur="this.placeholder='Контакт*'"> --}}
+                                    onfocus="this.placeholder=''" onblur="this.placeholder='{!! __('Contact') !!}*'" required="required">
                             </div>
                             <div class="col-lg-12">
                                 <textarea name="your-message" id="comment" class="form-control" rows="8" placeholder="{!! __('Message') !!}"
-                                    onfocus="this.placeholder=''" onblur="this.placeholder='{!! __('Message') !!}*'"></textarea>
+                                    onfocus="this.placeholder=''" onblur="this.placeholder='{!! __('Message') !!}*'" required="required"></textarea>
                             </div>
                             <input type="submit" class="primary-btn btn" value="{!! __('Submit') !!}" id="submit-message" >
                             <div id="msg" class="message"></div>
@@ -103,5 +95,15 @@
     </section>
     <!-- End contact section -->
 
+
+@endsection
+
+@section('script')
+
+    <script type="text/javascript">
+         $('#contact-form2').on('submit', function(e) {
+             $('#spam_check').val(1);
+         });
+    </script>
 
 @endsection
