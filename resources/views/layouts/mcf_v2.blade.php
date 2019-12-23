@@ -13,7 +13,7 @@
     </script>
     <meta name="yandex-verification" content="83b65c06351bda90" />
     <meta name='wmail-verification' content='b9e6f88c7462291f23fc3ac29c7d0459' />
-
+    <meta name="msvalidate.01" content="977219EBE1D7A5FB3AEFA5612288920F" />
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Mobile Specific Meta -->
