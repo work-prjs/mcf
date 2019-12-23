@@ -364,6 +364,13 @@ CSS
                                             {{-- {!! __('Languages') !!} --}}
                                         </a>
                                     </li>
+                                    <li>
+                                        <a href="/login">
+                                            <i class="fa fa-user">
+                                            </i>
+                                        </a>
+                                    </li>
+
 {{--                                     <li>
                                         <a class="menu_creative_btn2" href="/cart/" style="color: #691cff;">
                                         </a>

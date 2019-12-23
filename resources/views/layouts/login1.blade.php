@@ -46,9 +46,66 @@
 </head>
 
 <body>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{__('Set languages')}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form>
+            <div class="form-group">
+
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-action">
+                        <a href="?_lang=ru">
+                            <img src="/22px-Flag_of_Russia.svg.png">
+                            {{__('Russian')}}
+                        </a>
+                    </li>
+                    <li class="list-group-item list-group-item-action">
+                        <a href="?_lang=en">
+                            <img src="/22px-Flag_of_the_United_States.svg.png">
+                            {{__('English')}}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">{!! __('Close') !!}</button>
+        <button type="button" class="btn btn-primary">{!! __('Save') !!}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
     <div class="limiter">
         <div class="container-login100">
+
             <div class="wrap-login100">
+                <div class="" style="position: absolute; right: 1em; top: 1em;">
+                        <a href="#" data-toggle="modal" data-target="#exampleModal">
+                            @if (session('locale')=='ru')
+                                <img src="/22px-Flag_of_Russia.svg.png">
+                            @else
+                                <img src="/22px-Flag_of_the_United_States.svg.png">
+                            @endif
+
+                            {{-- <i class="fa fa-flag"></i> --}}
+                            {{-- {!! __('Languages') !!} --}}
+                        </a>
+                    
+                </div>
                 @yield('content')
             </div>
         </div>

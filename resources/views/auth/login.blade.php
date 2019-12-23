@@ -2,6 +2,7 @@
 
 @section('content')
 
+
                 <div class="login100-pic js-tilt" data-tilt>
                     <img src="/Login_v1/images/img-01.png" alt="IMG">
                 </div>
@@ -11,7 +12,6 @@
                     @csrf
                     <span class="login100-form-title">
                         {{ __('Login') }}
-
                     </span>
 
 
