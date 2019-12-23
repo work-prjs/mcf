@@ -113,6 +113,8 @@ class ContactContractorController extends AppBaseController
      */
     public function update($id, UpdateContactContractorRequest $request)
     {
+        $input=$request->all();
+        // $input['country_en'];
         $contactContractor = $this->contactContractorRepository->find($id);
 
         if (empty($contactContractor)) {
@@ -121,7 +123,17 @@ class ContactContractorController extends AppBaseController
             return redirect(route('contactContractors.index'));
         }
 
-        $contactContractor = $this->contactContractorRepository->update($request->all(), $id);
+        $contactContractor = $this->contactContractorRepository->update($input, $id);
+
+        // $contactContractor['country']
+
+        // $newsItem = new NewsItem; // This is an Eloquent model
+        $contactContractor
+           ->setTranslation('country', 'en', 'Russia')
+           ->setTranslation('country', 'ru', 'Россия')
+           ->save();
+           
+        // dd($contactContractor->getTranslation('country', 'en'));
 
         Flash::success('Contact Contractor updated successfully.');
 

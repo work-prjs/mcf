@@ -316,28 +316,9 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 
-Route::get('/cart', function () {
-    // session('cart');
-    // return view('menu3.cart');
-    return view('mcf_v2.cart')->with('cart', session('cart'));
-});
-
-Route::get('/mcf_cart', function () {
-    // session('cart');
-    // return view('menu3.cart');
-    return view('mcf_v2.cart')->with('cart', session('cart'));
-});
 
 
-Route::get('/product/{ident}/to_cart/{qty}', 'ProductController@to_cart');
-// Route::get('/cart/{cart_id}/product/{ident}/to_cart/{qty}', 'ProductController@to_cart');
-
-    Route::get('/menu', function () {
-        $cats = Cat::all();
-        // $cart
-        return view('menu3.menu3')->with('cats', $cats);
-    });
-
+    Route::get('/product/{ident}/to_cart/{qty}', 'ProductController@to_cart');
 
     Route::get('/cats/{ident}/check_menu', 'CatController@check_menu');
     Route::get('/cats/{ident}/cats_products', 'CatController@cats_products');
@@ -378,8 +359,6 @@ Route::get('/product/{ident}/to_cart/{qty}', 'ProductController@to_cart');
 // Route::get('/menu', 'MenuController@index');
 
 
-    Route::get('/thanks/{id}', 'CartController@thanks');
-    Route::get('/thanks', 'CartController@thanks');
 
 // Route::get('/thanks', function () {
 //     return view('menu3.thanks');
@@ -392,6 +371,14 @@ Route::get('/product/{ident}/to_cart/{qty}', 'ProductController@to_cart');
 
     Route::group(['middleware'=>'language'],function ()
     {
+        Route::get('/thanks/{id}', 'CartController@thanks');
+        Route::get('/thanks', 'CartController@thanks');
+        Route::get('/mcf_cart', function () {
+            // session('cart');
+            // return view('menu3.cart');
+            return view('mcf_v2.cart')->with('cart', session('cart'));
+        });
+
         //отображение формы аутентификации
         Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
         //POST запрос аутентификации на сайте
@@ -547,8 +534,12 @@ Route::get('/product/{ident}/to_cart/{qty}', 'ProductController@to_cart');
         });
 
         Route::get('/mcf_shops', function () {
-            return view('mcf_v2.mcf_shops');
+            $mcf_shops=\App\Models\ContactContractor::all();
+            return view('mcf_v2.mcf_shops')
+                    ->with('mcf_shops', $mcf_shops);
         });
+
+        Route::resource('contactContractors', 'ContactContractorController');
 
     });
 
@@ -764,8 +755,4 @@ Route::post('/docFiles/import', 'DocFileController@import');
 
 
 
-Route::get('/contrs_destroy_all', 'ContrController@destroy_all');
-Route::post('/contrs/import', 'ContrController@import');
 
-
-Route::resource('contactContractors', 'ContactContractorController');

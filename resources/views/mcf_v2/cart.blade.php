@@ -75,8 +75,8 @@
         <div class="container">
             <div class="row section-gap-half">
                 <div class="col-lg-12 text-center">
-                    <h1>Корзина</h1>
-                    <h4>Оформление заказа</h4>
+                    <h1>{{__('Cart')}}</h1>
+                    <h4>{{__('Checkout')}}</h4>
                 </div>
             </div>
         </div>
@@ -320,9 +320,9 @@
 
                           <div class="row" style="display: grid;">
                             <div class="col-xs-12 text-center">
-                              Корзина пуста
+                              {{__('Cart empty')}}
                               <br>
-                              <a href="/">На главную</a>
+                              <a href="/">{{ __('Go to main page') }}</a>
                             </div>
                           </div>
                           <hr>

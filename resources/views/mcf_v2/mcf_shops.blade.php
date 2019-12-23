@@ -45,18 +45,28 @@
 
                     <table class="table table-hover">
                         <thead>
-                            <th>{!! __('Locality') !!}</th>
+                            <th>{!! __('Country') !!}</th>
+                            <th>{!! __('City') !!}</th>
                             <th>{!! __('Сontractor') !!}</th>
                             <th>{!! __('Address') !!}</th>
                             <th>{!! __('Contacts') !!}</th>
                         </thead>
                         <tbody>
+                            @foreach ($mcf_shops as $mcf_shop)
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{ $mcf_shop->country }}</td>
+                                <td>{{ $mcf_shop->city }}
+{{--                                     @if (!empty($mcf_shop->city))
+                                        
+                                    @else
+                                        Благовещенск
+                                    @endif --}}
+                                </td>
+                                <td>{{ $mcf_shop->name }}</td>
+                                <td>{{ $mcf_shop->adr }}</td>
+                                <td>{{ $mcf_shop->contacts }}</td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
 

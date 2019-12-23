@@ -77,7 +77,7 @@
   "Orders": "Заказы",
   "Order": "Заказ",
   "Role": "Роль",
-  "Action": "действия",
+  "Action": "Действия",
   "Price Amount": "Цена",
   "Product": "Продукт",
   "Product Id": "Продукт",
@@ -122,6 +122,18 @@
   "Сontractor":"Поставщик",
   "Сontractors contact information":"Контакты наших представителей",
   "Address": "Адрес",
-  "Locality":"Населенный пункт"
+  "City": "Город",
+  "Locality":"Населенный пункт",
+  "Country":"Страна",
+  "Cart empty":"Корзина пуста",
+  "Go to main page":"Перейти на главную",
+  "Help":"Помощь",
+  "Links":"Ссылки",
+  "Documents":"Документы",
+  "Media":"Медиа",
+  "Articles":"Статьи",
+  "How make order":"Как сделать заказ",
+  "Payment Rules":"Правила оплаты",
+  "Purchase returns":"Возврат товара"
 
 }

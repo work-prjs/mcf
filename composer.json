@@ -18,6 +18,7 @@
         "infyomlabs/swagger-generator": "dev-master",
         "laravel/framework": "^6.2",
         "laravel/helpers": "^1.1",
+        "laravel/scout": "^7.2",
         "laravel/telescope": "^2.1",
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "^6.0",
@@ -27,6 +28,7 @@
         "pusher/pusher-php-server": "~4.0",
         "spatie/db-dumper": "^2.15",
         "spatie/laravel-permission": "^3.2",
+        "spatie/laravel-translatable": "^4.2",
         "unisharp/laravel-filemanager": "dev-master",
         "yajra/laravel-datatables": "^1.5"
     },

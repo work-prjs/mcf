@@ -18,8 +18,7 @@
     <!-- meta character set -->
     <meta charset="UTF-8">
     <!-- Site Title -->
-    <title> {{ __('mcf title')  }}
-    </title>
+    <title> {{ __('mcf title')  }} </title>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700" rel="stylesheet">
     <!--
@@ -352,8 +351,14 @@ CSS
                                     </li>
                                     <li>
                                         <a href="#" data-toggle="modal" data-target="#exampleModal">
-                                            <i class="fa fa-flag"></i>
-                                            {!! __('Languages') !!}
+                                            @if (session('locale')=='ru')
+                                                <img src="/22px-Flag_of_Russia.svg.png">
+                                            @else
+                                                <img src="/22px-Flag_of_the_United_States.svg.png">
+                                            @endif
+
+                                            {{-- <i class="fa fa-flag"></i> --}}
+                                            {{-- {!! __('Languages') !!} --}}
                                         </a>
                                     </li>
 {{--                                     <li>
@@ -384,8 +389,10 @@ CSS
             <div class="row">
                 <div class="col-lg-3 col-sm-6 footer-cols">
 
-                        <a class="nav-brand" href="/">
-                            <img src="/logo1.png" alt="" style="max-width: 4em;">
+                        <a class="nav-brand" href="/" style="    padding: 10px 7px;">
+                            <img src="/logo1_transparent.png" alt="" style="max-width: 4em;" class="img-responsive img-fluid">
+                            
+
                         </a>
 
                     {{-- <a href="#">                        <img src="/logo1.png" alt="" style="max-width: 4em;">                    </a> --}}
@@ -395,14 +402,16 @@ CSS
                     </p>
                     <ul >
                         <li>
-                            <img src="/logo3h.png" class="img-responsive img-fluid" style="max-width: 15em">
+                            {{-- <img src="/logo3h.png" class="img-responsive img-fluid" style="max-width: 15em"> --}}
+                            <img src="/pay_sberk1.png" class="img-responsive img-fluid" style="max-width: 15em">
+                            {{-- <img src="/pay_sberk1.png" alt="" style="max-width: 4em;"> --}}
                         </li>
                     </ul>
                     
                 </div>
 
                 <div class="col-lg-3 col-sm-6 footer-cols">
-                    <h4>Ссылки</h4>
+                    <h4>{{__('Links')}}</h4>
                     <ul>
 {{--                         <li><a href="/">Главная</a></li>
                         <li><a href="/mcf_products">Продукция</a></li>
@@ -412,13 +421,13 @@ CSS
 
 
                                     <li>
-                                        <a href="/mcf_media">Статьи</a>
+                                        <a href="/mcf_articles">{{ __('Articles') }}</a>
                                     </li>
                                     <li>
-                                        <a href="/mcf_media">Медиа</a>
+                                        <a href="/mcf_media">{{ __('Media') }}</a>
                                     </li>
                                     <li>
-                                        <a href="/mcf_media">Документы</a>
+                                        <a href="/mcf_docFiles">{{ __('Documents') }}</a>
                                     </li>
 
 
@@ -441,33 +450,26 @@ CSS
                     </ul>
                 </div>
                 <div class="col-lg-3 col-sm-6 footer-cols">
-                    <h4>Помощь</h4>
+                    <h4>{{__('Help')}}</h4>
                     <ul>
-
-
-
-
-                        <li><a href="#">Как сделать заказ</a></li>
-                        <li> <a href="#">Правила оплаты</a></li>
-                        <li> <a href="#">Возврат товара</a></li>
-                        <li> <a href="#">Отказ от услуги</a></li>
-                        <li> <a href="#">Запрос помощи</a></li>
+                        <li><a href="#"> {{ __('How make order') }}         </a></li>
+                        <li> <a href="#">{{ __('Payment Rules') }}          </a></li>
+                        <li> <a href="#">{{ __('Purchase returns') }}       </a></li>
+                        <li> <a href="#">{{ __('Service cancellation') }}   </a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-sm-6 footer-cols">
-                    <h4>Наши котакты</h4>
+                    <h4>{{ __('Contacts')}}</h4>
                     <ul>
                         <li>
-                            <a href="tel:88002000023">8‒800‒200‒00‒23</a>
+                            <a href="tel:+78002000023">+7‒800‒200‒00‒23</a>
                         </li>
                         <li>
                             <a href="email:mcfzavod@gmail.com">mcfzavod@gmail.com</a>
                         </li>
                         <li>
                             <a href="#">
-                                 675000, Амурская обл.,
-                                <br>
-                                г.Благовещенск, Пионерская 31
+                                {!! __('Contact adress') !!}
                             </a>
                         </li>
                     </ul>

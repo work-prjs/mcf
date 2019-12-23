@@ -2,13 +2,21 @@
     <table class="table" id="contactContractors-table">
         <thead>
             <tr>
-                <th>Country</th>
-        <th>City</th>
-        <th>Adr</th>
-        <th>Contacts</th>
-        <th>Name</th>
-        <th>User Id</th>
-                <th colspan="3">Action</th>
+                            <th>{!! __('Country') !!}</th>
+                            <th>{!! __('City') !!}</th>
+                            <th>{!! __('Address') !!}</th>
+                            <th>{!! __('Contacts') !!}</th>
+                            <th>{!! __('Сontractor') !!}</th>
+                            {{-- <th>{!! __('User') !!}</th> --}}
+                
+                {{-- <th>Country</th>
+                <th>City</th>
+                <th>Adr</th>
+                <th>Contacts</th>
+                <th>Name</th>
+                <th>User Id</th> --}}
+                <th colspan="3">{!! __('Action') !!}</th>
+                
             </tr>
         </thead>
         <tbody>
@@ -19,7 +27,7 @@
             <td>{{ $contactContractor->adr }}</td>
             <td>{{ $contactContractor->contacts }}</td>
             <td>{{ $contactContractor->name }}</td>
-            <td>{{ $contactContractor->user_id }}</td>
+            {{-- <td>{{ $contactContractor->user_id }}</td> --}}
                 <td>
                     {!! Form::open(['route' => ['contactContractors.destroy', $contactContractor->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

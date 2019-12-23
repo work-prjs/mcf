@@ -4,6 +4,10 @@ namespace App\Models;
 
 use Eloquent as Model;
 
+// use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
+
+
 /**
  * Class ContactContractor
  * @package App\Models
@@ -18,6 +22,10 @@ use Eloquent as Model;
  */
 class ContactContractor extends Model
 {
+
+    use HasTranslations;
+    
+    public $translatable = ['country', 'city', 'adr', 'contacts', 'name'];
 
     public $table = 'contact_contractors';
     

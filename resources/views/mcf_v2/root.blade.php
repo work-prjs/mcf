@@ -230,7 +230,7 @@
                     <div class="single-team item">
                         <img class="img-fluid" src="/8_cr.jpg" alt="">
                         <div class="team-content">
-                            <h4>Елена (Контрактный управляющий)</h4>
+                            <h4>Елена<br>(Контрактный управляющий)</h4>
                             <ul>
                                 <li>
                                     <a href="tel:+79145763770" class="hover_red">
@@ -248,7 +248,7 @@
                     <div class="single-team item">
                         <img class="img-fluid" src="/7_cr.jpg" alt="">
                         <div class="team-content">
-                            <h4>Павел (Руководитель завода)</h4>
+                            <h4>Павел<br>(Руководитель завода)</h4>
                             <ul>
                                 <li>
                                     <a href="tel:+79098134343" class="hover_red">
@@ -267,7 +267,7 @@
                     <div class="single-team item">
                         <img class="img-fluid" src="/9_cr.jpg" alt="">
                         <div class="team-content">
-                            <h4>Матвей (IT Специалист)</h4>
+                            <h4>Матвей<br>(IT Специалист)</h4>
                             <ul>
                                 <li>
                                     <a href="tel:+79248415521" class="hover_red">
@@ -283,43 +283,18 @@
 
                         </div>
                     </div>
-                    <div class="single-team item">
-                        <img class="img-fluid" src="/9_cr.jpg" alt="">
-                        <div class="team-content">
-                            <h4>Владимир (Юридический отдел)</h4>
-                            <ul>
-                                <li>
-                                    <a href="tel:+79248415521" class="hover_red">
-                                        <i class="fa fa-phone" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="mailto:mcfzavod@gmail.com" class="hover_red">
-                                        <i class="fa fa-envelope" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                            </ul>
-
-                        </div>
-                    </div>
-{{--                     <div class="single-team item">
-                        <img class="img-fluid" src="/10_cr.jpg" alt="">
-                        <div class="team-content">
-                            <h4>Анастасия</h4>
-                        </div>
-                    </div> --}}
                     <div class="single-team item">
                         <img class="img-fluid" src="/11_cr.jpg" alt="">
                         <div class="team-content">
-                            <h4>Михаил (Программист)</h4>
+                            <h4>Владимир <br> (Юридический отдел)</h4>
                             <ul>
                                 <li>
-                                    <a href="tel:+79622841331" class="hover_red">
+                                    <a href="tel:+79298303570" class="hover_red">
                                         <i class="fa fa-phone" aria-hidden="true"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="mailto:mltefive@gmail.com" class="hover_red">
+                                    <a href="mailto:mcfzavod@gmail.com" class="hover_red">
                                         <i class="fa fa-envelope" aria-hidden="true"></i>
                                     </a>
                                 </li>
@@ -330,7 +305,7 @@
                     <div class="single-team item">
                         <img class="img-fluid" src="/12_cr.jpg" alt="">
                         <div class="team-content">
-                            <h4>Галина (Старший менеджер по работе с клиентами)</h4>
+                            <h4>Галина<br>(Старший менеджер по работе с клиентами)</h4>
                             <ul>
                                 <li>
                                     <a href="tel:+79244427027" class="hover_red">
@@ -418,7 +393,7 @@
                     <div class="div">
                         <i class="ti ti-mobile"></i>
                         <p>
-                            <a href="tel:8‒800‒200‒00‒23">8‒800‒200‒00‒23</a>
+                            <a href="tel:+7‒800‒200‒00‒23">+7‒800‒200‒00‒23</a>
                             <br>
                             <a href="tel:+7–914–553–48–18">+7–914–553–48–18</a>
                         </p>
@@ -428,8 +403,7 @@
                     <div class="div">
                         <i class="ti ti-map-alt"></i>
                         <p>
-                            Россия Амурская область
-                            <br> г.Благовещенск,<br> Пионерская 31
+                            {!! __('Contact adress') !!}
                         </p>
                     </div>
                 </div>
