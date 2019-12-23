@@ -47,13 +47,12 @@
                     <img class="img-fluid" src="/led.png" alt="">
                 </div>
                 <div class="col-lg-5 col-md-5 about-right">
-                    <h3>Завод MCF</h3>
-                    <h1>Все что Вам нужно знать о нас</h1>
+                    {{-- <h3>Завод MCF</h3> --}}
+                    <h1>{{__('Who are we')}}</h1>
                     <p>
-                        Работаем с 2002 года. Сообдственное производство звукового и светового оборудования.
-                        Работая с нами Вы работает без посредников.
+                        {!! __('We have been working since 2002. Own production of sound and lighting equipment. Working with us, you work without intermediaries.') !!}
                     </p>
-                    <a class="primary-btn" href="#contact-section">Контакты</a>
+                    {{-- <a class="primary-btn" href="#contact-section">{{__('Contacts')}}</a> --}}
                 </div>
             </div>
         </div>
@@ -89,7 +88,7 @@
     </section>
     <!-- End about section -->
     <!-- Start feature section -->
-    <section class="feature-section section-gap-full" id="feature-section">
+{{--     <section class="feature-section section-gap-full" id="feature-section">
         <div class="container">
             <div class="row align-items-center feature-wrap">
                 <div class="col-lg-4 header-left " data-aos="fade-right" >
@@ -148,10 +147,10 @@
             </div>
         </div>
     </section>
-    <!-- End feature section -->
+ --}}    <!-- End feature section -->
 
     <!-- Start stat section -->
-    <section class="stat-section section-gap-half" data-aos="flip-down"  >
+    <section class="stat-section section-gap-half" data-aos="flip-down" style=" margin-top: 4em !important;" >
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
@@ -159,7 +158,9 @@
                         <i class="ti-thumb-up"></i>
                         <h1>
                             <span class="counter">56</span>+</h1>
-                        <h4>Проектов сделано</h4>
+                        <h4>
+                            {{__('Projects done')}}
+                        </h4>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
@@ -167,23 +168,23 @@
                         <i class="ti-face-smile"></i>
                         <h1>
                             <span class="counter">106</span>+</h1>
-                        <h4>Счатливых клиента</h4>
+                        <h4>{{__('Happy clients')}}</h4>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="single-stat">
                         <i class="ti-paint-bucket"></i>
                         <h1>
-                            <span class="counter">14320</span>+</h1>
-                        <h4>Общая мощность</h4>
+                            <span class="counter">432</span>+</h1>
+                        <h4>{{__('Products')}}</h4>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="single-stat">
                         <i class="ti-check-box"></i>
                         <h1>
-                            <span class="counter">123</span>+</h1>
-                        <h4>Наши партнеры</h4>
+                            <span class="counter">23</span>+</h1>
+                        <h4>{{__('Contractors')}}</h4>
                     </div>
                 </div>
             </div>
@@ -191,12 +192,55 @@
     </section>
     <!-- End stat section -->
 
+
+
+    <section class="feature-section section-gap-full" id="feature-section" style="    padding: 4em 0 !important;">
+        <div class="container">
+            <div class="row align-items-center feature-wrap">
+                <div class="col-lg-4 header-left " data-aos="fade-right" >
+
+                    <h1 style="font-size: 3em;">
+                        {{__('Become a factory representative')}}
+                    </h1>
+                    <a class="primary-btn" href="#contact-section">{{__('Send request')}}
+                        <span class="ti-arrow-right"></span>
+                    </a>
+                </div>
+                <div class="col-lg-8" data-aos="fade-left" >
+                    <div class="row features-wrap">
+                        <div class="col-md-6">
+                            <div class="single-feature relative">
+                                <div class="overlay overlay-bg"></div>
+                                {{-- <span class="ti-palette"></span> --}}
+                                <span class="ti-headphone-alt"></span>
+                                <h3>{{__("Let's Conclude an agency agreement")}} </h3>
+                                <p>
+                                    {{__('Get a representative discount')}}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="single-feature relative">
+                                <div class="overlay overlay-bg"></div>
+                                <span class="ti-heart"></span>
+                                <h3>{{__('Made with love')}}</h3>
+                                <p>
+                                    {{__('Expand your store’s product range with factory products')}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     @if (\App\Models\MediaFile::take(4)->get()->count()>0)
-    <section class="portfolio-section section-gap-full">
+    <section class="portfolio-section section-gap-full" style=" padding-top: 4em !important;">
         <div class="container">
             <div class="section-title" data-aos="zoom-in-down" >
-                <h2 class="text-center">Наши последние работы</h2>
-                <p class="text-center">Поставка и монтаж установка оборудования</p>
+                <h2 class="text-center">{{__('Last works')}}</h2>
+                <p class="text-center">{{__('Supply and installation of equipment')}}</p>
             </div>
             <div class="row justify-content-center" data-aos="zoom-in-up" >
                       @foreach (\App\Models\MediaFile::take(4)->get() as $line )
@@ -215,6 +259,35 @@
 
             </div>
         </div>
+        <div class="floating-shapes">
+            <span data-parallax='{"x": 150, "y": -20, "rotateZ":500}'>
+                <img src="/mcf/img/shape/fl-shape-1.png" alt="">
+            </span>
+            <span data-parallax='{"x": 250, "y": 150, "rotateZ":500}'>
+                <img src="/mcf/img/shape/fl-shape-2.png" alt="">
+            </span>
+            <span data-parallax='{"x": -180, "y": 80, "rotateY":2000}'>
+                <img src="/mcf/img/shape/fl-shape-3.png" alt="">
+            </span>
+            <span data-parallax='{"x": -20, "y": 180}'>
+                <img src="/mcf/img/shape/fl-shape-4.png" alt="">
+            </span>
+            <span data-parallax='{"x": 300, "y": 70}'>
+                <img src="/mcf/img/shape/fl-shape-5.png" alt="">
+            </span>
+            <span data-parallax='{"x": 250, "y": 180, "rotateZ":1500}'>
+                <img src="/mcf/img/shape/fl-shape-6.png" alt="">
+            </span>
+            <span data-parallax='{"x": 180, "y": 10, "rotateZ":2000}'>
+                <img src="/mcf/img/shape/fl-shape-7.png" alt="">
+            </span>
+            <span data-parallax='{"x": 60, "y": -100}'>
+                <img src="/mcf/img/shape/fl-shape-9.png" alt="">
+            </span>
+            <span data-parallax='{"x": -30, "y": 150, "rotateZ":1500}'>
+                <img src="/mcf/img/shape/fl-shape-10.png" alt="">
+            </span>
+        </div>        
     </section>
     @endif
 
@@ -222,8 +295,9 @@
     <section class="team-section section-gap-full" style="    padding-top: 4em !important;">
         <div class="container">
             <div class="section-title" data-aos="zoom-in-down"  data-aos-duration="1500">
-                <h2 class="text-center">Наша команда</h2>
-                <p class="text-center">А вот и Мы! Знакомьтесь.</p>
+                <h2 class="text-center">{!! __('Our team') !!}</h2>
+
+                <p class="text-center">{!! __("Let's get acquainted") !!}</p>
             </div>
             <div class="row" data-aos="zoom-in-up"  data-aos-duration="1500">
                 <div class="team-carusel  owl-carousel" id="team-carusel">
@@ -339,11 +413,11 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-4 testimonial-left"  data-aos-duration="1500" data-aos="fade-right">
-                    <h2>Что о нас говорят</h2>
+                    <h2>{!! __('What people say') !!}</h2>
                     <p>
-                        Если Вы уже являетесь нашим клиентом, то оставьте пожалуйста отзыв. Мы будем Вам благодарны за обратную связь.
+                        {!! __('If you are already our customer, please leave a review. We will be grateful for your feedback.') !!}
                     </p>
-                    <a class="primary-btn" href="/show_chits">Отзывы
+                    <a class="primary-btn" href="/show_chits">{!! __('Chits') !!}
                         <span class="ti-arrow-right"></span>
                     </a>
                 </div>
@@ -379,13 +453,12 @@
     </section>
     <!-- End testimonial section -->
 
-
     <!-- Start contact section -->
     <section class="contact-section " id="contact-section" style="padding-top: 6em;">
         <div class="container">
             <div class="section-title" data-aos="zoom-in-up"  data-aos-duration="1500">
-                <h2 class="text-center">Контакты</h2>
-                <p class="text-center">Позвоните нам или оставьте заявку тут</p>
+                <h2 class="text-center">{!! __('Contacts') !!}</h2>
+                <p class="text-center">{{__('Call us or send message')}}</p>
             </div>
 
             <div class="row address-wrap justify-content-center" data-aos="zoom-in-up"  data-aos-duration="1500">
@@ -437,7 +510,7 @@
                             <div id="msg" class="message"></div>
                         </div>
                     </form>
-                    
+
                 </div>
             </div>
         </div>

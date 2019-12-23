@@ -334,9 +334,12 @@ CSS
                                         </ul>
                                     </li>
                                     <li>
+                                        <a href="#">{!! __('Kits') !!}</a>
+                                    </li>
+{{--                                     <li>
                                         <a href="/mcf_about_us">{!! __('About us') !!}</a>
                                     </li>
-                                    <li>
+ --}}                                    <li>
                                         <a href="/mcf_shops"> {!! __('Сontractors') !!}</a>
                                     </li>
                                     <li>
