@@ -172,7 +172,7 @@
     </div>
 
 
-
+{{-- 
     <div id="myModalInvoice" class="modal fade ">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -186,12 +186,11 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
-                    {{-- <button type="button" class="btn btn-primary">Сохранить изменения</button> --}}
                 </div>
             </div>
         </div>
     </div>
-
+ --}}
 
 
                           <form id="form_id" action="/carts/{{$cart->id}}/checkout">
@@ -199,20 +198,20 @@
 
                               <div class="col-md-6" style="text-align: left;">
 
-                                <b class="bold-black">Метод оплаты</b>
+                                <b class="bold-black">{{__('Payments method')}}</b>
 
 
                                 <div class="radio">
                                   <label>
                                     <input type="radio" name="pay_type" id="optionsRadios2" value="0" required>
-                                    Оплата на месте
+                                    {{__('Payment on the spot')}}
                                   </label>
-                                  <a href="/mcf_contact" target="_blank">Пункты получения продукта</a>
+                                  <a href="/mcf_contact" target="_blank">{{__('Contacts')}}</a>
                                 </div> 
                                 <div class="radio">
                                   <label>
                                     <input type="radio" name="pay_type" id="optionsRadios3" value="1" class="pay_type_online" required>
-                                    Онлайн оплата Картой
+                                    {{__('Online Payment by Card')}}
                                   </label>
                                 </div>
 
@@ -220,7 +219,7 @@
                                 <div class="radio">
                                  <label>
                                     <input type="radio" name="pay_type" id="optionsRadios1" value="2" class="pay_type_invoice" required>
-                                    Выставить счёт
+                                      {{__('Invoice')}}
                                   </label>
                                 </div>
 
@@ -228,52 +227,52 @@
                               </div>
 
                               <div class="col-md-6" style="text-align: left;">
-                                <b class="bold-black">Место получения Продукта</b>
+                                <b class="bold-black">{{__('Place of receipt of the Product')}}</b>
                                 <div class="radio">
                                   <label>
                                     <input type="radio" name="pay_place" id="optionsRadios4" value="0" required>
-                                    Доставка курьером
+                                    {{__('Courier delivery')}}
                                   </label>
                                 </div>
                                 <div class="radio">
                                   <label>
                                     <input type="radio" name="pay_place" id="optionsRadios5" value="1" required>
-                                    Самовывоз
+                                    {{__('Pickup')}}
                                   </label>
                                 </div>
                               </div>
 
 
                               <div class="col-md-6" style="text-align: left;">
-                                <b class="bold-black">Контактный номер (<span style="color: red;">обязательно*</span>)</b>
+                                <b class="bold-black">{{__('Contact phone')}} (<span style="color: red;">{{__('required')}}*</span>)</b>
                                 <div class="form-group">
 
                                   <div class="input-group">
                                     {{-- <span class="input-group-addon">
                                       <i class="fa fa-phone"></i>            
                                     </span> --}}
-                                      <input type="text" name="contact_number" id="contact_number" value="" placeholder="11 цифр: +7(999)-888-77-77" class="form-control" required>
+                                      <input type="text" name="contact_number" id="contact_number" value="" placeholder="+7(999)-888-77-77" class="form-control" required>
                                   </div>
                                 </div>
                               </div>
 
                               <div class="col-md-6" style="text-align: left;">
-                                <b class="bold-black">Email (не обязательно)</b>
+                                <b class="bold-black">Email ({{__('not required')}})</b>
                                 <div class="form-group">
 
                                   <div class="input-group">
                                     {{-- <span class="input-group-addon">
                                       <i class="fa fa-envelope" aria-hidden="true"></i>
                                     </span> --}}
-                                      <input type="text" name="contact_email" id="contact_email" value="" placeholder="Ваша электронная почта" class="form-control" >
+                                      <input type="text" name="contact_email" id="contact_email" value="" placeholder="{{__('Your email')}}" class="form-control" >
                                   </div>
                                 </div>
                               </div>
 
                                 
                               <div class="col-md-12" style="text-align: left;">
-                                <b class="bold-black">Адрес/Место/Примечание</b>
-                                <textarea name="pay_adr" style="width: 100%;" rows="5" placeholder="Укажите адрес: Населенный пункт, улица, номер дома, офис и примечания"></textarea>
+                                <b class="bold-black">{{__('Address/Place/Comment')}}</b>
+                                <textarea name="pay_adr" style="width: 100%;" rows="5" placeholder="{{__('Indicate the address: Settlement, street, house number, office and notes')}}"></textarea>
                               </div>
 
                               {{-- <div class="col-md-12" style="text-align: left;">
@@ -288,24 +287,21 @@
                             <div class="panel-footer">
                               <div class="row text-center">
                                 <div class="col-xs-12">
-                                  <h4 class="text-right">Итого <strong id="cart_total">{{ $cart->total() }}</strong></h4>
+                                  <h4 class="text-right">{{__('In total')}} <strong id="cart_total">{{ $cart->total() }}</strong></h4>
                                 </div>
                               </div>
                               
                               <div class="row text-center">
                                   <div class="col-xs-12">
-  {{--                                   <a href="/carts/{{$cart->id}}/checkout" class="btn-success btn-block" id="checkout_link">
-                                      Оплатить
-                                    </a> --}}
-                                    {{-- <a href="#" class="btn-success btn-block btn-sm" id="checkout_link" data-link="/carts/{{$cart->id}}/checkout">
-                                      Оплатить
-                                    </a> --}}
                                     <button type="submit" value="Оплатить" class="btn btn-success" id="checkout_link" style="background-color: #691cff; border-color: #691cff">
-                                    Оплатить
+                                    
+                                      {{__('Checkout cart')}}
+                                      {{-- Оплатить --}}
                                   </button>
                                     {{-- <a href="/carts/{{$cart->id}}/clear" class="btn-danger btn-block" data-url="/carts/{{$cart->id}}/clear"> --}}
                                     <a href="/carts/{{$cart->id}}/clear" class="btn-danger btn" data-url="/carts/{{$cart->id}}/clear" id="clear_btn">
-                                      Очистить корзину
+                                      
+                                      {{__('Clear cart')}}
                                     </a>
                                   </div>
                                   </div>

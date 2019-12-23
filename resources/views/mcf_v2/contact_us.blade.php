@@ -24,8 +24,8 @@
         <div class="container">
             <div class="row section-gap-half">
                 <div class="col-lg-12 text-center">
-                    <h1>Контакты</h1>
-                    <h4>Наши реквизиты и партнеры</h4>
+                    <h1>{{ __('Contacts') }} </h1>
+                    <h4>{{__('Our details and contacts')}}</h4>
                 </div>
             </div>
         </div>
@@ -45,9 +45,9 @@
                     <div class="div">
                         <i class="ti ti-email"></i>
                         <p>
-                            СООБЩЕНИЕ ОТПРАВЛЕНО
+                            {{__('Message sent')}}
                         </p>
-                        <a href="/">На главную</a>
+                        <a href="/">{{ __('Go to main page') }}</a>
                     </div>
                 </div>
             </div>

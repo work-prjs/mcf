@@ -38,8 +38,3 @@
 
 
 
-
-<li class="{{ Request::is('contactContractors*') ? 'active' : '' }}">
-    <a href="{{ route('contactContractors.index') }}"><i class="fa fa-edit"></i><span>{{__('Contractors')}}</span></a>
-</li>
-

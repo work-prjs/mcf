@@ -82,6 +82,14 @@ $( document ).ready(function() {
                 <a href="{!! route('metatexts.index') !!}"><i class="fa fa-edit"></i><span>Мета метки</span></a>
             </li>
 
+
+            <li class="{{ Request::is('contactContractors*') ? 'active' : '' }}">
+                <a href="{{ route('contactContractors.index') }}"><i class="fa fa-edit"></i><span>
+                    {{-- {{__('Contractors')}} --}}
+                    Представители
+                </span></a>
+            </li>
+
             
           </ul>
         </li>
