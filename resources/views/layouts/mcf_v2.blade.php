@@ -20,6 +20,8 @@
     <!-- Site Title -->
     <title> {{ __('mcf title')  }} </title>
 
+    <meta name="google-site-verification" content="0B6_0Fv7C7oIM9VHjwv12xqMZ4tDsRbfx89eTytnAig" />
+
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700" rel="stylesheet">
     <!--
 CSS
