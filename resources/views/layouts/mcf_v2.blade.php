@@ -12,6 +12,8 @@
       gtag('config', 'UA-154894435-1');
     </script>
     <meta name="yandex-verification" content="83b65c06351bda90" />
+    <meta name='wmail-verification' content='b9e6f88c7462291f23fc3ac29c7d0459' />
+
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Mobile Specific Meta -->
