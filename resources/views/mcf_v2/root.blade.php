@@ -25,7 +25,7 @@
             <div class="row section-gap-half">
                 <div class="col-lg-12 text-center">
                     <h1>MCF</h1>
-                    <h4>завод по производству звукового и светового оборудования</h4>
+                    <h4>{{__('Sound and lighting equipment factory')}}</h4>
                 </div>
             </div>
         </div>
