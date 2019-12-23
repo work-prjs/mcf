@@ -3,9 +3,9 @@
         <thead>
             <tr>
                 <th>{{ __('Name') }}</th>
-        <th>{{ __('Desc') }}</th>
-        <th>{{ __('Doc File') }}</th>
-        <th>{{ __('Doc File Type') }}</th>
+        <th>{{ __('Description') }}</th>
+        <th>{{ __('Documents') }}</th>
+        <th>{{ __('Type') }}</th>
                 <th colspan="3">Действие</th>
             </tr>
         </thead>

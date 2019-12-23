@@ -3,7 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            <b>Изменить:</b> {{ __('Doc File') }}
+            <b>Изменить:</b> {{ __('Document') }}
         </h1>
    </section>
    <div class="content">
