@@ -175,6 +175,7 @@ Route::post('/api/v1/{model}/{id}', function ($model, $id) {
             // return view('menu3.cart');
             return view('mcf_v2.cart')->with('cart', session('cart'));
         });
+        Route::get('/carts/{id}/checkout',      'CartController@checkout');
 
         /*
 
@@ -720,7 +721,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/carts/{id}/total',         'CartController@total');
     Route::get('/carts/{id}/total_qty',     'CartController@total_qty');
     Route::get('/carts/{id}/clear',         'CartController@remove_items');
-    Route::get('/carts/{id}/checkout',      'CartController@checkout');
 
     
     Route::get('/lineItems/{id}/del',       'LineItemController@del');

@@ -42,7 +42,7 @@
     <!-- Start blog-lists section -->
 
     <section class="blog-lists-section section-gap-full ">
-        <div class="container">
+        <div class="container" style="    padding-top: 2em;">
             <div class="row">
                 <div class="col-lg-4">
                     <div class="sidebar-wrap">
@@ -59,7 +59,7 @@
                         </div>
 
                         <div class="single-widget archive-widget">
-                            <h4 class="widget-title">Категории</h4>
+                            <h4 class="widget-title">{{__('Categories')}}</h4>
                             <ul>
 
                             @foreach($cats as $cat1)
@@ -77,7 +77,7 @@
 
 
                         <div class="single-widget recent-post-widget">
-                            <h4 class="widget-title">Последние предложения</h4>
+                            <h4 class="widget-title">{{__('Latest offers')}}</h4>
                             <ul>
                                 <li class="d-flex flex-row align-items-center">
                                     <div class="thumbs">
@@ -155,12 +155,12 @@
 
 
                 <!-- Start service section -->
-                <section class="service-section section-gap-full" style="padding-top: 0em;">
+                <section class="service-section section-gap-full" style="    padding-top: 0em !important;">
                     <div class="container">
 
                         <div class="row single-widget ">
                                 <div class="col-md-12 ">
-                                    <span class="brown">Категория:</span>
+                                    <span class="brown">{{__('Category')}}:</span>
                                     <span><h2>{{ $cat2->name }}</h2></span>
                                 </div>
                         </div>

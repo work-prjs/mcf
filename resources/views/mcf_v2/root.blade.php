@@ -292,7 +292,7 @@
     @endif
 
     <!-- Start team section -->
-    <section class="team-section section-gap-full" style="    padding-top: 4em !important;">
+    <section class="team-section section-gap-full" style="    padding: 4em 0 !important;">
         <div class="container">
             <div class="section-title" data-aos="zoom-in-down"  data-aos-duration="1500">
                 <h2 class="text-center">{!! __('Our team') !!}</h2>
@@ -409,7 +409,7 @@
     <!-- End team section -->
 
     <!-- Start testimonial section -->
-    <section class="testimonial-section section-gap-full" id="testimonial-section">
+    <section class="testimonial-section section-gap-full" id="testimonial-section" style="    padding-top: 5em !important;">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-4 testimonial-left"  data-aos-duration="1500" data-aos="fade-right">

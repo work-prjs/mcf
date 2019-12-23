@@ -22,8 +22,8 @@
         <div class="container">
             <div class="row section-gap-half">
                 <div class="col-lg-12 text-center">
-                    <h1>Продукт</h1>
-                    <h4> нашего завода</h4>
+                    <h1>{{__('Product')}}</h1>
+                    {{-- <h4> нашего завода</h4> --}}
                 </div>
             </div>
         </div>
@@ -38,7 +38,8 @@
 
     <!-- Start blog-lists section -->
     <section class="blog-lists-section section-gap-full">
-        <div class="container">
+        <div class="container" style="    padding-top: 2em;">
+
             <div class="row">
                 <div class="col-lg-4">
                     <div class="sidebar-wrap">
@@ -55,7 +56,7 @@
                         </div>
 
                         <div class="single-widget archive-widget">
-                            <h4 class="widget-title">Категории</h4>
+                            <h4 class="widget-title">{{__('Categories')}}</h4>
                             <ul>
 
                             @foreach($cats as $cat1)
@@ -73,7 +74,7 @@
 
 
                         <div class="single-widget recent-post-widget">
-                            <h4 class="widget-title">Последние предложения</h4>
+                            <h4 class="widget-title">{{__('Latest offers')}}</h4>
                             <ul>
                                 <li class="d-flex flex-row align-items-center">
                                     <div class="thumbs">
@@ -149,11 +150,11 @@
                 <div class="col-lg-8">
 
                 <!-- Start service section -->
-                <section class="service-section section-gap-full" style="padding-top: 0em;">
+                <section class="service-section section-gap-full" style="    padding-top: 0em !important;">
                     <div class="container">
                         <div class="row single-widget ">
                                 <div class="col-md-12   ">
-                                    <span class="brown">Название:</span>
+                                    <span class="brown">{{__('Model')}}:</span>
                                     <span><h2>{{ $product->name }}</h2></span>
                                             
                                 </div>
@@ -178,13 +179,13 @@
                                     <div class="row ">
                                         <div class="col-md-12 col-xs-12">
                                             <span class="brown">
-                                                Цена: 
+                                                {{__('Price')}}:
                                             </span>
 
                                         </div>
                                         <div class="col-md-12 col-xs-12">
 
-                                            <h3><strong><b>{{ $product->price_amount }}</b></strong> руб. <span class="pull-right"><a data-ident="{{ $product->ident }}" href="" class="btn to_cart btn-success" style="background-color: #691cff; border-color: #691cff"> <i class="fa fa-cart-plus" aria-hidden="true"></i> В корзину</a></span> </h3>
+                                            <h3><strong><b>{{ $product->price_amount }}</b></strong> руб. <span class="pull-right"><a data-ident="{{ $product->ident }}" href="" class="btn to_cart btn-success" style="background-color: #691cff; border-color: #691cff"> <i class="fa fa-cart-plus" aria-hidden="true"></i> {{__('To cart')}}</a></span> </h3>
 
                                             <span >
                                             </span>
@@ -203,21 +204,21 @@
                                     <!-- Rounded tabs -->
                                     <ul id="myTab" role="tablist" class="nav nav-tabs nav-pills flex-column flex-sm-row text-center bg-light border-0 rounded-nav">
                                       <li class="nav-item flex-sm-fill">
-                                        <a id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" class="nav-link border-0 text-uppercase font-weight-bold active">Описание</a>
+                                        <a id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" class="nav-link border-0 text-uppercase font-weight-bold active">{{__('Description')}}</a>
                                       </li>
                                       <li class="nav-item flex-sm-fill">
-                                        <a id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" class="nav-link border-0 text-uppercase font-weight-bold">Характеристики</a>
+                                        <a id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" class="nav-link border-0 text-uppercase font-weight-bold">{{__('Specifications')}}</a>
                                       </li>
                                       <li class="nav-item flex-sm-fill">
-                                        <a id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false" class="nav-link border-0 text-uppercase font-weight-bold">Документы</a>
+                                        <a id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false" class="nav-link border-0 text-uppercase font-weight-bold">{{__('Documents')}}</a>
                                       </li>
                                     </ul>
 
-                        <div id="myTabContent" class="tab-content">
-                          <div id="home" role="tabpanel" aria-labelledby="home-tab" class="tab-pane fade px-4 py-5 show active">
-                            {{ $product->desc }}
-                          </div>
-                          <div id="profile" role="tabpanel" aria-labelledby="profile-tab" class="tab-pane fade px-4 py-5">
+                                    <div id="myTabContent" class="tab-content">
+                                        <div id="home" role="tabpanel" aria-labelledby="home-tab" class="tab-pane fade px-4 py-5 show active">
+                                            {{ $product->desc }}
+                                        </div>
+                                        <div id="profile" role="tabpanel" aria-labelledby="profile-tab" class="tab-pane fade px-4 py-5">
                                                     @php
                                                         // if (!empty($product->attrs)) {
                                                             # code...
@@ -230,8 +231,8 @@
                                                     @if (!empty($product->attrs))
                                                     <table class="table table-hover">
                                                         <thead class="thead-light">
-                                                            <th>Название</th>
-                                                            <th>Значение</th>
+                                                            <th>{{__('Designation')}}</th>
+                                                            <th>{{__('Value')}}</th>
                                                         </thead>
                                                         <tbody>
                                                             @foreach ( $a1 as $line)
@@ -249,13 +250,14 @@
 
                                                     @endif                                                 
 
-                          </div>
+                                        </div>
+
                                       <div id="contact" role="tabpanel" aria-labelledby="contact-tab" class="tab-pane fade px-4 py-5">
                                         <table class="table table-hover">
 
                                             <thead class="thead-light">
-                                                <th>Название</th>
-                                                <th>Скачать</th>
+                                                <th>{{__('File')}}</th>
+                                                <th>{{__('Download')}}</th>
                                             </thead>
                                             <tbody>
                                                 @php
@@ -272,9 +274,9 @@
                                         </table>
 
                                       </div>
-                                      <div id="comments" role="tabpanel" aria-labelledby="comments-tab" class="tab-pane fade px-4 py-5">
+{{--                                       <div id="comments" role="tabpanel" aria-labelledby="comments-tab" class="tab-pane fade px-4 py-5">
                                         <p class="text-muted"> Список комментариев.</p>
-                                      </div>
+                                      </div> --}}
                                     </div>
 
 
@@ -284,7 +286,7 @@
 
                         <div class="row single-widget ">
                               <div class="col-md-12">
-                                  <h3 class="color-black">Коментарии:</h3>
+                                  <h3 class="color-black">{{__('Comments')}}:</h3>
                               </div>
                         </div>
 
@@ -292,7 +294,7 @@
                             <div class="row single-widget ">
                                   <div class="col-md-3">
                                       <div class="row">
-                                          <b class="bold1">Текст:</b>
+                                          <b class="bold1">{{__('Text')}}:</b>
                                       </div>
                                       <div class="row">
                                           {{-- <b class="bold1">Пользователь: </b>Гость --}}
@@ -308,7 +310,7 @@
                         <div class="row single-widget" id="comment_block">
                               <div class="col-md-3">
                                   <div class="row">
-                                  <b class="bold1">Текст:</b>
+                                  <b class="bold1">{{__('Text')}}:</b>
                                   </div>
                                   <div class="row">
                                   {{-- Гость --}}
@@ -321,7 +323,7 @@
                                   </div>
                                   <hr>
                                   <div class="row pull-right">
-                                    <a class="btn to_comment btn-success" data-product_id="{{ $product->ident }}" style="color: white; background-color: #691cff; border-color: #691cff"> <i class="fa fa-pencil" aria-hidden="true"></i> Написать</a>
+                                    <a class="btn to_comment btn-success" data-product_id="{{ $product->ident }}" style="color: white; background-color: #691cff; border-color: #691cff"> <i class="fa fa-pencil" aria-hidden="true"></i> {{__('Write')}}</a>
                                   </div>
 
                               </div>
