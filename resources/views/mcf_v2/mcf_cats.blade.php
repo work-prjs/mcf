@@ -24,8 +24,8 @@
         <div class="container">
             <div class="row section-gap-half">
                 <div class="col-lg-12 text-center">
-                    <h1>Категории</h1>
-                    <h4>Продукция нашего завода</h4>
+                    <h1>{{__('Categories')}}</h1>
+                    {{-- <h4>Продукция нашего завода</h4> --}}
                 </div>
             </div>
         </div>

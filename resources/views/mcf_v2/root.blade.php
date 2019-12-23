@@ -14,7 +14,9 @@
   background: url(/bg3.jpg);
   background-size: cover;
 }
-
+a.bestsellers:hover {
+    color: #691cff !important;
+}
 </style>
 
 
@@ -39,8 +41,70 @@
 
     <!-- End about-top-banner section -->
 
+    <section class="screenshot-section section-gap-full" style="    padding: 4em 0 !important;">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="text-center">{{__('Bestsellers')}}</h2>
+            </div>
+            <div class="row">
+                <div class="screenshot_slider owl-carousel" id="screenshot-carusel">
+
+                    @foreach(\App\Models\Product::where(['menu'=>true])->take(5)->limit(5)->get() as $cat)
+
+                        <div class="item">
+                            <img src="{{ $cat->image }}" alt="" title="{{ $cat->name }}">
+                            <div style="text-align: center;">
+                                <a href="/mcf_products/{{ $cat->ident }}" style="color: grey;" class="bestsellers">{{ $cat->name }}</a>
+                            </div>
+
+                        </div>
+
+                    @endforeach
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="service-section section-gap-full" style="    padding-top: 5em !important;">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="text-center">{{__('Categories')}}</h2>
+            </div>
+
+            <div class="row">
+
+                @foreach($cats as $cat)
+
+                  <div class="col-lg-4  col-md-6 pb-30">
+                      <a href="/mcf_cat/{{ $cat->ident }}">
+                        <div class="single-service text-center ccats" style="display: flex; align-items: center;">
+                            <div class="text-center" style="margin: 0 auto; ">
+                                <img src="{{ $cat->image }}" class="img-responsive responsive-img" style="max-width: 23em;    height: 100%;    width: 100%;">
+                                <h4>{{ $cat->name }}</h4>
+                            </div>
+                            {{-- <i class="ti-user"></i> --}}
+
+                            {{-- <p> --}}
+                                {{-- {{ $cat->desc }} --}}
+                            {{-- </p> --}}
+                        </div>
+                      </a>
+                  </div>
+
+                @endforeach
+
+
+
+            </div>
+        </div>
+    </section>
+
     <!-- Start about section -->
-    <section class="about-section section-gap-full relative" id="about-section">
+    <section class="about-section section-gap-full relative" id="about-section" style="    padding: 4em 0 !important;">
         <div class="container" data-aos="fade-up-right">
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-6 col-md-6 about-left">
@@ -52,7 +116,7 @@
                     <p>
                         {!! __('We have been working since 2002. Own production of sound and lighting equipment. Working with us, you work without intermediaries.') !!}
                     </p>
-                    {{-- <a class="primary-btn" href="#contact-section">{{__('Contacts')}}</a> --}}
+                    <a class="primary-btn" href="/mcf_cats">{{__('To shop')}}</a>
                 </div>
             </div>
         </div>

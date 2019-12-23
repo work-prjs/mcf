@@ -112,7 +112,9 @@ Route::post('/api/v1/{model}/{id}', function ($model, $id) {
         // root
         Route::get('/', function () {
             $chits = \App\Models\Chit::where('active','=',1)->get();
+            $cats = \App\Models\Cat::all();
             return view('mcf_v2.root')
+                ->with('cats', $cats)
                 ->with('chits', $chits);
         });
 
