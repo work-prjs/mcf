@@ -118,6 +118,12 @@ class Cat extends Model
         return $this->hasMany('App\Models\Product','cat_id');
         // return $this->belongsTo('App\Carts');
     }
+
+    public function allowed_products()
+    {
+        return $this->hasMany('App\Models\Product','cat_id')->where(['menu'=>true]);
+    }
+
     // public function category(){
     //     return $this->belongsTo('Category','act_acc_ID');
     // }
