@@ -11,6 +11,7 @@
 
       gtag('config', 'UA-154894435-1');
     </script>
+    <meta name="yandex-verification" content="83b65c06351bda90" />
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Mobile Specific Meta -->
