@@ -138,6 +138,7 @@
   "Documents":"Документы",
   "Document":"Документ",
   "Media":"Медиа",
+  "Media files":"Медиа файлы",
   "Articles":"Статьи",
   "How make order":"Как сделать заказ",
   "Payment Rules":"Правила оплаты",
@@ -195,5 +196,6 @@
   "Download":"Скачать",
   "Bestsellers":"Хиты продаж",
   "To shop":"В магазин",
-  "Type":"Тип"
+  "Type":"Тип",
+  "Documents, acknowledgments, certificates, news":"Документы, благодарности, сертификаты, новинки"
 }

@@ -24,8 +24,8 @@
         <div class="container">
             <div class="row section-gap-half">
                 <div class="col-lg-12 text-center">
-                  <h1>Медиа контент</h1>
-                  <h4>Документы, благодарности, сертификаты, новинки</h4>
+                  <h1>{{__('Media files')}}</h1>
+                  <h4>{{__('Documents, acknowledgments, certificates, news')}}</h4>
                 </div>
             </div>
         </div>
