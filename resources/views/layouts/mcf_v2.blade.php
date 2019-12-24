@@ -65,9 +65,14 @@ CSS
 /*#691cff*/
 
 
+        /* ширина блока категорий в меню */
         .breakpoint-off .dopenav ul li .dropdown {
-            width: 17em;
+            width: 24em;
         }
+        /* ширина блока категорий в sidebar (0) */
+        .blog-lists-section .archive-widget ul li a {
+            width: 80%;
+        }        
         .nav-brand {
             text-align: center;
             border: 1px solid #f00000;
