@@ -24,8 +24,8 @@
         <div class="container">
             <div class="row section-gap-half">
                 <div class="col-lg-12 text-center">
-            <h1>Спасибо за заказ. </h1>
-            <h4>Ожидайте, менеджер с Вами свяжется для подтверждения заказа. <br>   Номер заказа: {{ $order_id }}</h4>
+                <h1>{{__('Thanks for your order')}}</h1>
+                <h4>{{__('Expect manager to contact you to confirm the order')}}<br> {{__('Order')}} №: {{ $order_id }}</h4>
                 </div>
             </div>
         </div>
@@ -45,9 +45,9 @@
                     <div class="div">
                         <i class="ti ti-email"></i>
                         <p>
-                            СООБЩЕНИЕ ОТПРАВЛЕНО
+                            {{__('Message sent')}}
                         </p>
-                        <a href="/">На главную</a>
+                        <a href="/">{{ __('Go to main page') }}</a>
                     </div>
                 </div>
             </div>
