@@ -188,6 +188,11 @@ CSS
             /*border: 1px solid grey;*/
         }
 
+        .blog-lists-section .archive-widget ul li a:hover {
+            /*-webkit-filter: drop-shadow(0 0 1px rgba(100,0,0,0.5));*/
+            filter: drop-shadow(3px 3px 3px grey);
+        }
+
         #nav > li:hover a {
             /*color: #691cff;*/
             /*border: 1px solid grey;*/

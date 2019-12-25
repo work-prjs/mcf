@@ -29,7 +29,7 @@
                         </div>
 
 
-                        <div class="single-widget recent-post-widget">
+                        <div class="single-widget recent-post-widget" style="display: none;">
                             <h4 class="widget-title">{{__('Latest offers')}}</h4>
                             <ul>
                                 <li class="d-flex flex-row align-items-center">
