@@ -117,7 +117,7 @@ CSS
 
 
         :not(.dope-sticky) #nav a {
-            color: white;
+            /*color: white;*/
             /*#nav > li:nth-child(7) > a*/
         }
 
