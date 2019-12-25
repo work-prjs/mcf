@@ -76,7 +76,7 @@
             <div class="row section-gap-half">
                 <div class="col-lg-12 text-center">
                     <h1>{{__('Cart')}}</h1>
-                    <h4>{{__('Checkout')}}</h4>
+                    <h4>{{__('Checkout page')}}</h4>
                 </div>
             </div>
         </div>

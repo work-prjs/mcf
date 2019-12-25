@@ -69,7 +69,7 @@ a.bestsellers:hover {
 
 
 
-    <section class="service-section section-gap-full" style="    padding-top: 5em !important;">
+    <section class="service-section section-gap-full" style="    padding-top: 5em !important; display: none;">
         <div class="container">
             <div class="section-title">
                 <h2 class="text-center">{{__('Categories')}}</h2>
