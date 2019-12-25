@@ -17,6 +17,18 @@
 a.bestsellers:hover {
     color: #691cff !important;
 }
+
+
+/*.bestsellers:hover .item img:hover {*/
+.bestsellers:hover .item img:hover {
+    /*zoom: 120%;*/
+    /*transform: scale(1.0001);*/
+    -webkit-box-shadow: 0px 3px 13px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 3px 13px -4px rgba(0,0,0,0.75);
+    box-shadow: 0px 3px 13px -4px rgba(0,0,0,0.75);
+
+}
+
 </style>
 
 
@@ -40,33 +52,6 @@ a.bestsellers:hover {
 @section('content')
 
     <!-- End about-top-banner section -->
-
-    <section class="screenshot-section section-gap-full" style="    padding: 4em 0 !important;">
-        <div class="container">
-            <div class="section-title">
-                <h2 class="text-center">{{__('Bestsellers')}}</h2>
-            </div>
-            <div class="row">
-                <div class="screenshot_slider owl-carousel" id="screenshot-carusel">
-
-                    @foreach(\App\Models\Product::where(['menu'=>true])->take(5)->limit(5)->get() as $cat)
-
-                        <div class="item">
-                            <img src="{{ $cat->image }}" alt="" title="{{ $cat->name }}">
-                            <div style="text-align: center;">
-                                <a href="/mcf_products/{{ $cat->ident }}" style="color: grey;" class="bestsellers">{{ $cat->name }}</a>
-                            </div>
-
-                        </div>
-
-                    @endforeach
-
-
-                </div>
-            </div>
-        </div>
-    </section>
-
 
 
     <section class="service-section section-gap-full" style="    padding-top: 5em !important; display: none;">
@@ -150,6 +135,41 @@ a.bestsellers:hover {
             </span>
         </div>
     </section>
+
+    <section class="screenshot-section section-gap-full" style="    padding: 4em 0 !important;">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="text-center">{{__('Bestsellers')}}</h2>
+            </div>
+            <div class="row">
+                <div class="screenshot_slider owl-carousel" id="screenshot-carusel">
+
+                    @foreach(\App\Models\Product::where(['menu'=>true])->take(5)->limit(5)->get() as $pr)
+
+                    <a href="/mcf_products/{{ $pr->ident }}" style="color: grey;" class="bestsellers">
+                        <div class="item">
+                            @if (!empty($pr->image))
+                                <img src="{{ $pr->image }}" alt="" title="{{ $pr->name }}">
+                            @else
+                                <img src="{{ $pr->cat->image }}" alt="" title="{{ $pr->name }}">
+                            @endif
+                            <div style="text-align: center;">
+                                {{ $pr->name }}
+                                {{-- <a href="/mcf_products/{{ $pr->ident }}" style="color: grey;" class="bestsellers">{{ $pr->name }}</a> --}}
+                            </div>
+                        </div>
+                    </a>
+
+                    @endforeach
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
     <!-- End about section -->
     <!-- Start feature section -->
 {{--     <section class="feature-section section-gap-full" id="feature-section">
@@ -263,7 +283,7 @@ a.bestsellers:hover {
             <div class="row align-items-center feature-wrap">
                 <div class="col-lg-4 header-left " data-aos="fade-right" >
 
-                    <h1 style="font-size: 3em;">
+                    <h1 style="    font-size: 2.3em;">
                         {{__('Become a factory representative')}}
                     </h1>
                     <a class="primary-btn" href="#contact-section">{{__('Send request')}}
@@ -549,8 +569,8 @@ a.bestsellers:hover {
                         <i class="ti ti-email"></i>
                         <p>
                             <a href="mailto:mc.fank@mail.ru">mc.fank@mail.ru</a>
-                            <br> 
-                            <a href="mailto:mcfzavod@gmail.com">mcfzavod@gmail.com</a>
+                            {{-- <br>  --}}
+                            {{-- <a href="mailto:mcfzavod@gmail.com">mcfzavod@gmail.com</a> --}}
                         </p>
                     </div>
                 </div>

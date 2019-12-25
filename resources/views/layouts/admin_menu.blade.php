@@ -84,10 +84,7 @@ $( document ).ready(function() {
 
 
             <li class="{{ Request::is('contactContractors*') ? 'active' : '' }}">
-                <a href="{{ route('contactContractors.index') }}"><i class="fa fa-edit"></i><span>
-                    {{-- {{__('Contractors')}} --}}
-                    Представители
-                </span></a>
+                <a href="{{ route('contactContractors.index') }}"><i class="fa fa-edit"></i><span>Представители</span></a>
             </li>
 
             

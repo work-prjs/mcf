@@ -56,7 +56,6 @@
                         <i class="ti ti-map-alt"></i>
                         <p>
                             {!! __('Contact adress') !!}
-                            
                         </p>
                     </div>
                 </div>
@@ -64,8 +63,7 @@
                     <div class="div">
                         <i class="ti ti-email"></i>
                         <p>
-                            mc.fank@mail.ru 
-                            <br> mcfzavod@gmail.com
+                            <a href="email:mc.fank@mail.ru">mc.fank@mail.ru</a>
                         </p>
                     </div>
                 </div>

@@ -62,7 +62,7 @@ CSS
 
     <style type="text/css">
 
-/*#691cff*/
+        /*#691cff*/
 
 
         /* ширина блока категорий в меню */
@@ -104,10 +104,16 @@ CSS
             /*#nav > li:nth-child(7) > a*/
         }
 
-        #nav a {
+
+        :not(.dope-sticky) #nav a {
             color: white;
             /*#nav > li:nth-child(7) > a*/
         }
+
+        :not(.dope-sticky) #nav .cn-dropdown-item:hover a {
+            color: black;
+        }
+
         #nav a:hover {
             color: black;
             /*#nav > li:nth-child(7) > a*/
@@ -136,6 +142,21 @@ CSS
         .dope-sticky a:hover {
             /*color: black !important;*/
         }
+
+        #nav > li:hover {
+            background-color: white;
+            -webkit-box-shadow: 0px 3px 13px -4px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 3px 13px -4px rgba(0,0,0,0.75);
+            box-shadow: 0px 3px 13px -4px rgba(0,0,0,0.75);
+
+            /*border: 1px solid grey;*/
+        }
+
+        #nav > li:hover a {
+            /*color: #691cff;*/
+            /*border: 1px solid grey;*/
+        }
+
 
         .dope-nav-container a {
             /*color: floralwhite;*/
@@ -235,6 +256,11 @@ CSS
         .section-gap-full {
             padding: 1em 0 !important;
         }        
+
+        /* chatra */
+        .chatra--webkit {
+            margin-right: 4em !important;
+        }
     </style>
 
     @yield('css')
@@ -499,7 +525,7 @@ CSS
                             <a href="tel:+78002000023">+7‒800‒200‒00‒23</a>
                         </li>
                         <li>
-                            <a href="email:mcfzavod@gmail.com">mcfzavod@gmail.com</a>
+                            <a href="email:mc.fank@mail.ru">mc.fank@mail.ru</a>
                         </li>
                         <li>
                             <a href="#">
@@ -538,6 +564,21 @@ CSS
     <div class="scroll-top">
         <i class="ti-angle-up"></i>
     </div>
+
+<!-- Chatra {literal} -->
+<script>
+    (function(d, w, c) {
+        w.ChatraID = 'JYCxAYg8ygd696tcx';
+        var s = d.createElement('script');
+        w[c] = w[c] || function() {
+            (w[c].q = w[c].q || []).push(arguments);
+        };
+        s.async = true;
+        s.src = 'https://call.chatra.io/chatra.js';
+        if (d.head) d.head.appendChild(s);
+    })(document, window, 'Chatra');
+</script>
+<!-- /Chatra {/literal} -->
 
     <!--
 JS
