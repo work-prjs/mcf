@@ -101,11 +101,11 @@
 
                             <div class="row">
 
-                              <div class="col-xs-2 col-lg-2">
+                              <div class="col-sm-2 col-lg-2">
                                 <img class="img-fluid" src="{{ $line->product->cat->image ?? "http://placehold.it/100x70" }}" style="">
                               </div>
 
-                              <div class="col-xs-3 col-md-6 col-lg-6">
+                              <div class="col-sm-3 col-lg-6">
                                 {{-- <h4 class="product-name"> --}}
                                   <strong>{{ $line->product->name ?? "" }}</strong>
                                 {{-- </h4> --}}
@@ -118,7 +118,7 @@
                                 @endif
                               </div>
 
-                              <div class="col-xs-7 col-md-4 col-lg-4" style="text-align: left;">
+                              <div class="col-sm-7 col-lg-4" style="text-align: left;">
                                 <div class="col-xs-12 cart_id" >
 
                                   {{-- <h7> --}}
@@ -134,7 +134,8 @@
 
                                   {!! Form::open(['route' => ['lineItems.destroy', $line->id], 'method' => 'delete','class'=>"position",'style'=>"position: absolute;display: contents;"]) !!}
 
-                                  {!! Form::button('X', ['type' => 'submit', 'class' => 'destroy_button btn-sm btn', 'style'=>'background-color: white;color: red;right: 0em;position: absolute;margin-top: 4px;padding: 3px;', 'onclick' => "return confirm('Вы уверены?')"]) !!}
+                                  {{-- {!! Form::button('X', ['type' => 'submit', 'class' => 'destroy_button btn-sm btn', 'style'=>'background-color: white;color: red;right: 0em;position: absolute;margin-top: 4px;padding: 3px;', 'onclick' => "return confirm('Вы уверены?')"]) !!} --}}
+                                  {!! Form::button('X', ['type' => 'submit', 'class' => 'destroy_button btn-sm btn', 'style'=>'background-color: white;color: red;', 'onclick' => "return confirm('Вы уверены?')"]) !!}
                                   {!! Form::close() !!}
 
                                   {{-- cart_id --}}
@@ -285,13 +286,13 @@
                             <hr>
 
                             <div class="panel-footer">
-                              <div class="row text-center">
+                              <div class="row123 text-center">
                                 <div class="col-xs-12">
                                   <h4 class="text-right">{{__('In total')}} <strong id="cart_total">{{ $cart->total() }}</strong></h4>
                                 </div>
                               </div>
                               
-                              <div class="row text-center">
+                              <div class="row123 text-center">
                                   <div class="col-xs-12">
                                     <button type="submit" value="Оплатить" class="btn btn-success" id="checkout_link" style="background-color: #691cff; border-color: #691cff">
                                     

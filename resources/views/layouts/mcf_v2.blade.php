@@ -66,13 +66,13 @@ CSS
 
         .breakpoint-on .dope-navbar .dope-menu {
             background-color: brown;
-            /*overflow-y: hidden;*/
+            overflow-y: auto;
         }
 
         /* Добавляем после текста закрывающую кавычку */
-        #nav > li:nth-child(6) > a > img:after {
-            content: "close-quote";
-        }
+        /*#nav > li:nth-child(6) > a > img:after {*/
+            /*content: "close-quote";*/
+        /*}*/
 
         /* ширина блока категорий в меню */
         .breakpoint-off .dopenav ul li .dropdown {
