@@ -234,7 +234,7 @@ a.bestsellers:hover {
  --}}    <!-- End feature section -->
 
     <!-- Start stat section -->
-    <section class="stat-section section-gap-half" data-aos="flip-down" style=" margin-top: 4em !important;" >
+    <section class="stat-section section-gap-half" data-aos="flip-down" style=" " >
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">

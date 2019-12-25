@@ -114,6 +114,8 @@ CSS
             color: black;
         }
 
+
+
         #nav a:hover {
             color: black;
             /*#nav > li:nth-child(7) > a*/
@@ -143,12 +145,14 @@ CSS
             /*color: black !important;*/
         }
 
+
+        /* блок меню при наведении */
         #nav > li:hover {
+
             background-color: white;
             -webkit-box-shadow: 0px 3px 13px -4px rgba(0,0,0,0.75);
             -moz-box-shadow: 0px 3px 13px -4px rgba(0,0,0,0.75);
             box-shadow: 0px 3px 13px -4px rgba(0,0,0,0.75);
-
             /*border: 1px solid grey;*/
         }
 
