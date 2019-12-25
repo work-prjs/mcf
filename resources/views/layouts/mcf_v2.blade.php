@@ -144,8 +144,12 @@ CSS
 
 
 
-        .dope-sticky #nav a {
+        .dope-sticky .menu-on:not #nav a {
             color: black;
+        }
+
+        .dope-sticky .menu-on #nav a {
+            color: white;
         }
 
         .dope-sticky #nav a:hover {
@@ -290,6 +294,10 @@ CSS
         }
         .chatra--mobile-widget {
             /*margin-right: 0 !important;*/
+        }
+
+        .dope-sticky .menu-on a {
+            color: white;
         }
     </style>
 
