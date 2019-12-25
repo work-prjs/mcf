@@ -66,7 +66,7 @@ CSS
 
         .breakpoint-on .dope-navbar .dope-menu {
             background-color: brown;
-            overflow-y: hidden;
+            /*overflow-y: hidden;*/
         }
 
         /* Добавляем после текста закрывающую кавычку */
@@ -286,7 +286,10 @@ CSS
 
         /* chatra */
         .chatra--webkit {
-            margin-right: 4em !important;
+            /*margin-right: 4em !important;*/
+        }
+        .chatra--mobile-widget {
+            /*margin-right: 0 !important;*/
         }
     </style>
 
@@ -588,7 +591,7 @@ CSS
     </footer>
     <!-- End footer section -->
 
-    <div class="scroll-top">
+    <div class="scroll-top" style="    margin-bottom: 2em;">
         <i class="ti-angle-up"></i>
     </div>
 
