@@ -17,7 +17,7 @@ class CreateCatsTable extends Migration
         Schema::create('cats', function (Blueprint $table) {
             $table->increments('id');
             $table->string('ident')->nullable();
-            $table->string('name')->nullable();
+            $table->longText('name')->nullable();
             $table->longText('desc')->nullable();
             $table->string('image')->nullable();
             $table->string('xml_name')->nullable();

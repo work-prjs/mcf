@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Eloquent as Model;
+use Spatie\Translatable\HasTranslations;
 
 /**
  * @SWG\Definition(
@@ -79,10 +80,15 @@ use Eloquent as Model;
 class Product extends Model
 {
 
-    public $table = 'products';
+    use HasTranslations;
     
+    public $translatable = [
+        'name',
+        'desc',
+        'attrs'
+    ];
 
-
+    public $table = 'products';
 
     public $fillable = [
         'ident',
@@ -97,7 +103,8 @@ class Product extends Model
         'position',
         'attrs',
         'docs',
-        'new'
+        'new',
+        'hit'
     ];
 
     /**
@@ -117,7 +124,8 @@ class Product extends Model
         'menu' => 'boolean',
         'attrs' => 'string',
         'docs' => 'string',
-        'new' => 'boolean'
+        'new' => 'boolean',
+        'hit' => 'boolean'
 
     ];
 

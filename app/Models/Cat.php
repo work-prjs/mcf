@@ -4,6 +4,7 @@ namespace App\Models;
 // use App\Models\Cat;
 
 use Eloquent as Model;
+use Spatie\Translatable\HasTranslations;
 
 /**
  * @SWG\Definition(
@@ -70,9 +71,10 @@ class Cat extends Model
 {
 
     public $table = 'cats';
+
+    use HasTranslations;
     
-
-
+    public $translatable = [ 'name', 'desc'];
 
     public $fillable = [
         'ident',

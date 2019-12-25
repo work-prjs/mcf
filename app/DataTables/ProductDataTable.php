@@ -91,11 +91,11 @@ class ProductDataTable extends DataTable
             'name' => 'name',
             'title' => 'Название'
         ],
-        [
-            'data' => 'xml_cat',
-            'name' => 'xml_cat',
-            'title' => 'Путь'
-        ],
+        // [
+        //     'data' => 'xml_cat',
+        //     'name' => 'xml_cat',
+        //     'title' => 'Путь'
+        // ],
 
         [
             'data' => 'cat_id',

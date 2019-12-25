@@ -136,10 +136,13 @@
                                                                 @php
                                                                     $a2 = explode(":", $line);
                                                                 @endphp
-                                                                <tr>
-                                                                    <td><strong>{{ $a2[0] ?? '' }}:</strong></td>
-                                                                    <td>{{ $a2[1] ?? ''}}</td>
-                                                                </tr>
+                                                                @if (!empty($a2[1]))
+                                                                  <tr>
+                                                                      <td><strong>{{ $a2[0] ?? '' }}:</strong></td>
+                                                                      <td>{{ $a2[1] ?? ''}}</td>
+                                                                  </tr>
+
+                                                                @endif
                                                             @endforeach
                                                             
                                                         </tbody>
