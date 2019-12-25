@@ -11,7 +11,7 @@
   }
 
 .active2 {
-  background-color: orange;
+  /*background-color: orange;*/
 }
 
 
