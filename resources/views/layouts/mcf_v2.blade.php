@@ -64,6 +64,15 @@ CSS
 
         /*#691cff*/
 
+        .breakpoint-on .dope-navbar .dope-menu {
+            background-color: brown;
+            overflow-y: hidden;
+        }
+
+        /* Добавляем после текста закрывающую кавычку */
+        #nav > li:nth-child(6) > a > img:after {
+            content: "close-quote";
+        }
 
         /* ширина блока категорий в меню */
         .breakpoint-off .dopenav ul li .dropdown {
@@ -91,8 +100,10 @@ CSS
         section.page-top-banner.section-gap-full.relative > div.container > div > div > h1, section.page-top-banner.section-gap-full.relative > div.container > div > div > h4 {
             color: white;
         }
-        a.a_hover:hover {
-            /*color: #691cff !important;*/
+
+
+        .dopenav ul li a {
+            height: auto !important;
         }
 
         .blog-lists-section .tags-widget ul li a {
@@ -145,6 +156,18 @@ CSS
             /*color: black !important;*/
         }
 
+
+
+        a.a_hover {
+            /*line-height: 20px !important;*/
+        }
+        a.a_hover:hover {
+            /*color: #691cff !important;*/
+            -webkit-box-shadow: 0px 3px 13px -4px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 3px 13px -4px rgba(0,0,0,0.75);
+            box-shadow: 0px 3px 13px -4px rgba(0,0,0,0.75);
+
+        }
 
         /* блок меню при наведении */
         #nav > li:hover {
