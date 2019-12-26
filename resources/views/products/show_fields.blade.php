@@ -43,6 +43,49 @@
     </p>
 </div>
 
+<div class="form-group">
+    {!! Form::label('gal', __('Gal') ) !!}
+        {{-- <pre> --}}
+        {{-- {{ dd(json_decode($product->gal))  }} --}}
+              <div id="links">
+
+                <a href="{{ $product->image }}">
+                  <span>
+                    <img src="{{ $product->image }}" style="max-width: 10em;" />
+                  </span>
+                </a>
+
+                @if (!empty($product->gal))
+                @foreach ( json_decode($product->gal) as $line)
+            {{-- {{$line}} --}}
+                {{-- <img src="{{ $line }}" class="img-fluid img-responsive"  style="width: 100%; height: 100%; max-width: 5em;"/> --}}
+                    <a href="{{ $line }}">
+                      <span>
+                        <img src="{{ $line }}" style="max-width: 10em;" />
+                      </span>
+                    </a>
+                @endforeach
+                @endif
+        {{-- </pre> --}}
+              </div>
+
+              <script>
+                document.getElementById('links').onclick = function(event) {
+                  event = event || window.event
+                  var target = event.target || event.srcElement,
+                    link = target.src ? target.parentNode : target,
+                    options = { index: link, event: event },
+                    links = this.getElementsByTagName('a')
+                  blueimp.Gallery(links, options)
+                }
+              </script>
+
+
+
+        {{-- <img class="img-responsive" src="{{ $product->image ?? "http://placehold.it/100x70" }}"> --}}
+        {{-- {!! $product->image !!} --}}
+</div>
+
 <!-- Xml Name Field -->
 <div class="form-group">
     {!! Form::label('xml_name', __('Xml Name') ) !!}

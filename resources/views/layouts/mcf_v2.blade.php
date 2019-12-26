@@ -313,11 +313,24 @@ CSS
 
     @yield('css')
 
+    <script src="/js/blueimp-gallery.min.js"></script>
+    <link rel="stylesheet" href="/css/blueimp-gallery.min.css" />
 
 </head>
 
 <body style="    overflow-x: hidden;">
 
+
+    <div id="blueimp-gallery" class="blueimp-gallery">
+      <div class="slides">
+      </div>
+      <h3 class="title"></h3>
+      <a class="prev">‹</a>
+      <a class="next">›</a>
+      <a class="close">×</a>
+      <a class="play-pause"></a>
+      <ol class="indicator"></ol>
+    </div>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -535,7 +548,7 @@ CSS
                                         <a href="/mcf_media">{{ __('Media') }}</a>
                                     </li>
                                     <li>
-                                        <a href="/mcf_docFiles">{{ __('Documents') }}</a>
+                                        <a href="/mcf_docs">{{ __('Documents') }}</a>
                                     </li>
 
 

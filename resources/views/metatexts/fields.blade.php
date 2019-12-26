@@ -14,7 +14,7 @@
 <div class="form-group col-sm-12 col-lg-12">
     {!! Form::label('code_text', 'Code Text:') !!}
     {!! Form::textarea('code_text', null, ['class' => 'form-control']) !!}
-        CKEDITOR
+        Редактор
     {!! Form::checkbox('CKEDITOR', '1', null) !!}
 </div>
 

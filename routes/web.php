@@ -218,6 +218,17 @@ Route::post('/api/v1/{model}/{id}', function ($model, $id) {
         Route::get('/client_order_show/{client_order_show_id}', 'OrderController@client_order_show');
 
 
+
+        Route::get('/mcf_docs', function () {
+            return view('mcf_v2.mcf_docs');
+        });
+
+        Route::get('/mcf_articles', function () {
+            return view('mcf_v2.mcf_articles');
+        });
+
+
+
         /*
              ######   #######  ##    ## ########    ###     ######  ########
             ##    ## ##     ## ###   ##    ##      ## ##   ##    ##    ##

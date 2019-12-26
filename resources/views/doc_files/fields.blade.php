@@ -39,3 +39,5 @@
     {!! Form::submit('Сохранить', ['class' => 'btn btn-success']) !!}
     <a href="{!! route('docFiles.index') !!}" class="btn btn-default">Отмена</a>
 </div>
+
+

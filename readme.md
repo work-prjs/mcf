@@ -1,3 +1,5 @@
+php artisan make:migration add_hits_to_products_table --table=products
+
 https://github.com/spatie/db-dumper
 
 MODEL_NAME$ NameWhatsApp

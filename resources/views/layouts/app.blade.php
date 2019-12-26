@@ -43,6 +43,13 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+    <!-- CSS file -->
+    <script src="/js/blueimp-gallery.min.js"></script>
+    <link rel="stylesheet" href="/css/blueimp-gallery.min.css" />
+    {{-- <link rel="stylesheet" href="https://cafe-maxim.ru/photoswipe/photoswipe.css">  --}}
+    {{-- <link rel="stylesheet" href="https://cafe-maxim.ru/photoswipe/default-skin/default-skin.css">  --}}
+
     
     <!-- Styles -->
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
@@ -86,6 +93,33 @@
 </head>
 
 <body class="skin-blue sidebar-mini">
+
+
+
+
+
+
+
+
+
+
+    <div id="blueimp-gallery" class="blueimp-gallery">
+      <div class="slides">
+      </div>
+      <h3 class="title"></h3>
+      <a class="prev">‹</a>
+      <a class="next">›</a>
+      <a class="close">×</a>
+      <a class="play-pause"></a>
+      <ol class="indicator"></ol>
+    </div>
+
+
+
+
+
+
+
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -136,9 +170,9 @@
             <!-- Logo -->
             <a href="#" class="logo">
               <!-- mini logo for sidebar mini 50x50 pixels -->
-              <span class="logo-mini"><b>A</b>LT</span>
+              <span class="logo-mini"><b>MC</b>F</span>
               <!-- logo for regular state and mobile devices -->
-              <span class="logo-lg"><b>Admin</b>LTE</span>
+              <span class="logo-lg"><b>Управление</b>MCF</span>
 
             </a>
 
@@ -215,7 +249,9 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             @yield('content-header')
+
             @yield('content')
+
         </div>
 
         <!-- Main Footer -->
@@ -303,6 +339,14 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pnotify@4.0.0/dist/umd/PNotifyButtons.js"></script>
 
     <script type="text/javascript" src="/js/masonry.pkgd.min.js"></script>
+
+    {{-- <script src="https://cafe-maxim.ru/js/vendor/jquery-1.9.1.min.js"></script> --}}
+
+    <!-- Core JS file -->
+    {{-- <script src="https://cafe-maxim.ru/photoswipe/photoswipe.js"></script>  --}}
+    <!-- UI JS file -->
+    {{-- <script src="https://cafe-maxim.ru/photoswipe/photoswipe-ui-default.min.js"></script>  --}}
+
 
     <script type="text/javascript">
         

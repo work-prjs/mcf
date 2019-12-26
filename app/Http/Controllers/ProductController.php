@@ -69,6 +69,15 @@ class ProductController extends AppBaseController
             $input['image'] = $publicPath;
         }
 
+        $gals_path = array();
+        if ($request->hasFile('gal')) {
+            foreach($request->file('gal') as $file) {
+                $path = $file->store('public/products');
+                $gals_path[] = \Storage::url( $path );
+            }
+            $input['gal'] = json_encode($gals_path);
+        }
+
         $product = $this->productRepository->create($input);
 
         Flash::success('Продукт успешно сохранен.');
@@ -142,6 +151,21 @@ class ProductController extends AppBaseController
             $input['image'] = $publicPath;
         }
 
+//         $input['gal']
+
+//           type="file" name="gal[]" multiple>
+
+//         $i = 0;
+
+        $gals_path = array();
+        if ($request->hasFile('gal')) {
+            foreach($request->file('gal') as $file) {
+                $path = $file->store('public/products');
+                $gals_path[] = \Storage::url( $path );
+            }
+            $input['gal'] = json_encode($gals_path);
+        }
+
         $product = $this->productRepository->update($input, $id);
 
         Flash::success('Продукт обновлено успешно.');
@@ -168,6 +192,15 @@ class ProductController extends AppBaseController
 
         // TODO Удаляем файл
         unlink( getcwd().$product['image'] );
+
+
+        $gals_path = array();
+        if (!empty($product['gal'])) {
+            foreach( json_decode($product['gal']) as $file) {
+                unlink( getcwd().$file );
+            }
+        }
+
 
         $this->productRepository->delete($id);
 

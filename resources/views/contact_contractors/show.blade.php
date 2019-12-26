@@ -11,7 +11,7 @@
             <div class="box-body">
                 <div class="row" style="padding-left: 20px">
                     @include('contact_contractors.show_fields')
-                    <a href="{{ route('contactContractors.index') }}" class="btn btn-default">Back</a>
+                    <a href="{{ route('contactContractors.index') }}" class="btn btn-default">Назад</a>
                 </div>
             </div>
         </div>

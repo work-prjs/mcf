@@ -63,9 +63,38 @@
                               </div>
                               <div class="col-md-5 " >
                                     <div class="row">
-                                                @foreach ( [0,1,2,3,4,5] as $line)
-                                                        <img src="{{ $product->image }}" class="img-fluid"  style="    width: 100%; height: 100%; max-width: 5em;"/>
-                                                @endforeach
+                                        <div id="links">
+
+                                          <a href="{{ $product->image }}">
+                                            <span>
+                                              <img src="{{ $product->image }}" style="max-width: 5em;" />
+                                            </span>
+                                          </a>
+                                          @if (!empty($product->gal))
+                                          @foreach ( json_decode($product->gal) as $line)
+                                      {{-- {{$line}} --}}
+                                          {{-- <img src="{{ $line }}" class="img-fluid img-responsive"  style="width: 100%; height: 100%; max-width: 5em;"/> --}}
+                                              <a href="{{ $line }}">
+                                                <span>
+                                                  <img src="{{ $line }}" style="max-width: 5em;" />
+                                                </span>
+                                              </a>
+                                          @endforeach
+                                          @endif
+                                  {{-- </pre> --}}
+                                        </div>
+
+                                        <script>
+                                          document.getElementById('links').onclick = function(event) {
+                                            event = event || window.event
+                                            var target = event.target || event.srcElement,
+                                              link = target.src ? target.parentNode : target,
+                                              options = { index: link, event: event },
+                                              links = this.getElementsByTagName('a')
+                                            blueimp.Gallery(links, options)
+                                          }
+                                        </script>
+
                                     </div>
                               </div>
 
@@ -100,11 +129,11 @@
 
                                     <!-- Rounded tabs -->
                                     <ul id="myTab" role="tablist" class="nav nav-tabs nav-pills flex-column flex-sm-row text-center bg-light border-0 rounded-nav">
-                                      <li class="nav-item flex-sm-fill">
+                                      {{-- <li class="nav-item flex-sm-fill">
                                         <a id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" class="nav-link border-0 text-uppercase font-weight-bold active">{{__('Description')}}</a>
-                                      </li>
+                                      </li> --}}
                                       <li class="nav-item flex-sm-fill">
-                                        <a id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" class="nav-link border-0 text-uppercase font-weight-bold">{{__('Specifications')}}</a>
+                                        <a id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" class="nav-link border-0 text-uppercase font-weight-bold active">{{__('Specifications')}}</a>
                                       </li>
                                       <li class="nav-item flex-sm-fill">
                                         <a id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false" class="nav-link border-0 text-uppercase font-weight-bold">{{__('Documents')}}</a>
@@ -112,10 +141,10 @@
                                     </ul>
 
                                     <div id="myTabContent" class="tab-content">
-                                        <div id="home" role="tabpanel" aria-labelledby="home-tab" class="tab-pane fade px-4 py-5 show active">
+                                        <div id="home" role="tabpanel" aria-labelledby="home-tab" class="tab-pane fade px-4 py-5 show ">
                                             {{ $product->desc }}
                                         </div>
-                                        <div id="profile" role="tabpanel" aria-labelledby="profile-tab" class="tab-pane fade px-4 py-5">
+                                        <div id="profile" role="tabpanel" aria-labelledby="profile-tab" class="tab-pane fade px-4 py-5 show active">
                                                     @php
                                                         // if (!empty($product->attrs)) {
                                                             # code...
@@ -136,7 +165,7 @@
                                                                 @php
                                                                     $a2 = explode(":", $line);
                                                                 @endphp
-                                                                @if (!empty($a2[1]))
+                                                                @if (!empty(trim($a2[1])))
                                                                   <tr>
                                                                       <td><strong>{{ $a2[0] ?? '' }}:</strong></td>
                                                                       <td>{{ $a2[1] ?? ''}}</td>

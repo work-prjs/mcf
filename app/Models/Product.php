@@ -104,7 +104,8 @@ class Product extends Model
         'attrs',
         'docs',
         'new',
-        'hit'
+        'hit',
+        'gal'
     ];
 
     /**
@@ -125,7 +126,8 @@ class Product extends Model
         'attrs' => 'string',
         'docs' => 'string',
         'new' => 'boolean',
-        'hit' => 'boolean'
+        'hit' => 'boolean',
+        'gal' => 'string'
 
     ];
 

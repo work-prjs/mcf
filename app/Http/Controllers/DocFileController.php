@@ -66,6 +66,10 @@ class DocFileController extends AppBaseController
             $input['doc_file'] = $publicPath;
         }
 
+        $request->validate([
+            'file.*' => 'required|file|max:50000|mimes:pdf,docx,doc,xls,xlsx',
+        ]);
+
         $docFile = $this->docFileRepository->create($input);
 
         Flash::success('Doc File успешно сохранен.');
@@ -130,6 +134,21 @@ class DocFileController extends AppBaseController
 
             return redirect(route('docFiles.index'));
         }
+
+
+          $this->validate($request, [
+              'doc_file' => 'bail|required|required|file|max:50000|mimes:pdf,docx,doc,xls,xlsx',
+              'name' => 'required',
+          ]);
+
+        // $request->validate([
+        //     // 'file.*' => 'required|file|max:50000|mimes:pdf,docx,doc,xls,xlsx',
+        //     'doc_file' => 'required|file|max:50000|mimes:pdf,docx,doc,xls,xlsx',
+        // ]);
+
+        // $validator = Validator::make($request->all(), [
+        //     'doc_file'   => 'mimes:doc,pdf,docx,zip'
+        // ]);
 
         $input = $request->all();
         if ($request->hasFile('doc_file')) {

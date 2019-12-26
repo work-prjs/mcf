@@ -6,7 +6,7 @@
         <h1 class="pull-right">
            <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('docFiles.create') !!}"> <i class="fa fa-plus" aria-hidden="true"></i> Создать</a>
            <a class="btn btn-danger pull-right" style="margin-top: -10px;margin-bottom: 5px" href="/docFiles_destroy_all"> <i class="fa fa-trash" aria-hidden="true"></i> Очистить</a>
-           <a class="btn btn-success pull-right" style="margin-top: -10px;margin-bottom: 5px" data-toggle="modal" data-target="#myModal_import"> <i class="fa fa-upload" aria-hidden="true"></i> Импорт</a>
+           {{-- <a class="btn btn-success pull-right" style="margin-top: -10px;margin-bottom: 5px" data-toggle="modal" data-target="#myModal_import"> <i class="fa fa-upload" aria-hidden="true"></i> Импорт</a> --}}
         </h1>
     </section>
     <div class="content">

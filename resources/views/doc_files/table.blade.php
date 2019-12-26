@@ -4,18 +4,22 @@
             <tr>
                 <th>{{ __('Name') }}</th>
         <th>{{ __('Description') }}</th>
-        <th>{{ __('Documents') }}</th>
-        <th>{{ __('Type') }}</th>
+        {{-- <th>{{ __('Documents') }}</th> --}}
+        {{-- <th>{{ __('Type') }}</th> --}}
                 <th colspan="3">Действие</th>
             </tr>
         </thead>
         <tbody>
         @foreach($docFiles as $docFile)
             <tr>
-                <td>{!! $docFile->name !!}</td>
+                <td>
+                    <a href="{{ $docFile->doc_file }}">
+                        {!! $docFile->name !!}
+                    </a>
+                </td>
             <td>{!! $docFile->desc !!}</td>
-            <td>{!! $docFile->doc_file !!}</td>
-            <td>{!! $docFile->doc_file_type !!}</td>
+            {{-- <td>{!! $docFile->doc_file !!}</td> --}}
+            {{-- <td>{!! $docFile->doc_file_type !!}</td> --}}
                 <td>
                     {!! Form::open(['route' => ['docFiles.destroy', $docFile->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
