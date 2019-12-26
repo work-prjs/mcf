@@ -144,7 +144,7 @@ a.bestsellers:hover {
             <div class="row">
                 <div class="screenshot_slider owl-carousel" id="screenshot-carusel">
 
-                    @foreach(\App\Models\Product::where(['menu'=>true])->take(5)->limit(5)->get() as $pr)
+                    @foreach(\App\Models\Product::where(['hit'=>true])->take(5)->limit(5)->get() as $pr)
 
                     <a href="/mcf_products/{{ $pr->ident }}" style="color: grey;" class="bestsellers">
                         <div class="item">
