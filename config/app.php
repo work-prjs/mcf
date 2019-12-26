@@ -224,6 +224,8 @@ return [
         // yajra/laravel-datatables-buttons suggests installing barryvdh/laravel-snappy (Allows exporting of dataTable to PDF using the print view.)
         // Mews\Captcha\CaptchaServiceProvider::class,
 
+        Laravel\Socialite\SocialiteServiceProvider::class,
+
     ],
 
     /*
@@ -283,6 +285,8 @@ return [
         // https://unisharp.github.io/laravel-filemanager/installation
         'Image' => Intervention\Image\Facades\Image::class,
         // 'Captcha' => Mews\Captcha\Facades\Captcha::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+
 
     ],
 

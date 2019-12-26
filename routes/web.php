@@ -157,6 +157,9 @@ Route::post('/api/v1/{model}/{id}', function ($model, $id) {
         Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
 
 
+        Route::get('/redirect', 'Auth\LoginController@redirectToProvider');
+        Route::get('/callback', 'Auth\LoginController@handleProviderCallback');
+
 
         /*
 
