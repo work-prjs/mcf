@@ -98,7 +98,7 @@
                                                 {{-- <div class=" text-center" style="background-color: white;"> --}}
                                                     <div class="text-center " style="    padding-bottom: 1em;">
                                                       {{-- <img src="{{ $cat2->image }}" class="img-fluid" style="max-height: 10em; max-width: 8em;"> --}}
-                                                      <img src="{{ $cat2->image }}" class="img-fluid" style="">
+                                                      <img src="{{ $product->image ?? $cat2->image }}" class="img-fluid" style="">
                                                     </div>
                                                     {{-- <i class="ti-user"></i> --}}
 
